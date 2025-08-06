@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Engineering Library | Amrut Filtration & Indcare Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #e6f7fc;
+            opacity: 0;
+            transition: opacity 1s ease;
+            color: #333;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+        }
+        
+        h1, h2, h3 {
+            color: black;
+        }
+
+        h1 {
+            border-bottom: 3px solid black;
+            padding-bottom: 0.3rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li::marker {
+            color: #00b4d8;
+        }
+
+        .highlight {
+            background-color: white;
+            padding: 0.3rem 0.6rem;
+            display: inline-block;
+            border-left: 4px solid black;
+        }
+
+        /* Main Navigation Styles */
+        nav {
+            background: black;
+            padding: 0.8rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            border-bottom: 4px solid #e6f7fc;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        /* Sidebar and Content Container */
+        .container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        /* Sidebar Navigation Styles */
+        .wt-nav {
+            flex: 0 0 250px;
+            background-color: #e0f0ff;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .wt-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .wt-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .wt-nav ul li a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .wt-nav ul li a:hover,
+        .wt-nav ul li a.active {
+            background-color: #003366;
+            color: white;
+        }
+
+        /* Main Content Styles */
+        .wt-content {
+            flex: 1;
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        
+        .wt-content > div {
+            display: none;
+        }
+
+        .wt-content > div.active {
+            display: block;
+        }
+
+        .wt-content h3 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        thead tr {
+            background-color: #f2f2f2;
+        }
+
+        /* --- Media Query for Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            /* Stack main nav vertically */
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            /* Stack sidebar and content vertically */
+            .container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            /* Allow sidebar to take full width */
+            .wt-nav {
+                flex: 1 1 auto; /* Allow it to grow and shrink */
+                width: 100%;
+            }
+            /* Allow content to take full width */
+            .wt-content {
+                flex: 1 1 auto;
+                width: 100%;
+            }
+        }
+    </style>
+  
+</head>
+<body>
+  
+  
+</a>
+  <div style="width:100%; text-align:center; margin-bottom:1.5rem;">
+    <h1 style="font-size:2.7rem; color:#003366; font-weight:bold; margin:0;">The Engineering Library</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#water-treatment">Water Treatment</a></li>
+      <li><a href="#pneumatic">Pneumatic</a></li>
+      <li><a href="#hydraulic">Hydraulic</a></li>
+      <li><a href="#industrial-hardware">Industrial Hardware</a></li>
+       <li><a href="#pumps">Pumps</a></li>
+      <li><a href="#service-provided">Service Provided </a></li>
+
+    </ul>
+  </nav>
+
+ 
+
+
+<section id="water-treatment">
+  <h2>Water Treatment</h2>
+
+  <p class="highlight">Water Purification and Filtration Solutions</p>
+
+  <div style="background:#003366; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1.2rem; border-left:5px solid #003366;">
+    <strong style="font-size:1.15rem; color:white;">What Is Water Treatment?</strong>
+    <p style="margin:0.7rem 0 0 0; color:white; font-size:1rem;">
+      Water treatment refers to the processes used to improve the quality of water for a specific purpose, such as drinking, industrial use, or environmental discharge. It involves removing contaminants, solids, and microorganisms to make water safe and suitable for its intended use. Common methods include filtration, chemical dosing, reverse osmosis, and disinfection.
+    </p>
+  </div>
+  <div>
+      <strong style="font-size:1.08rem; color:black; ">Key Components</strong>
+      
+    </div>
+ <div style="display: flex; gap: 2rem; align-items: flex-start;">
+  <div class="wt-section">
+    <div class="wt-nav">
+      <ul>
+         <li><a href="#wt" class="active">Water Treatment</a></li>
+        <li><a href="#wt-Water-RO-system">Water RO Systems</a></li>
+        <li><a href="#wt-Water-cartdriges">Water Cartdridges</a></li>
+        <li><a href="#wt-Automatic-Water-Softener">Automatic Water Softener</a></li>
+        <li><a href="#wt-Water-Conditioner">Water Conditioner</a></li>
+        <li><a href="#wt-Water-Vending-Machine">Water Vending Machine</a></li>
+        <li><a href="#wt-UF-Filter"> UF Filter</a></li>
+        <li><a href="#wt-Water-Ionizer">Water Ionizer</a></li>
+        <li><a href="#wt-Water-Treatment-Media">Water Treatment Media</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="wt-content">
+      <div id="wt" class="active">
+     
+  <p>Water treatment systems are a broad category of technologies and processes used to improve the quality of water for a specific purpose, such as drinking, industrial use, or environmental discharge. The goal is to remove contaminants and make the water safe, clean, and suitable for its intended use.</p>
+
+<p><h2>Water Treatment Processes</h2></p>
+
+<p>Water treatment often involves a series of steps, known as a "treatment train," to address different types of contaminants. The specific processes used depend on the source of the water and the level of purity required.</p>
+
+<p><strong>Coagulation and Flocculation:</strong> This is often the first step for raw water sources like rivers and lakes. Chemicals called coagulants (like alum) are added to the water to neutralize the negative charge of small, suspended particles (like dirt and clay). This allows the particles to clump together into larger, heavier masses called "floc."</p>
+
+<P><strong>Sedimentation:</strong> Flocculation, the water is left undisturbed in a tank. The heavy floc particles settle to the bottom by gravity, separating them from the clearer water on top.</P>
+
+<P><strong> Filtration</strong> The water is passed through various filters to remove any remaining suspended solids, germs, and other impurities. Common filter media include sand, gravel, and activated carbon. Modern systems also use advanced filtration technologies like microfiltration, ultrafiltration, and nanofiltration.</P>
+
+<p><strong>Disinfection:</strong> This is a crucial step to kill any remaining disease-causing microorganisms (pathogens) like bacteria and viruses. Common disinfection methods include:</p>
+
+<ul>
+<li>Chlorination: Adding chlorine or chloramine to the water. This is a very common method because the residual chlorine continues to disinfect the water as it travels through pipes.</li>
+
+<li>Ultraviolet (UV) Light: Exposing water to UV light, which damages the DNA of microorganisms and prevents them from reproducing.</li>
+
+<li>Ozonation: Using ozone gas, a powerful oxidant, to kill pathogens.</li>
+
+<li>Reverse Osmosis (RO): A highly effective process that uses a semi-permeable membrane to remove dissolved solids, salts, and other impurities. It's often used for desalination or to produce high-purity water for industrial or drinking purposes.</li>
+</ul>
+
+<strong><h3>Types of Water Treatment Systems</h3></strong>
+Water treatment systems can be designed for different scales and purposes:
+<ul>
+<li>Commercial Water Treatment Plants: Large-scale facilities that treat water from lakes, rivers, or reservoirs and distribute it to an entire community for drinking and household use.</li>
+
+<li>Industrial Water Treatment: Systems designed for specific industrial processes. This can include treating water to prevent scaling in boilers, removing heavy metals from wastewater, or creating ultra-pure water for electronics manufacturing.</li>
+
+<li>Domestic Water Treatment Systems: These are systems installed in homes to further purify water from a municipal supply or a private well. They can be:
+</ul>
+<ul>
+<li>Point-of-Use (POU) systems: Systems that treat water at a single tap, such as a filter on a kitchen faucet or a pitcher filter.</li>
+
+<li>Point-of-Entry (POE) systems: Also known as "whole-house" systems, these treat all the water entering the home. Examples include water softeners and whole-house carbon filters</li></p>
+     
+</ul> 
+      </div>
+
+  <div id="wt-Water-RO-system"><p><h3>Water RO Systems</h3>
+  <p>
+    A <strong>Reverse Osmosis (RO)</strong> system is a water purification technology that removes a wide range of contaminants, including dissolved salts, ions, and large molecules, from water. It is one of the most effective methods for creating high-purity water for drinking, industrial, and medical applications.
+  </p>
+  
+  <h4>How it Works:</h4>
+  <p>
+    The core of an RO system is a semi-permeable membrane. The process works by applying pressure to the contaminated water (feed water) on one side of the membrane. This pressure forces the water molecules through the membrane's tiny pores, leaving the larger contaminants behind. The purified water (permeate) is collected on the other side, while the concentrated waste stream (brine or reject water) containing the impurities is flushed away.
+  </p>
+
+  <h4>Key Components of a Typical RO System:</h4>
+  <ul>
+    <li>
+      <strong>Sediment Filter:</strong> A pre-filter that removes larger particles like sand, silt, and rust to protect the delicate RO membrane from clogging.
+    </li>
+    <li>
+      <strong>Carbon Filter:</strong> A second pre-filter that uses activated carbon to remove chlorine, chloramines, and organic compounds that can damage the RO membrane and affect water taste.
+    </li>
+    <li>
+      <strong>RO Membrane:</strong> The heart of the system. This membrane has pores small enough to block dissolved salts, heavy metals, and many other contaminants.
+    </li>
+    <li>
+      <strong>Post-Carbon Filter:</strong> A final filter that "polishes" the water after it passes through the membrane, ensuring any lingering odors or tastes are removed before it reaches the faucet.
+    </li>
+    <li>
+      <strong>Booster Pump:</strong> An electric pump used in many systems to increase the pressure of the feed water, which improves the efficiency and flow rate of the RO process.
+    </li>
+    <li>
+      <strong>Storage Tank:</strong> A pressurized tank where the purified RO water is stored, as the filtration process is slow.
+    </li>
+    <li>
+      <strong>Automatic Shut-Off Valve / Low-Pressure Switch:</strong> A mechanism that stops the flow of water when the storage tank is full, or when the incoming pressure is too low, to conserve water and protect the pump.
+    </li>
+    <li>
+      <strong>Faucet:</strong> A dedicated tap for dispensing the purified RO water.
+    </li>
+  </ul>
+  
+  <h4>Advantages:</h4>
+  <ul>
+    <li>Highly effective at removing a broad spectrum of contaminants, including bacteria and viruses.</li>
+    <li>Removes dissolved solids, making water taste better.</li>
+    <li>Produces a consistent quality of purified water.</li>
+  </ul>
+  
+  <h4>Disadvantages:</h4>
+  <ul>
+    <li>Can be a slow process, which is why a storage tank is necessary.</li>
+    <li>Generates a significant amount of wastewater (brine).</li>
+    <li>Requires regular replacement of filters and the membrane to maintain efficiency.</li>
+  </ul>
+</div>
+ <div id="wt-Water-cartdriges">
+    <h3>Water Cartridges</h3>
+    <p>
+      Water filter cartridges are essential components in any filtration system, acting as the primary medium for removing contaminants. They come in various types, each designed for a specific function, from removing large sediment to improving taste and preventing scale buildup.
+    </p>
+
+    <h4>Master Cartridge Reference Table</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Function</th>
+          <th>Application</th>
+          <th>Mesh (micron)</th>
+          <th>Size</th>
+          <th>Max Flow (L/hr)</th>
+          <th>Service Life</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Screen Filter</td><td>Filter debris and large particles</td><td>Pre-filter</td><td>–</td><td>10”, 20” (S/J)</td><td>500–2000</td><td>Washable</td></tr>
+        <tr><td>Bag Filter</td><td>Remove large particles</td><td>Pre-filter</td><td>–</td><td>–</td><td>–</td><td>Washable</td></tr>
+        <tr><td>Disc Filter</td><td>Filter debris and large particles</td><td>Pre-filter</td><td>–</td><td>–</td><td>–</td><td>Washable</td></tr>
+        <tr><td>Spun/PP/Sediment</td><td>Sand, dust, rust, silt</td><td>Pre-filter</td><td>0.5–50</td><td>10”, 20” (S/J)</td><td>500–2000</td><td>6 months</td></tr>
+        <tr><td>Wound Cartridge</td><td>Sand, dust, rust, silt</td><td>Pre-filter</td><td>0.5–50</td><td>10”, 20” (S/J)</td><td>500–2000</td><td>6 months</td></tr>
+        <tr><td>Carbon Block (CTO)</td><td>Chlorine, taste, odor, organics</td><td>Treatment</td><td>1, 5</td><td>10”, 20” (S/J)</td><td>500–2000</td><td>6 months</td></tr>
+        <tr><td>GAC</td><td>Chlorine, taste, odor, organics</td><td>Treatment</td><td>–</td><td>10”, 20” (S/J)</td><td>500–2000</td><td>6 months</td></tr>
+        <tr><td>Softener Resin</td><td>Removes hardness</td><td>Treatment</td><td>–</td><td>10”, 20” (S/J)</td><td>200–500</td><td>6 months/depends</td></tr>
+        <tr><td>Activated Alumina</td><td>Fluoride removal</td><td>Treatment</td><td>–</td><td>10”, 20” (S/J)</td><td>200–500</td><td>6 months/depends</td></tr>
+        <tr><td>Birm Media</td><td>Iron and manganese</td><td>Treatment</td><td>–</td><td>10”, 20” (S/J)</td><td>200–500</td><td>6 months/depends</td></tr>
+        <tr><td>Pleated Filter</td><td>Microfiltration</td><td>Final stage</td><td>0.2–5</td><td>10”–40” (S)</td><td>400</td><td>6 months</td></tr>
+        <tr><td>UF Membrane</td><td>Removes bacteria/viruses</td><td>Treatment</td><td>0.02</td><td>5”, 10”, 20” (S/J)</td><td>25–1000</td><td>Washable</td></tr>
+        <tr><td>UV Filter</td><td>Kills/deactivates bacteria</td><td>Disinfection</td><td>–</td><td>6W–55W</td><td>100–3000</td><td>–</td></tr>
+        <tr><td>Pre Carbon</td><td>Removes color, odor, chlorine</td><td>Pre-RO</td><td>–</td><td>10” (S)</td><td>850</td><td>6–9 months</td></tr>
+        <tr><td>Post Carbon</td><td>Enhances taste</td><td>Post-RO</td><td>–</td><td>10” (S)</td><td>–</td><td>6 months</td></tr>
+        <tr><td>RO Membrane (small)</td><td>Removes TDS, bacteria, chemicals</td><td>Main filter</td><td>–</td><td>75–100 GPD</td><td>60</td><td>12 months</td></tr>
+        <tr><td>RO Membrane (4040)</td><td>Removes TDS, bacteria, chemicals</td><td>Main filter</td><td>–</td><td>4040</td><td>250–1000</td><td>12 months</td></tr>
+        <tr><td>RO Membrane (8040)</td><td>Removes TDS, bacteria, chemicals</td><td>Main filter</td><td>–</td><td>8040</td><td>10,000</td><td>6–9 months</td></tr>
+        <tr><td>Mineral Cartridge</td><td>Restore lost minerals</td><td>Post-RO</td><td>–</td><td>10”</td><td>1</td><td>6 months</td></tr>
+        <tr><td>Vitamin B12 Filter</td><td>Adds minerals</td><td>Post-RO</td><td>–</td><td>10”</td><td>–</td><td>–</td></tr>
+        <tr><td>Alkaline Filter</td><td>Improves pH and taste</td><td>Post-RO</td><td>–</td><td>10”</td><td>–</td><td>–</td></tr>
+        <tr><td>Magnetic Water Filter</td><td>Softens water via magnetism</td><td>Prevents scaling</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Ceramic Water Filter</td><td>Removes bacteria</td><td>Gravity systems</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+      </tbody>
+    </table>
+
+    <p>All cartridge service life can vary depending on water quality and usage patterns. Always consult with a technician or distributor before selecting the right filter for your system.</p>
+  </div>
+
+
+      <div id="wt-UF-Filter"><p><h3>UF (Ultrafiltration) Filter</h3>
+  <p>
+    An Ultrafiltration (UF) filter is a membrane-based water purification technology that uses a physical barrier to remove contaminants. It is a highly effective method for ensuring water is free of microorganisms, colloids, and suspended solids without removing beneficial minerals.
+  </p>
+
+  <h4>How It Works:</h4>
+  <p>
+    The core of a UF filter is a membrane, often in a hollow-fiber configuration, with microscopic pores typically ranging from 0.01 to 0.1 microns in size. Water is pushed through these pores under pressure, operating on a principle of size exclusion.
+  </p>
+  <ul>
+    <li><strong>Physical Separation:</strong> The membrane acts as a physical barrier. Water molecules and dissolved minerals, which are smaller than the pore size, pass through the membrane.</li>
+    <li><strong>Contaminant Retention:</strong> Particles larger than the membrane pores, such as bacteria, viruses, colloids, and other suspended solids, are physically blocked and retained on the outer surface of the membrane.</li>
+    <li><strong>Low Pressure:</strong> Unlike Reverse Osmosis (RO), UF systems operate at a much lower pressure, often using standard home water pressure, which makes them more energy-efficient and less complex.</li>
+  </ul>
+
+  <h4>What UF Filters Remove:</h4>
+  <ul>
+    <li><strong>Bacteria:</strong> Highly effective at removing bacteria (up to 99.99%).</li>
+    <li><strong>Viruses:</strong> Capable of removing many viruses.</li>
+    <li><strong>Protozoa:</strong> Removes protozoa like Giardia and Cryptosporidium.</li>
+    <li><strong>Suspended Solids:</strong> Eliminates dirt, silt, sand, rust, and other particulate matter.</li>
+    <li><strong>Colloids and Macromolecules:</strong> Filters out high-molecular-weight organic compounds, proteins, and other large particles.</li>
+    <li><strong>Does NOT Remove:</strong> Unlike RO, UF does not remove dissolved salts, total dissolved solids (TDS), or dissolved minerals.</li>
+  </ul>
+
+  <h4>Key Advantages:</h4>
+  <ul>
+    <li><strong>Mineral Retention:</strong> Keeps beneficial minerals like calcium and magnesium in the water, which are essential for health and taste.</li>
+    <li><strong>High Efficiency:</strong> Delivers a high flow rate and has a high water recovery rate, with minimal to no wastewater generated.</li>
+    <li><strong>Chemical-Free:</strong> It's a purely physical process that does not require the use of chemicals for disinfection or filtration.</li>
+    <li><strong>Durability:</strong> UF membranes are robust and can be cleaned (backwashed) to restore their performance, extending their lifespan.</li>
+  </ul>
+
+  <h4>Applications:</h4>
+  <p>UF filters are a versatile solution used in various applications:</p>
+  <ul>
+    <li><strong>Drinking Water Systems:</strong> Used in point-of-use (POU) and whole-house systems to provide microbiologically safe water.</li>
+    <li><strong>Pre-treatment for RO:</strong> Used as a pre-filter to protect Reverse Osmosis membranes from fouling and extend their lifespan.</li>
+    <li><strong>Industrial Water Treatment:</strong> Employed in food and beverage processing, pharmaceutical production, and wastewater treatment.</li>
+    <li><strong>Water Vending Machines:</strong> Often a key stage in public water vending machines to ensure the safety of the dispensed water.</li>
+  </ul>
+</div>
+
+      <div id="wt-Water-Conditioner"><p><h2>Water Conditioner</h2>
+  <h3>AMRUT Nano Water Conditioner </h3>
+  <p>
+    The AMRUT Nano Water Conditioner,  is a unique, chemical-free water treatment device that uses a natural process to condition water. It is designed to mimic the spiraling, vortex-generating motions found in nature to restructure water at a molecular level, providing a maintenance-free solution for hard water problems.
+  </p>
+
+  <h4>How It Works:</h4>
+  <p>
+    The device works on the principle of structured water science. As water flows through the in-line unit, a series of geometric chambers and special materials create a powerful vortex and a mild electromagnetic field.
+  </p>
+  <ul>
+    <li>
+      <strong>Vortex Generation:</strong> Water is forced into a rapid spinning motion, creating centripetal and centrifugal forces that break up the existing water molecule clusters.
+    </li>
+    <li>
+      <strong>Electromagnetic Field:</strong> Rare earth materials inside the chamber generate an electromagnetic field.
+    </li>
+    <li>
+      <strong>Molecular Restructuring:</strong> The combination of the vortex and the electromagnetic field regenerates the water's natural structure, transforming it into a hexagonal molecular pattern, similar to high-quality natural spring water.
+    </li>
+    <li>
+      <strong>Scale Prevention:</strong> This process changes the form of lime scale (calcium carbonate) from a sticky, crystalline structure into a non-sticky, powdery form. This prevents it from adhering to surfaces, allowing it to be easily washed away. The device also helps to descale existing mineral buildup.
+    </li>
+  </ul>
+
+  <h4>Key Benefits:</h4>
+  <ul>
+    <li>
+      <strong>Maintenance-Free:</strong> Operates without the use of electricity, chemicals, salts, or filters, making it a completely maintenance-free system.
+    </li>
+    <li>
+      <strong>Improved Water Quality:</strong> Transforms hard water into a softer, more invigorating state without removing beneficial minerals. It also reduces heavy metals and gases like chlorine.
+    </li>
+    <li>
+      <strong>Domestic Use:</strong>
+      <ul>
+        <li>Prevents scale formation on pipes, taps, and appliances.</li>
+        <li>Eliminates the dry, itchy skin and chlorine smell associated with hard water.</li>
+        <li>Increases lather from soaps and detergents, leading to reduced consumption.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Industrial Use:</strong>
+      <ul>
+        <li>Reduces scale and corrosion in machinery and plumbing.</li>
+        <li>Improves heat absorption, making it an excellent solution for AC cooling towers and other heat transfer systems.</li>
+        <li>Reduces odors in STP (Sewage Treatment Plant) and ETP (Effluent Treatment Plant) applications.</li>
+      </ul>
+    </li>
+
+ <h3>AMRUT Magnetic Water Conditioner </h3>
+  
+ <p>
+    The AMRUT Magnetic Water Conditioner is a chemical-free, non-invasive solution for hard water problems. Unlike traditional salt-based softeners, this device uses a powerful magnetic field to alter the physical properties of hard water minerals, preventing them from forming scale without removing essential minerals.
+  </p>
+
+  <h4>How It Works:</h4>
+  <p>
+    The conditioner operates by creating a complex, modulating magnetic field around the water pipe. As water flows through this field, two key processes occur:
+  </p>
+  <ul>
+    <li>
+      <strong>Breaking Process:</strong> The high-frequency magnetic field breaks down large mineral clusters (like calcium and magnesium) into much smaller, tiny particles. For example, a 40-micron cluster is broken into ten 4-micron particles, making them more bio-available and less likely to form scale.
+    </li>
+    <li>
+      <strong>Transforming Process:</strong> This process changes the molecular structure of the water, transforming the minerals' nature from sticky to non-sticky. This prevents the tiny particles from bonding with each other or with surfaces, so they cannot form hard scale on pipes and appliances. The water's solubility is increased, turning it into a "Best Solvent" that can even help dissolve existing scale over time.
+    </li>
+  </ul>
+
+  <h4>Key Benefits:</h4>
+  <ul>
+    <li>
+      <strong>Prevents Scale Formation:</strong> Effectively controls and prevents new scale from forming on pipes, fittings, water heaters, and appliances.
+    </li>
+    <li>
+      <strong>Removes Existing Scale:</strong> The conditioned water helps to gradually break down and remove pre-existing scale buildup, improving the efficiency and lifespan of your equipment.
+    </li>
+    <li>
+      <strong>Energy Efficiency:</strong> By preventing scale deposition in water heaters and pipes, the device helps reduce heat exchange inefficiencies and lowers energy consumption.
+    </li>
+    <li>
+      <strong>Health & Personal Care:</strong>
+      <ul>
+        <li>Softens water without removing essential minerals, making them more bio-available.</li>
+        <li>Leaves hair and skin feeling softer after bathing.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Versatile & Maintenance-Free:</strong>
+      <ul>
+        <li>Treats water without the use of chemicals, salts, or electricity.</li>
+        <li>Fits various pipe sizes and materials without complex installation.</li>
+        <li>Reduces maintenance costs and extends the lifespan of filters and membranes in a system.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Industrial & Agricultural Use:</strong>
+      <ul>
+        <li>Improves soil profile by breaking down hard ions.</li>
+        <li>Increases the lifespan of industrial equipment and reduces maintenance costs.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+      <div id="wt-Water-Vending-Machine"><p><h3>Amrut Water Vending Machine (Water ATM)</h3>
+  <p>
+    The Amrut Water Vending Machine is a self-service purification and dispensing system that provides high-quality, safe drinking water to the public. It features a compact and efficient four-stage filtration and disinfection process to ensure the highest standards of water purity.
+  </p>
+
+  <h4>Four-Stage Purification Process:</h4>
+  <ol>
+    <li>
+      <strong>Bag Filter:</strong> The first stage of purification uses a bag filter to remove large suspended solids such as dirt, sand, and sediment from the raw water. This crucial pre-filtration step protects the more sensitive downstream filters and extends their lifespan.
+    </li>
+    <li>
+      <strong>Ultrafiltration (UF):</strong> In the second stage, water passes through a high-performance ultrafiltration membrane. This membrane has microscopic pores that effectively trap and remove bacteria, viruses, colloids, and other microorganisms while allowing beneficial minerals to pass through.
+    </li>
+    <li>
+      <strong>Automated Dispensing:</strong> This stage is an automated dispensing system that provides a precise, pre-measured quantity of purified water. Once the user makes a payment, this system delivers the water in a user-friendly and efficient manner.
+    </li>
+    <li>
+      <strong>UV Disinfection:</strong> The final stage provides a critical layer of protection. A powerful UV lamp exposes the water to ultraviolet light just before it is dispensed, which inactivates any remaining bacteria, viruses, and other pathogens by damaging their DNA. This ensures the water is completely disinfected without the use of chemicals.
+    </li>
+  </ol>
+
+  <h4>Automated & User-Friendly Features:</h4>
+  <ul>
+    <li>
+      <strong>Fully Automatic Operation:</strong> The machine is designed for a completely hands-off experience. Once payment is made, the system automatically runs the purification process and dispenses the water.
+    </li>
+    <li>
+      <strong>User Interface:</strong> An intuitive interface guides the user through the process, from payment to water collection.
+    </li>
+    <li>
+      <strong>Coin and/or Card System:</strong> The machine is equipped with a secure system that accepts various forms of payment, making it convenient for public use.
+    </li>
+  </ul>
+</div>
+  
+      <div id="wt-Water-Ionizer"><p><h3>Water Ionizer</h3>
+  <p>
+    A water ionizer is an electronic device that uses electrolysis to alter the pH of water. It separates the incoming water into two streams: alkaline ionized water for drinking, and acidic water for other uses.
+  </p>
+
+  <h4>How It Works:</h4>
+  <p>
+    The process of water ionization, also known as electrolysis, occurs in a chamber equipped with platinum-coated titanium electrodes and a membrane.
+  </p>
+  <ul>
+    <li>
+      <strong>Pre-Filtration:</strong> Before electrolysis, water is passed through a multi-stage filter to remove impurities such as chlorine, heavy metals, and other contaminants.
+    </li>
+    <li>
+      <strong>Electrolysis Chamber:</strong> The filtered water then enters a chamber where an electric current is applied to the electrodes. The chamber is divided by a semi-permeable membrane.
+    </li>
+    <li>
+      <strong>Ion Separation:</strong>
+      <ul>
+        <li>
+          <strong>Alkaline Water (Cathode):</strong> Positively charged ions (cations), such as minerals like calcium and magnesium, are attracted to the negatively charged electrode (cathode). Here, they combine with hydroxide ions to create alkaline water with a higher pH and a negative oxidation-reduction potential (ORP), which indicates antioxidant properties.
+        </li>
+        <li>
+          <strong>Acidic Water (Anode):</strong> Negatively charged ions (anions) are attracted to the positively charged electrode (anode). This stream forms acidic water with a lower pH and a positive ORP.
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Key Features and Components:</h4>
+  <ul>
+    <li>
+      <strong>Dual Water Streams:</strong> A water ionizer produces two distinct types of water from separate hoses, each with a different pH level.
+    </li>
+    <li>
+      <strong>Adjustable pH Settings:</strong> Many models allow users to customize the pH level of the alkaline and acidic water streams, typically ranging from a pH of 4 to 10 or higher.
+    </li>
+    <li>
+      <strong>Filter Cartridge:</strong> Integrated multi-stage filters are a standard component to ensure the water is free of contaminants before ionization.
+    </li>
+    <li>
+      <strong>Platinum-Coated Titanium Plates:</strong> The quality and number of these plates are a key factor in the ionizer's performance and durability.
+    </li>
+    <li>
+      <strong>ORP (Oxidation-Reduction Potential):</strong> The device produces water with a negative ORP, which proponents claim provides antioxidant benefits.
+    </li>
+  </ul>
+
+  <h4>Applications and Uses:</h4>
+  <ul>
+    <li>
+      <strong>Alkaline Water (for drinking):</strong> Primarily used for drinking and cooking, proponents claim it helps neutralize acidity, improves hydration, and provides antioxidant benefits.
+    </li>
+    <li>
+      <strong>Acidic Water (for external use):</strong> The acidic water is not for consumption but is marketed as a natural disinfectant. It can be used for cleaning, skincare, and other household applications.
+    </li>
+  </ul>
+</div>
+      <div id="wt-Automatic-Water-Softener"><p><div id="wt-Automatic-Water-Softener">
+  <h3>Amrut Automatic Water Softener</h3>
+  <p>
+    An automatic water softener is a system designed to remove hardness-causing minerals, primarily calcium and magnesium, from water. The Amrut Automatic Water Softener offers a maintenance-free and user-friendly solution for homes and commercial establishments.
+  </p>
+<h4>How Softening Works:</h4>
+  <p>
+    The system uses an ion exchange process. Hard water passes through a tank filled with resin beads. These beads are covered in sodium ions. As the water flows through, the calcium and magnesium ions in the water are attracted to the resin beads and "swap places" with the sodium ions. This leaves the water free of hardness minerals and with a minimal amount of harmless sodium. When the resin beads are saturated with hardness minerals, the system initiates a regeneration cycle using a salt brine solution to flush out the minerals and "recharge" the beads with new sodium ions.
+  </p>
+  <h4>Key Features:</h4>
+  <ul>
+    <li>
+      <strong>Fully Automatic Operation:</strong> The system manages itself, automatically monitoring water usage and initiating the regeneration cycle without the need for manual intervention or a technician. This provides a hassle-free, continuous supply of soft water.
+    </li>
+    <li>
+      <strong>LCD Screen with Flow & Status Display:</strong> An integrated LCD panel provides real-time information on water flow, system status, and regeneration cycles. This allows for easy monitoring of the system's performance and remaining capacity.
+    </li>
+    <li>
+      <strong>Auto-Regeneration:</strong> The system automatically cleans its resin media when its softening capacity is depleted. It can be programmed to regenerate based on water volume or a pre-set schedule, ensuring a consistent supply of soft water.
+    </li>
+    <li>
+      <strong>72-Hour Battery Backup:</strong> In the event of a power outage, a built-in battery ensures that the system's settings and programming are saved for up to 72 hours, so it can resume normal operation without any loss of data.
+    </li>
+    <li>
+      <strong>Maintenance-Free & Compact Design:</strong> Designed for convenience, the system requires minimal maintenance. Its compact and stylish cabinet allows for easy installation in various spaces, from utility closets to bathrooms.
+    </li>
+    <li>
+      <strong>Stylish & Durable Cabinet:</strong> The unit is housed in a robust and aesthetically pleasing cabinet that not only protects the internal components but also blends seamlessly with modern interiors.
+    </li>
+  </ul>
+
+  <h4>Ideal Applications:</h4>
+  <p>The Amrut Automatic Water Softener is versatile and can be used for various purposes, categorized by size:</p>
+  <ul>
+    <li>
+      <strong>Small:</strong> Perfect for homes, small flats, and single-point applications like washing machines, geysers, and dishwashers.
+    </li>
+    <li>
+      <strong>Medium:</strong> Suitable for larger residences such as bungalows and apartments, as well as small commercial spaces like salons and offices.
+    </li>
+    <li>
+      <strong>Big:</strong> Engineered for heavy-duty use in large establishments like hotels, factories, hospitals, and entire buildings.
+    </li>
+  </ul>
+
+  
+</div></div>
+     
+      <div id="wt-Water-Treatment-Media"><p><h3>Water Treatment Media</h3>
+  <p>
+    Water treatment media are the specialized materials used inside filters and vessels to physically and chemically remove contaminants from water. The selection of media depends on the type of impurities that need to be addressed.
+  </p>
+
+  <div class="media-type">
+    <h4>1. Glass Media</h4>
+    <p>
+      Glass media, such as Activated Filter Media (AFM), is a high-performance, eco-friendly alternative to traditional sand for filtration.
+    </p>
+    <ul>
+      <li>
+        <strong>Function:</strong> Provides superior mechanical filtration to remove suspended solids, dirt, and fine particles. Its unique surface properties also provide a self-sterilizing effect.
+      </li>
+      <li>
+        <strong>Key Features:</strong>
+        <ul>
+          <li>Filters particles down to 1 micron, resulting in much clearer water than sand.</li>
+          <li>Resists biofilm growth and bacterial colonization.</li>
+          <li>Requires less backwashing, saving water and energy.</li>
+          <li>Highly durable with a lifespan of up to 15 years.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="media-type">
+    <h4>2. CS Activated Carbon (Coconut Shell)</h4>
+    <p>
+      This is a highly microporous and durable form of activated carbon derived from coconut shells, ideal for chemical filtration.
+    </p>
+    <ul>
+      <li>
+        <strong>Function:</strong> Removes contaminants through the process of **adsorption**. Its vast surface area traps and holds organic and chemical impurities.
+      </li>
+      <li>
+        <strong>Key Features:</strong>
+        <ul>
+          <li>Exceptional at removing chlorine, chloramines, pesticides, and Volatile Organic Compounds (VOCs).</li>
+          <li>Eliminates bad tastes and odors from water.</li>
+          <li>Hard and long-lasting, with low attrition.</li>
+          <li>High purity and low ash content.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="media-type">
+    <h4>3. Softening Resin</h4>
+    <p>
+      Softening resin is the core media used in water softeners to remove hardness-causing minerals.
+    </p>
+    <ul>
+      <li>
+        <strong>Function:</strong> Works via an **ion exchange** process. As hard water passes through the resin beads, calcium and magnesium ions are exchanged for sodium ions, thereby softening the water.
+      </li>
+      <li>
+        <strong>Key Features:</strong>
+        <ul>
+          <li>Effectively removes hardness minerals to prevent scale buildup.</li>
+          <li>Can be regenerated by flushing with a salt (brine) solution to restore its softening capacity.</li>
+          <li>The most common type is a strong acid cation (SAC) resin.</li>
+          <li>Durable and has a long operational lifespan when properly maintained.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</section>
+
+  <section id="pneumatic">
+    <h2>Pneumatic</h2>
+    <p class="highlight">Compressed Air and Automation</p>
+    <div style="background:#003366; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1.2rem; border-left:5px solid #003366;">
+      <strong style="font-size:1.15rem; color:white;"> What Are Pneumatic Systems?</strong>
+      <p style="margin:0.7rem 0 0 0; color:white; font-size:1rem;">A pneumatic system uses compressed air or gas to generate power and control motion. It's a fundamental technology in manufacturing and automation. The system works by compressing air with a pump, storing it in a tank, and then releasing it through a series of valves to drive a cylinder or motor. This creates a powerful, linear or rotary motion. These systems are prized in industry for being clean, reliable, and fast. They are also inherently safe in explosive environments because they do not use electricity, which could cause a spark.</p>
+    </div>
+    <div>
+      <strong style="font-size:1.08rem; color:black; ">Key Components</strong>
+      
+    </div>
+   
+    <div style="display: flex; gap: 2rem; align-items: flex-start;">
+      <div class="wt-nav">
+        <div>
+         
+          <ul>
+            <li><a href="#pn-automation" class="active">Pneumatic Automation</a></li>
+            <li><a href="#pn-air-processing">Air Processing Units</a></li>
+            <li><a href="#pn-air-cylinder">Air Cylinder</a></li>
+            <li><a href="#pn-solenoid-valves">Solenoid Valves</a></li>
+            <li><a href="#pn-accessories">Pneumatic Accessories</a></li>
+            <li><a href="#pn-directional-control-valve">Directional Control Valve</a></li>
+            <li><a href="#pn-din-fit-pleated">Din Fit Pleated Cartridge Filter</a></li>
+            <li><a href="#pn-quick-release-dust">Quick Release Dust Filter Cartridge</a></li>
+            <li><a href="#pn-bayone-type">Bayone Type Dust Filter</a></li>
+            <li><a href="#pn-dust-collection">Dust Collection Filter</a></li>
+            <li><a href="#pn-hvac-pre-filters">HVAC Pre-Filters</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wt-content">
+        <div id="pn-automation" class="active"><p>Details about Pneumatic Automation.</p></div>
+        <div id="pn-air-processing"><p>Details about Air Processing Units.</p></div>
+        <div id="pn-air-cylinder"><p>Details about Air Cylinder.</p></div>
+        <div id="pn-solenoid-valves"><p>Details about Solenoid Valves.</p></div>
+        <div id="pn-accessories"><p>Details about Pneumatic Accessories.</p></div>
+        <div id="pn-functional-fittings"><p>Details about Functional Fittings & Accessories.</p></div>
+        <div id="pn-directional-control-valve"><p>Details about Directional Control Valve.</p></div>
+        <div id="pn-valve-cylinders"><p>Details about Valve & Cylinders.</p></div>
+        <div id="pn-pulse-valve-timer"><p>Details about Pulse Valve and Sequence Timer.</p></div>
+        <div id="pn-din-fit-pleated"><p>Details about Din Fit Pleated Cartridge Filter (Air Filter).</p></div>
+        <div id="pn-quick-release-dust"><p>Details about Quick Release Dust Collection Pleated Filter Cartridge (Air Filter).</p></div>
+        <div id="pn-bayone-type"><p>Details about Bayone Type Dust Collection Filter.</p></div>
+        <div id="pn-reverse-dust-bag"><p>Details about Reverse Dust Filter Bag.</p></div>
+        <div id="pn-dust-collection"><p>Details about Dust Collection Filter.</p></div>
+        <div id="pn-pleated-cartridges"><p>Details about Pleated Filter Cartridges.</p></div>
+        <div id="pn-hvac-pre-filters"><p>Details about HVAC Pre-Filters Paint Booth Filters.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hydraulic">
+    <h2>Hydraulic</h2>
+    
+    <div style="background:#003366; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1.2rem; border-left:5px solid #003366;">
+      <strong style="font-size:1.15rem; color:white;">What Are Hydraulic Systems?</strong>
+      <p style="margin:0.7rem 0 0 0; color:white; font-size:1rem;">Hydraulic systems use pressurized fluid—typically oil—to generate force and motion for industrial machinery. They are essential in applications requiring high power and precision, such as construction equipment, manufacturing, and aerospace. Hydraulic systems operate based on Pascal's Law, transmitting pressure uniformly to actuators and motors for lifting, pressing, and moving heavy loads.</p>
+    </div>
+    <div>
+      <strong style="font-size:1.08rem; color:black; ">Key Components</strong>
+      
+    </div>
+    <div style="display: flex; gap: 2rem; align-items: flex-start;">
+      <div class="wt-nav">
+        <ul>
+          <li><a href="#hyd-pumps" class="active">Hydraulic Pumps</a></li>
+          <li><a href="#hyd-fixed-displacement">Fixed Displacement Pumps</a></li>
+          <li><a href="#hyd-variable-displacement">Variable Displacement Pumps</a></li>
+          <li><a href="#hyd-cylinders">Hydraulic Cylinders</a></li>
+          <li><a href="#hyd-single-acting">Single-Acting Cylinders</a></li>
+          <li><a href="#hyd-double-acting">Double-Acting Cylinders</a></li>
+          <li><a href="#hyd-control-valves">Control Valves</a></li>
+          <li><a href="#hyd-directional-control">Directional Control Valves</a></li>
+          <li><a href="#hyd-pressure-control">Pressure Control Valves</a></li>
+          <li><a href="#hyd-flow-control">Flow Control Valves</a></li>
+          <li><a href="#hyd-spares">Hydraulic Spares</a></li>
+          <li><a href="#hyd-seals-orings">Seals & O-Rings</a></li>
+          <li><a href="#hyd-hoses-fittings">Hoses & Fittings</a></li>
+          <li><a href="#hyd-filters">Hydraulic Filters</a></li>
+        </ul>
+      </div>
+      <div class="wt-content">
+        <div id="hyd-pumps" class="active"><b>Hydraulic Pumps:</b> Generate the fluid flow that creates the system's pressure.</div>
+        <div id="hyd-fixed-displacement"><b>Fixed Displacement Pumps:</b> Deliver a constant amount of fluid with each rotation. Examples include gear, vane, and piston pumps, each with slightly different applications based on pressure and efficiency needs.</div>
+        <div id="hyd-variable-displacement"><b>Variable Displacement Pumps:</b> Can change the amount of fluid they deliver per rotation, allowing for more flexible control over system speed and power.</div>
+        <div id="hyd-cylinders"><b>Hydraulic Cylinders:</b> Similar to their pneumatic counterparts, these are the actuators that use fluid pressure to create linear motion. They are much stronger than pneumatic cylinders and can lift incredible weights.</div>
+        <div id="hyd-single-acting"><b>Single-Acting Cylinders:</b> Uses fluid to push the piston in one direction; gravity or a spring returns it.</div>
+        <div id="hyd-double-acting"><b>Double-Acting Cylinders:</b> Uses fluid to power both the extension and retraction of the piston, providing force in both directions.</div>
+        <div id="hyd-control-valves"><b>Control Valves:</b> These valves are crucial for managing the system's power and precision.</div>
+        <div id="hyd-directional-control"><b>Directional Control Valves:</b> Direct the flow of fluid to the correct actuator port, determining the direction of movement.</div>
+        <div id="hyd-pressure-control"><b>Pressure Control Valves:</b> Safeguard the system by limiting the maximum pressure to prevent damage.</div>
+        <div id="hyd-flow-control"><b>Flow Control Valves:</b> Regulate the speed of the actuator by controlling how much fluid is allowed to pass.</div>
+        <div id="hyd-spares"><b>Hydraulic Spares:</b> Essential parts for maintenance and repairs.</div>
+        <div id="hyd-seals-orings"><b>Seals & O-Rings:</b> Prevent fluid leaks, which are critical because a hydraulic leak can cause system failure and be a safety hazard.</div>
+        <div id="hyd-hoses-fittings"><b>Hoses & Fittings:</b> Must be robust enough to handle extremely high fluid pressures. Hoses often have multiple layers of reinforcement.</div>
+        <div id="hyd-filters"><b>Hydraulic Filters:</b> Keep the fluid clean from contaminants like metal shavings and dirt, which can quickly damage expensive components like pumps and valves.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industrial-hardware">
+    <h2>Industrial Hardware</h2>
+    <p class="highlight">Essential Components for Engineering</p>
+    <div style="background:#003366; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1.2rem; border-left:5px solid #003366;">
+      <strong style="font-size:1.15rem; color:white;"> What Is Industrial Hardware?</strong>
+      <p style="margin:0.7rem 0 0 0; color:white; font-size:1rem;">Industrial hardware is a broad and diverse category of components, tools, and accessories that serve as the foundational building blocks for all industrial operations. From simple clamps and fittings to sophisticated electronic controls, this hardware enables the assembly, control, and automation of machinery. It’s what makes manufacturing plants, water treatment facilities, and other industrial settings function reliably and efficiently.</p>
+    </div>
+    <div style="padding:1rem 1.2rem; margin-bottom:1.2rem;">
+      <strong style="font-size:1.08rem; color:black">Key Components</strong>
+     
+    </div>
+    <div style="display: flex; gap: 2rem; align-items: flex-start;">
+      <div class="wt-nav">
+        <div style="margin-bottom:1rem;">
+          <strong style="color:#003366; font-size:1.1rem;">Automation & Control</strong>
+          <ul>
+            <li><a href="#ih-controllers" class="active">Controllers</a></li>
+            <li><a href="#ih-sensors">Sensors (Proximity, Photo, etc.)</a></li>
+            <li><a href="#ih-serial-converter">Serial Converter RS232 / RS485</a></li>
+            <li><a href="#ih-device-net">Device Net</a></li>
+            <li><a href="#ih-hmi">HMI</a></li>
+            <li><a href="#ih-single-converters">Single Converters</a></li>
+            <li><a href="#ih-recorders">Recorders</a></li>
+            <li><a href="#ih-thyristors">Thyristors</a></li>
+            <li><a href="#ih-transmitters">Transmitters</a></li>
+            <li><a href="#ih-indicators">Indicators</a></li>
+            <li><a href="#ih-electronic-automation">Electronic Automation Apparatus</a></li>
+            <li><a href="#ih-sequential-timer-card">Sequential Timer Card</a></li>
+          </ul>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <strong style="color:#003366; font-size:1.1rem;">Fittings & Filtration</strong>
+          <ul>
+            <li><a href="#ih-fittings">Fittings (Stream Fittings, etc.)</a></li>
+            <li><a href="#ih-filter-bags">Filter Bags</a></li>
+            <li><a href="#ih-filter-cartridges">Filter Cartridges</a></li>
+            <li><a href="#ih-filtration-equipments">Filtration Equipments</a></li>
+            <li><a href="#ih-dust-collector">Dust Collector</a></li>
+            <li><a href="#ih-filtration-media">Filtration Media</a></li>
+            <li><a href="#ih-screening-mesh">Screening Mesh</a></li>
+            <li><a href="#ih-printing-mesh">Printing Mesh</a></li>
+            <li><a href="#ih-flexible-bellows">Flexible Bellows</a></li>
+            <li><a href="#ih-anode-bags">Anode Bags</a></li>
+            <li><a href="#ih-sparkler-filter-pads">Sparkler Filter Pads</a></li>
+            <li><a href="#ih-filter-cages">Filter Cages</a></li>
+            <li><a href="#ih-frp-pressure-vessel">FRP Pressure Vessel</a></li>
+            <li><a href="#ih-multiport-valve">Multiport Valve</a></li>
+            <li><a href="#ih-distributor-system">Distributor System</a></li>
+            <li><a href="#ih-fluid-bed-dryer-bag">Fluid Bed Dryer Bag</a></li>
+            <li><a href="#ih-narrow-woven-fabric">Narrow Woven Fabric</a></li>
+            <li><a href="#ih-clamp">Clamp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wt-content">
+        <div id="ih-controllers" class="active">
+          <b>Controllers:</b> The brains of automated processes. A Human-Machine Interface (HMI) is a type of controller with a visual screen that allows operators to monitor and control a machine. Recorders track and log data like temperature and pressure over time.
+        </div>
+        <div id="ih-sensors">
+          <b>Sensors:</b> Electronic eyes and ears of a system. Proximity sensors detect if an object is nearby without contact, while photo sensors use light to detect objects at a distance.
+        </div>
+        <div id="ih-serial-converter">
+          <b>Converters:</b> Devices like RS232/RS485 converters translate data between different communication protocols so that various pieces of equipment can "talk" to each other.
+        </div>
+        <div id="ih-device-net"><b>Device Net:</b> An industrial network protocol used for communication between control devices (PLCs, sensors, actuators) in automation systems. It enables real-time data exchange and device interoperability.</div>
+        <div id="ih-hmi"><b>HMI (Human-Machine Interface):</b> A graphical interface that allows operators to interact with machines, monitor processes, and input commands. Modern HMIs feature touchscreens and real-time data visualization.</div>
+        <div id="ih-single-converters"><b>Single Converters:</b> Electronic devices that convert one type of signal or power to another, such as voltage, current, or communication protocol, for compatibility between equipment.</div>
+        <div id="ih-recorders"><b>Recorders:</b> Instruments that log and store process data (temperature, pressure, flow) over time for analysis, troubleshooting, and compliance.</div>
+        <div id="ih-thyristors"><b>Thyristors:</b> Semiconductor devices used for switching and controlling high-power electrical signals in industrial automation, motor drives, and power supplies.</div>
+        <div id="ih-transmitters"><b>Transmitters:</b> Devices that convert sensor signals (temperature, pressure, flow) into standardized output signals (e.g., 4-20mA) for monitoring and control systems.</div>
+        <div id="ih-indicators"><b>Indicators:</b> Visual devices (LEDs, displays, gauges) that show process status, measurements, or alarms to operators for quick monitoring.</div>
+        <div id="ih-electronic-automation"><b>Electronic Automation Apparatus:</b> Includes PLCs, relays, timers, and other electronic devices that automate industrial processes and machinery.</div>
+        <div id="ih-sequential-timer-card"><b>Sequential Timer Card:</b> A control module that triggers events or operations in a set sequence, often used in filtration, drying, or batch processing systems.</div>
+        <div id="ih-fittings">
+          <b>Fittings:</b> Connect components like pipes, hoses, and valves. They are designed to withstand specific pressures, temperatures, and corrosive materials.
+        </div>
+        <div id="ih-filter-bags">
+          <b>Filter Bags:</b> Often used in industrial settings for liquid filtration or as dust collector bags to remove particulate matter from the air.
+        </div>
+        <div id="ih-filter-cartridges">
+          <b>Filter Cartridges:</b> Used to filter liquids and gases. They come in different types like pleated cartridges (for large surface area), wound cartridges (for depth filtration), and melt-blown cartridges (for high efficiency).
+        </div>
+        <div id="ih-filtration-equipments"><b>Filtration Equipments:</b> Machines and assemblies (filter presses, cartridge housings, bag filter vessels) designed to remove solids or contaminants from liquids and gases in industrial processes.</div>
+        <div id="ih-dust-collector"><b>Dust Collector:</b> Equipment that captures and removes airborne dust and particulates from industrial environments, improving air quality and safety.</div>
+        <div id="ih-filtration-media"><b>Filtration Media:</b> Materials (sand, activated carbon, membranes, synthetic fibers) used inside filters to trap contaminants and purify fluids or air.</div>
+        <div id="ih-screening-mesh"><b>Screening Mesh:</b> Woven or welded wire mesh used for sieving, sorting, and filtering solids in industrial and agricultural applications.</div>
+        <div id="ih-printing-mesh"><b>Printing Mesh:</b> Fine mesh screens used in screen printing processes for textiles, electronics, and graphics, ensuring precise ink transfer.</div>
+        <div id="ih-anode-bags"><b>Anode Bags:</b> Porous bags used in electroplating to contain anode material, prevent contamination, and ensure uniform metal deposition.</div>
+        <div id="ih-sparkler-filter-pads"><b>Sparkler Filter Pads:</b> Circular pads used in sparkler filter assemblies for fine filtration of liquids, especially in pharmaceuticals and chemicals.</div>
+        <div id="ih-filter-cages"><b>Filter Cages:</b> Metal frameworks that support filter bags in dust collectors, maintaining shape and maximizing filtration efficiency.</div>
+        <div id="ih-multiport-valve"><b>Multiport Valve:</b> A valve with multiple ports for directing flow in water treatment, filtration, and pool systems, allowing for backwash, rinse, and filtration modes.</div>
+        <div id="ih-distributor-system"><b>Distributor System:</b> Assemblies that evenly distribute fluids or air within tanks, vessels, or filtration systems for optimal process performance.</div>
+        <div id="ih-fluid-bed-dryer-bag"><b>Fluid Bed Dryer Bag:</b> Permeable bags used in fluid bed dryers to contain and dry powders or granules with heated air, common in pharmaceuticals and food processing.</div>
+        <div id="ih-narrow-woven-fabric"><b>Narrow Woven Fabric:</b> Strong, flexible textile strips used for industrial strapping, filtration, and reinforcement applications.</div>
+        <div id="ih-frp-pressure-vessel"><b>FRP Pressure Vessels:</b> Tanks made of Fiber-Reinforced Plastic, which is a composite material that is strong, lightweight, and highly resistant to corrosion. They are used to hold pressurized liquids or gases.</div>
+        <div id="ih-flexible-bellows"><b>Flexible Bellows:</b> Protective covers for mechanical parts, shielding them from dust, dirt, and other environmental contaminants.</div>
+        <div id="ih-clamp"><b>Clamps:</b> Used to securely fasten pipes, hoses, and other components, ensuring stability and preventing leaks or movement.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pumps">
+    <h2>Pumps</h2>
+    <p class="highlight">Moving Liquids with Precision</p>
+    <div style="background:#003366; border-radius:8px; padding:1rem 1.2rem; margin-bottom:1.2rem; border-left:5px solid #003366;">
+      <strong style="font-size:1.15rem; color:white;">What Are Pumps?</strong>
+      <p style="margin:0.7rem 0 0 0; color:white; font-size:1rem;">Pumps are mechanical devices used to move liquids or gases from one place to another by creating pressure or suction. They are essential in water supply, chemical processing, irrigation, fire protection, and countless industrial applications. Pumps come in various types, each designed for specific fluids, flow rates, and pressure requirements.</p>
+    </div>
+    <div>
+      <strong style="font-size:1.08rem; color:black; ">Key Components</strong>
+      
+    </div>
+   <div class="container">
+  <div class="wt-nav">
+    <div style="margin-bottom:1rem;">
+      <ul>
+        <li><a href="#positive-displacement">Positive Displacement Pumps</a></li>
+        <li><a href="#rotodynamic">Rotodynamic Pumps</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wt-content">
+    <div id="positive-displacement" class="active">
+      <h3>Positive Displacement Pumps</h3>
+      <ul>
+        <li><strong>Function:</strong> Move fluid at a fixed rate using a mechanical device.</li>
+        <li><strong>Application:</strong> Ideal for precise dosing and constant flow, regardless of pressure.</li>
+        <li><strong>Common Types:</strong> Reciprocating and Rotary (e.g., rotary peripheral for domestic use).</li>
+      </ul>
+    </div>
+    
+    <div id="rotodynamic">
+      <h3>Rotodynamic Pumps</h3>
+      <ul>
+        <li><strong>Function:</strong> Use a rotating impeller to impart energy to the fluid. Flow rate depends on system pressure.</li>
+        <li><strong>Main Type:</strong> Centrifugal Pump — known for being efficient, simple, and economical.</li>
+        <li><strong>Impeller Types:</strong>
+          <ul>
+            <li><strong>Closed Impeller:</strong> Most efficient; best for clean water.</li>
+            <li><strong>Open Impeller:</strong> Handles solids better but is less efficient.</li>
+            <li><strong>Vortex Impeller:</strong> Generates a vortex for improved solids handling.</li>
+            <li><strong>Channel Impeller:</strong> Features large internal passages for fluids with high solid content.</li>
+            <li><strong>Cutter & Grinder Impellers:</strong> Chop solids for sludge or waste applications.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+        
+    </div>
+  </section>
+
+  <script>
+
+
+
+
+
+
+  function showWTSection(e, id) {
+    e.preventDefault();
+    const sections = document.querySelectorAll('.wt-content > div');
+    sections.forEach(section => section.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+    }
+    const navLinks = document.querySelectorAll('.wt-nav a');
+    navLinks.forEach(link => link.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(() => document.body.classList.add('page-loaded'), 100);
+
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    // Add this line to show the first section on page load
+    document.querySelector('section').classList.add('active'); 
+
+    // Your existing code for main navigation
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = this.getAttribute('href').substring(1);
+        sections.forEach(sec => sec.classList.remove('active'));
+        const targetSection = document.getElementById(id);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Your existing code for side navigation
+    const wtNavLinks = document.querySelectorAll('.wt-nav a');
+    const wtContentDivs = document.querySelectorAll('.wt-content > div');
+    wtNavLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        wtNavLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        const targetId = this.getAttribute('href').substring(1);
+        wtContentDivs.forEach(div => {
+          div.classList.remove('active');
+          if (div.id === targetId) {
+            div.classList.add('active');
+            div.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  });
+
+
+
+
+  function showWTSection(e, id) {
+    e.preventDefault();
+
+    // Hide all sections
+    const sections = document.querySelectorAll('.wt-content > div');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Show the selected section
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+    }
+
+    // Highlight the active link
+    const navLinks = document.querySelectorAll('.wt-nav a');
+    navLinks.forEach(link => link.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+  
+
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(() => document.body.classList.add('page-loaded'), 100);
+
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = document.querySelectorAll('section');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const id = this.getAttribute('href').substring(1);
+          sections.forEach(sec => sec.classList.remove('active'));
+          const targetSection = document.getElementById(id);
+          if (targetSection) {
+            targetSection.classList.add('active');
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      const wtNavLinks = document.querySelectorAll('.wt-nav a');
+      const wtContentDivs = document.querySelectorAll('.wt-content > div');
+      wtNavLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          wtNavLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          const targetId = this.getAttribute('href').substring(1);
+          wtContentDivs.forEach(div => {
+            div.classList.remove('active');
+            if (div.id === targetId) {
+              div.classList.add('active');
+              div.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-100 to-white p-4">
+    <div class="w-full max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl space-y-6">
+        <div class="flex justify-between items-center border-b pb-4">
+            <h1 class="text-4xl font-extrabold text-blue-800">Community Board</h1>
+            <a href="#" id="open-comment-modal" class="py-2 px-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
+                Leave a Review
+            </a>
+        </div>
+
+        <div id="comment-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-gray-800">Post a Comment</h2>
+                    <button id="close-comment-modal" class="text-gray-400 hover:text-gray-600 text-2xl">
+                        &times;
+                    </button>
+                </div>
+                
+                <form id="comment-form" class="space-y-4">
+                    <input id="user-name" type="text" placeholder="Your Name (optional)" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <textarea id="comment-text" placeholder="What's on your mind?" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                    <button type="submit" id="submit-button" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Post Comment</button>
+                </form>
+            </div>
+        </div>
+        
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Latest Comments</h2>
+            <div id="comments-container" class="space-y-4 max-h-[28rem] overflow-y-auto">
+                <p id="loading-indicator" class="text-gray-500 text-center">Loading comments...</p>
+            </div>
+        </div>
+
+        <div id="message-box" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+            <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm text-center">
+                <p id="message-text" class="text-lg font-medium text-gray-700 mb-4"></p>
+                <button id="message-ok" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // IMPORTANT: Create this file with your Firebase config
+        import { firebaseConfig } from './firebase-config.js';
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        const form = document.getElementById('comment-form');
+        const nameInput = document.getElementById('user-name');
+        const commentInput = document.getElementById('comment-text');
+        const commentsContainer = document.getElementById('comments-container');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const messageBox = document.getElementById('message-box');
+        const messageText = document.getElementById('message-text');
+        const messageOkButton = document.getElementById('message-ok');
+        
+        const openCommentModalBtn = document.getElementById('open-comment-modal');
+        const commentModal = document.getElementById('comment-modal');
+        const closeCommentModalBtn = document.getElementById('close-comment-modal');
+        const submitButton = document.getElementById('submit-button');
+
+        // IMPORTANT: Replace with your actual admin UID from the Firebase console
+        const ADMIN_UID = "YOUR_ADMIN_UID_HERE"; 
+        let userId = null;
+        const appId = "default";
+
+        const showMessage = (message) => {
+            messageText.innerHTML = message;
+            messageBox.classList.remove('hidden');
+        };
+
+        messageOkButton.addEventListener('click', () => {
+            messageBox.classList.add('hidden');
+        });
+
+        openCommentModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            commentModal.classList.remove('hidden');
+        });
+
+        closeCommentModalBtn.addEventListener('click', () => {
+            commentModal.classList.add('hidden');
+        });
+
+        commentModal.addEventListener('click', (e) => {
+            if (e.target === commentModal) {
+                commentModal.classList.add('hidden');
+            }
+        });
+
+        const handleAuth = async () => {
+            try {
+                await signInAnonymously(auth);
+            } catch (error) {
+                console.error("Auth error:", error);
+                showMessage("Authentication failed. Check your Firebase config and project settings.");
+            }
+        };
+
+        const setupCommentsListener = () => {
+            const commentsPath = `artifacts/${appId}/public/data/comments`;
+            const commentsQuery = query(collection(db, commentsPath), orderBy('timestamp', 'desc'));
+
+            onSnapshot(commentsQuery, (snapshot) => {
+                commentsContainer.innerHTML = '';
+                loadingIndicator.classList.add('hidden');
+
+                if (snapshot.empty) {
+                    commentsContainer.innerHTML = '<p class="text-gray-500 text-center">No comments yet. Be the first to leave one!</p>';
+                }
+
+                snapshot.forEach((docSnap) => {
+                    const commentData = docSnap.data();
+                    const commentElement = document.createElement('div');
+                    commentElement.className = 'bg-gray-50 border border-gray-200 p-4 rounded-xl relative group shadow-sm';
+
+                    const commentTime = commentData.timestamp?.toDate().toLocaleString() || 'Just now';
+
+                    let deleteBtnHTML = '';
+                    if (commentData.userId === userId || userId === ADMIN_UID) {
+                        deleteBtnHTML = `<button data-id="${docSnap.id}" class="absolute top-2 right-2 text-red-500 hover:text-red-700 delete-button opacity-0 group-hover:opacity-100 transition-opacity">✖</button>`;
+                    }
+
+                    commentElement.innerHTML = `
+                        <p class="font-semibold text-blue-800">${commentData.name || 'Anonymous'}</p>
+                        <p class="text-gray-700 mt-1">${commentData.comment}</p>
+                        <div class="flex justify-between items-center mt-2 text-sm text-gray-400">
+                            <span>${commentTime}</span>
+                        </div>
+                        ${deleteBtnHTML}
+                    `;
+
+                    commentsContainer.appendChild(commentElement);
+                });
+            }, (error) => {
+                console.error("Listener error:", error);
+                showMessage("Failed to fetch comments. Check your Firestore rules.");
+            });
+        };
+
+        // Event delegation for the delete button
+        commentsContainer.addEventListener('click', async (e) => {
+            if (e.target.classList.contains('delete-button')) {
+                const id = e.target.getAttribute('data-id');
+                if (confirm("Are you sure you want to delete this comment?")) {
+                    try {
+                        await deleteDoc(doc(db, `artifacts/${appId}/public/data/comments`, id));
+                    } catch (error) {
+                        console.error("Delete error:", error);
+                        showMessage("Failed to delete comment. You may not have the required permissions.");
+                    }
+                }
+            }
+        });
+
+        const handleFormSubmit = async (e) => {
+            e.preventDefault();
+            const name = nameInput.value.trim();
+            const comment = commentInput.value.trim();
+
+            if (!comment) {
+                showMessage("Please enter a comment.");
+                return;
+            }
+            
+            submitButton.disabled = true;
+
+            try {
+                const commentsPath = `artifacts/${appId}/public/data/comments`;
+                await addDoc(collection(db, commentsPath), {
+                    name: name || 'Anonymous',
+                    comment,
+                    timestamp: serverTimestamp(),
+                    userId
+                });
+                commentInput.value = '';
+                commentModal.classList.add('hidden');
+            } catch (error) {
+                console.error("Add comment error:", error);
+                showMessage("Error saving comment. Check your Firestore rules.");
+            } finally {
+                submitButton.disabled = false;
+            }
+        };
+
+        form.addEventListener('submit', handleFormSubmit);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                userId = user.uid;
+                setupCommentsListener();
+            } else {
+                userId = null;
+                handleAuth();
+            }
+        });
+    </script>
+</body>
+</html>

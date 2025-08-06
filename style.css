@@ -1,0 +1,108 @@
+/* Gallery grid for Technology Today section */
+.gallery-section {
+  margin-top: 32px;
+}
+.gallery-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.gallery-grid img {
+  width: 40%;
+  max-width: 220px;
+  min-width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  object-fit: cover;
+}
+/* Event date buttons row alignment */
+.event-btn-row {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  margin: 32px 0 24px 0;
+}
+/* Event date buttons styling */
+.event-calendar-card {
+  text-align: center;
+}
+.event-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0 8px 16px 8px;
+  transition: background 0.15s;
+  box-shadow: 0 1px 4px rgba(25,118,210,0.08);
+  display: inline-block;
+}
+.event-btn:hover {
+  background: #1565c0;
+}
+.event-btn:active {
+  background: #0d47a1;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.quick-links li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.quick-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  background: #f4f4f4;
+}
+.associate-logos, .client-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .associate-logos img,
+        .client-logos img {
+            max-width: 80px;
+            max-height: 60px;
+            object-fit: contain;
+            border-radius: 4px;
+        }

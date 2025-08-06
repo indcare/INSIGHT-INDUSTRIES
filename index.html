@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrut Expo Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Hide scrollbar for mobile menus */
+        .sidebar::-webkit-scrollbar {
+            display: none;
+        }
+        .sidebar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header for all screen sizes -->
+    <div class="flex items-center justify-between bg-gray-100 p-4 border-b-2 border-gray-200 shadow-sm md:p-6">
+        <!-- Left side content -->
+        <div class="flex items-center">
+            <!-- Left sidebar toggle button (mobile only) -->
+            <button id="toggle-left-sidebar" aria-label="Toggle left sidebar" class="p-2 rounded-lg bg-blue-900 text-white mr-4 md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <h1 class="text-xl md:text-3xl font-bold text-blue-900">Indcare Africa</h1>
+        </div>
+        
+        <!-- Right side content, with smaller text on mobile -->
+        <div class="flex flex-col items-end text-right">
+            <h1 class="text-base md:text-xl font-semibold text-gray-700"></h1>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Date: <span id="dashboard-date"></span></p>
+            <!-- Right sidebar toggle button (mobile only) -->
+            <button id="toggle-right-sidebar" aria-label="Toggle right sidebar" class="p-2 rounded-lg bg-blue-900 text-white md:hidden mt-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- The main layout container -->
+    <div class="flex">
+
+        <!-- Left Sidebar (Desktop and Off-canvas Mobile) -->
+        <aside id="sidebar-left" class="transform -translate-x-full fixed top-0 left-0 h-full w-3/4 md:w-80 md:relative md:transform-none bg-blue-900 text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:min-h-screen">
+            <div class="flex justify-between items-center mb-6 md:hidden">
+                <h2 class="text-xl font-bold">Amrut Expo</h2>
+                <button id="close-left-sidebar" aria-label="Close left sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
+            </div>
+            <div class="hidden md:block">
+                <h2 class="text-xl font-bold mb-4">Amrut Expo</h2>
+            </div>
+            
+            <div class="mb-6">
+                <strong>Date:</strong> 
+                <input type="date" id="sidebar-date-picker" class="ml-2 px-2 py-1 text-gray-900 rounded-md">
+            </div>
+            
+            <div class="quick-links">
+                <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+                <a href="#" onclick="loadNews()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Latest News</a>
+                <a href="engineering-library.html" target="_blank" rel="noopener" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Engineering Library</a>
+                <a href="#" onclick="loadTechnologyToday()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Technology Today</a>
+                <a href="#" onclick="loadEvents()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Event Calendar</a>
+              <a href="#" onclick="loadBusinessIdeas()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Business Ideas</a>
+  
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-4">Our Associates</h3>
+            <div class="associate-logos flex flex-wrap gap-2">
+                <img src="rex.png" alt="Rexnord" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Rexnord';">
+                <img src="lovato.png" alt="Lovato Electric" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Lovato';">
+                <img src="autonics.png" alt="Autonics" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Autonics';">
+                <img src="fluke.png" alt="Fluke" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Fluke';">
+                <img src="delta.png" alt="Delta" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Delta';">
+                <img src="logoo.png" alt="AMRUT" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=AMRUT';">
+                <img src="seltech.png" alt="Seltech" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Seltech';">
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 md:p-8 min-h-screen bg-white" id="main-content">
+            <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Amrut+Expo+Dashboard';">
+            
+            <div class="prose max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to the Dashboard</h2>
+                <p>Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you’re a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+                <p>Use the **Quick Links** on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+                <p>Take a moment to explore, and don’t miss the **Event Calendar** for a preview of what’s ahead. If you’re new, the sidebar is a great place to start.</p>
+                <p>We’re building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (Desktop and Off-canvas Mobile) -->
+        <aside id="sidebar-right" class="transform translate-x-full fixed top-0 right-0 h-full w-3/4 md:w-80 md:relative md:transform-none bg-blue-900 text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:min-h-screen">
+            <div class="flex justify-between items-center mb-6 md:hidden">
+                <h2 class="text-xl font-bold">Contact & Clients</h2>
+                <button id="close-right-sidebar" aria-label="Close right sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
+            </div>
+            
+            <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+            <p class="mb-2"><strong>Location:</strong> 30 Butere Road, Industrial Area, Nairobi, Kenya</p>
+            <p class="mb-2"><strong>Phone:</strong> +254 711 895 312</p>
+            <p class="mb-4"><strong>Email:</strong> <a href="mailto:indcaremkt@gmail.com" class="text-white underline">indcaremkt@gmail.com</a></p>
+
+            <h3 class="text-lg font-semibold mt-8 mb-4">Our Clients</h3>
+            <div class="client-logos flex flex-wrap gap-2">
+                <img src="devki-steel.png" alt="Devki Steel" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Devki';">
+                <img src="sparr.png" alt="Sparr" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Sparr';">
+                <img src="sun-africa.png" alt="Sun Africa Hotels" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Sun';">
+                <img src="the-print-exchange.png" alt="The Print Exchange" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Print';">
+                <img src="sanpac.png" alt="Sanpac Africa" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Sanpac';">
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Overlay for mobile, to dim background when menus are open -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+    <script>
+      function loadBusinessIdeas() {
+  document.getElementById('main-content').innerHTML = `
+    <div class="prose max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
+      <ul class="list-disc pl-5 space-y-3">
+        <li>
+          <strong>Water Kiosk:</strong> A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.
+        </li>
+        <li>
+          <strong>Water ATM:</strong> A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.
+        </li>
+        <li>
+          <strong>Milk ATM:</strong> Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.
+        </li>
+      </ul>
+    </div>
+  `;
+}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarDate = document.getElementById('sidebar-date-picker');
+            const dashboardDate = document.getElementById('dashboard-date');
+            
+            // Set dashboard date to today's date on load
+            const today = new Date();
+            const todayFormatted = today.toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' });
+            dashboardDate.innerText = todayFormatted;
+
+            // Also set the date picker to today's date
+            const todayISO = today.toISOString().split('T')[0];
+            sidebarDate.value = todayISO;
+
+            const toggleLeftBtn = document.getElementById('toggle-left-sidebar');
+            const toggleRightBtn = document.getElementById('toggle-right-sidebar');
+            const closeLeftBtn = document.getElementById('close-left-sidebar');
+            const closeRightBtn = document.getElementById('close-right-sidebar');
+            
+            const leftSidebar = document.getElementById('sidebar-left');
+            const rightSidebar = document.getElementById('sidebar-right');
+            const overlay = document.getElementById('overlay');
+
+            function toggleSidebar(sidebar, isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('translate-x-full', '-translate-x-full');
+                    overlay.classList.remove('hidden');
+                } else {
+                    if (sidebar.id === 'sidebar-left') {
+                        sidebar.classList.add('-translate-x-full');
+                    } else {
+                        sidebar.classList.add('translate-x-full');
+                    }
+                    overlay.classList.add('hidden');
+                }
+            }
+
+            toggleLeftBtn.addEventListener('click', () => toggleSidebar(leftSidebar, true));
+            closeLeftBtn.addEventListener('click', () => toggleSidebar(leftSidebar, false));
+            toggleRightBtn.addEventListener('click', () => toggleSidebar(rightSidebar, true));
+            closeRightBtn.addEventListener('click', () => toggleSidebar(rightSidebar, false));
+            
+            overlay.addEventListener('click', () => {
+                toggleSidebar(leftSidebar, false);
+                toggleSidebar(rightSidebar, false);
+            });
+
+            // Handle date picker functionality
+            sidebarDate.addEventListener('change', () => {
+                const date = new Date(sidebarDate.value);
+                const formatted = date.toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' });
+                dashboardDate.innerText = formatted;
+            });
+        });
+
+        // Functionality for loading content
+        function loadEvents() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="prose max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold mb-4">Event Calendar</h2>
+                    <table class="w-full border-collapse mt-4">
+                        <caption class="text-xl font-bold mb-4 text-left text-blue-900">Upcoming Events</caption>
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="border border-gray-300 p-3 text-left">Date</th>
+                                <th class="border border-gray-300 p-3 text-left">Event</th>
+                                <th class="border border-gray-300 p-3 text-left">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 p-3">16–18 July 2025</td>
+                                <td class="border border-gray-300 p-3">Water Africa Expo</td>
+                                <td class="border border-gray-300 p-3">KICC, Nairobi</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 p-3">29–31 July 2025</td>
+                                <td class="border border-gray-300 p-3">Daily Tech Africa Exhibition</td>
+                                <td class="border border-gray-300 p-3">KICC, Nairobi</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 p-3">4–6 September 2025</td>
+                                <td class="border border-gray-300 p-3">Engineering Expo by Chaina</td>
+                                <td class="border border-gray-300 p-3">Sarit Centre</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 p-3">19–20 September 2025</td>
+                                <td class="border border-gray-300 p-3">Naivasha Horticultural Fair</td>
+                                <td class="border border-gray-300 p-3">Naivasha Showgrounds</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 p-3">2–4 June 2026</td>
+                                <td class="border border-gray-300 p-3">Visha Oswal @ IFTEX</td>
+                                <td class="border border-gray-300 p-3">IFTEX Expo, Nairobi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        function loadNews() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="prose max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold mb-4">Latest News</h2>
+                    <p>Coming soon...</p>
+                </div>
+            `;
+        }
+
+        function loadTechnologyToday() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="prose max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold mb-4">Technology Today</h2>
+                    <p>Explore smart filtration, automation, and IoT applications reshaping the water industry.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
