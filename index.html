@@ -209,18 +209,18 @@
             </div>
 
         </aside>
+<main class="flex-1 p-6 md:p-8 min-h-screen bg-white" id="main-content">
+    <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Indcare+Africa+Dashboard';">
 
-        <main class="flex-1 p-6 md:p-8 min-h-screen bg-white" id="main-content">
-            <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Indcare+Africa+Dashboard';">
-            
-            <div class="prose max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to the Dashboard</h2>
-                <p>Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you’re a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-                <p>Use the **Quick Links** on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-                <p>Take a moment to explore, and don’t miss the **Event Calendar** for a preview of what’s ahead. If you’re new, the sidebar is a great place to start.</p>
-                <p>We’re building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-            </div>
-        </main>
+    <div class="prose max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to the Dashboard</h2>
+        <p>Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you’re a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+        <p>Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+        <p>Take a moment to explore, and don’t miss the <strong>Event Calendar</strong> for a preview of what’s ahead. If you’re new, the sidebar is a great place to start.</p>
+        <p>We’re building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+    </div>
+</main>
+
 
         <aside id="sidebar-right" class="transform translate-x-full fixed top-0 right-0 h-full w-3/4 md:w-80 md:relative md:transform-none bg-blue-900 text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:min-h-screen">
             <div class="flex justify-between items-center mb-6 md:hidden">
@@ -298,423 +298,515 @@
 
     <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-40 md:hidden"></div>
 
-    <script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.counter');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the element is visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = +counter.getAttribute('data-target').replace('+', '');
-                let count = 0;
-
-                const updateCounter = setInterval(() => {
-                    if (count < target) {
-                        count += Math.ceil(target / 200); // Adjust speed
-                        if (count > target) count = target;
-                        counter.innerText = count + (counter.getAttribute('data-target').includes('+') ? '+' : '');
-                    } else {
-                        clearInterval(updateCounter);
-                    }
-                }, 10);
-                observer.unobserve(counter); // Stop observing once the animation is complete
-            }
-        });
-    }, observerOptions);
-
-    counters.forEach(counter => {
-        observer.observe(counter);
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const counters = document.querySelectorAll('.counter');
-            const options = {
-                root: null, // viewport
-                rootMargin: '0px',
-                threshold: 0.5 // 50% of the element is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = +counter.getAttribute('data-target');
-                        const increment = target / 200;
-                        const updateCounter = () => {
-                            const value = +counter.innerText;
-                            if (value < target) {
-                                counter.innerText = Math.ceil(value + increment);
-                                setTimeout(updateCounter, 1);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        };
-                        updateCounter();
-                        observer.unobserve(counter);
-                    }
-                });
-            }, options);
-
-            counters.forEach(counter => {
-                observer.observe(counter);
-            });
-        });
-
-        // Helper function to manage active link styling
-        function setActiveLink(clickedLink) {
-            const links = document.querySelectorAll('.quick-links a');
-            links.forEach(link => link.classList.remove('active-link'));
-            if (clickedLink) {
-                clickedLink.classList.add('active-link');
-            }
-        }
-
-        // Functionality for loading content
-        function loadBusinessIdeas(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
-                    <ul class="list-disc pl-5 space-y-3">
-                        <li>
-                            <strong>Water Kiosk:</strong> A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.
-                        </li>
-                        <li>
-                            <strong>Water ATM:</strong> A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.
-                        </li>
-                        <li>
-                            <strong>Milk ATM:</strong> Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.
-                        </li>
-                    </ul>
-                </div>
-            `;
-        }
-
-      function loadEvents() {
-    const today = new Date();
-    const allEvents = [
-        // Past Events
-        { date: '16–18 July 2025', name: 'Water Africa Expo', venue: 'KICC, Nairobi' },
-        { date: '29–31 July 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
-        
-        // Upcoming Events
-        { date: '12–14 August 2025', name: 'Dairy Tech Expo', venue: 'KICC, Nairobi' },
-        { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
-        { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
-        { date: '27–31 August 2025', name: 'Homes & Gardens Expo 2025', venue: 'Sarit Expo Centre' },
-        { date: '4–6 September 2025', name: 'Engineering Expo by Chaina', venue: 'Sarit Centre' },
-        { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
-        { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
-        { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
-        { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
-        { date: '6–8 October 2025', name: 'Medic East Africa Expo', venue: 'KICC, Nairobi' },
-        { date: '23–26 October 2025', name: 'Kenya Homes Expo', venue: 'KICC, Nairobi' },
-        { date: '28–31 October 2025', name: 'Agri Expo', venue: 'KICC, Nairobi' },
-        { date: '4–8 November 2025', name: 'Changamka Festival', venue: 'KICC, Nairobi' },
-        { date: '5–7 November 2025', name: 'The Big 5 Construct Kenya 2025', venue: 'Sarit Expo Centre' },
-        { date: '17–20 November 2025', name: 'PRO-Expo', venue: 'KICC, Nairobi' },
-        { date: '18–20 November 2025', name: 'KHE – Kenyan Hospitality Event 2025', venue: 'Sarit Expo Centre' },
-        { date: '2–4 December 2025', name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators', venue: 'KICC, Nairobi' },
-        { date: '16–17 December 2025', name: 'Kenya Water Expo 2025', venue: 'KICC, Nairobi' },
-        { date: '3–5 March 2026', name: 'Print East Africa 2026', venue: 'Sarit Expo Centre' },
-        { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' }
-    ];
-
-    // Helper function to extract the start date for sorting and comparison
-    const getStartDate = (dateString) => {
-        const months = {
-            'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5,
-            'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of the element is visible
         };
-        const parts = dateString.split(' ');
-        let dayPart = parts[0].split('–').pop();
-        const month = months[parts[1]];
-        const year = parseInt(parts[2]);
-        const day = parseInt(dayPart);
-        return new Date(year, month, day);
-    };
 
-    // Sort all events chronologically
-    allEvents.sort((a, b) => {
-        const dateA = getStartDate(a.date);
-        const dateB = getStartDate(b.date);
-        return dateA - dateB;
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target').replace('+', '');
+                    let count = 0;
+
+                    const updateCounter = setInterval(() => {
+                        if (count < target) {
+                            count += Math.ceil(target / 200); // Adjust speed
+                            if (count > target) count = target;
+                            counter.innerText = count + (counter.getAttribute('data-target').includes('+') ? '+' : '');
+                        } else {
+                            clearInterval(updateCounter);
+                        }
+                    }, 10);
+                    observer.unobserve(counter); // Stop observing once the animation is complete
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
     });
 
-    const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
-    const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.counter');
+        const options = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.5 // 50% of the element is visible
+        };
 
-    const initialUpcomingCount = 5; // Display only the first 5 events initially
-
-    let htmlContent = `
-        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-            <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
-            
-            <p class="text-lg text-center text-gray-600 mb-8">
-                Stay updated with the latest events and exhibitions.
-            </p>
-    `;
-
-    if (upcomingEvents.length > 0) {
-        htmlContent += `
-            <div class="mb-10">
-                <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <table class="min-w-full table-auto border-collapse">
-                        <thead class="bg-blue-600 text-white">
-                            <tr>
-                                <th class="p-4 text-left">Date</th>
-                                <th class="p-4 text-left">Event</th>
-                                <th class="p-4 text-left">Venue</th>
-                            </tr>
-                        </thead>
-                        <tbody id="upcoming-events-body">
-                            ${upcomingEvents.slice(0, initialUpcomingCount).map((event, index) => `
-                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
-                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
-                                    <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
-                                    <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                    ${upcomingEvents.length > initialUpcomingCount ? `
-                        <div class="text-center p-4">
-                            <button id="show-more-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Show More</button>
-                        </div>
-                    ` : ''}
-                </div>
-            </div>
-        `;
-    }
-
-    if (pastEvents.length > 0) {
-        htmlContent += `
-            <div>
-                <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <table class="min-w-full table-auto border-collapse">
-                        <thead class="bg-gray-200 text-gray-700">
-                            <tr>
-                                <th class="p-4 text-left">Date</th>
-                                <th class="p-4 text-left">Event</th>
-                                <th class="p-4 text-left">Venue</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${pastEvents.map((event, index) => `
-                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
-                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
-                                    <td class="p-4 border-t border-gray-200">${event.name}</td>
-                                    <td class="p-4 border-t border-gray-200">${event.venue}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        `;
-    }
-
-    htmlContent += `</div>`;
-    document.getElementById('main-content').innerHTML = htmlContent;
-
-    // Add event listener for the "Show More" button
-    const showMoreBtn = document.getElementById('show-more-btn');
-    if (showMoreBtn) {
-        showMoreBtn.addEventListener('click', () => {
-            const tableBody = document.getElementById('upcoming-events-body');
-            const remainingEvents = upcomingEvents.slice(initialUpcomingCount);
-            
-            const remainingHtml = remainingEvents.map((event, index) => `
-                <tr class="${(initialUpcomingCount + index) % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
-                    <td class="p-4 border-t border-gray-200">${event.date}</td>
-                    <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
-                    <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
-                </tr>
-            `).join('');
-            
-            tableBody.innerHTML += remainingHtml;
-            showMoreBtn.style.display = 'none'; // Hide the button after all events are shown
-        });
-    }
-}
-
-// Call the function to display the events
-loadEvents();
-        function loadNews(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto text-center py-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 002 2h2m-7.6-4.4l-9-9m0 0l-1 1m1-1l-1 1M14 14l-5-5m5 5l1 1m-1-1l1 1"/>
-                    </svg>
-                    <h2 class="text-3xl font-bold mb-4">Latest News</h2>
-                    <p class="text-gray-600">Our news feed is coming soon. Check back for the latest updates on our products, services, and industry insights.</p>
-                </div>
-            `;
-        }
-
-        function loadTechnologyToday(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Technology Today</h2>
-                    <p>Explore smart filtration, automation, and IoT applications reshaping the water industry.</p>
-                </div>
-            `;
-        }
-
-        function loadServiceProvided(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Service Provided</h2>
-                    <p>This is the Service Provider page. Add details about available services, contacts, and forms here.</p>
-                </div>
-            `;
-        }
-
-        function loadPhotoGallery(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto text-center py-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
-                    <p class="text-gray-600 mb-2">Our collection of project photos and event highlights will be available soon.</p>
-                    <p class="text-gray-500 text-sm">Thank you for your patience!</p>
-                </div>
-            `;
-        }
-
-        function loadVideoGallery(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto text-center py-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4zm-2 2h-2.5a2.5 2.5 0 00-2.5 2.5v1.5a2.5 2.5 0 002.5 2.5H13v-6zm-4.5 6.5a.5.5 0 11-1 0 .5.5 0 011 0z" fill="none"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 14v-4m-6 4v-4m-2 4v-4m8 0v4m-2-4v4m-2-4v4m-4 0v4m-2-4v4m2-4v4"></path>
-                        <rect x="3" y="6" width="12" height="12" rx="2" ry="2"></rect>
-                    </svg>
-                    <h2 class="text-3xl font-bold mb-4">Video Gallery</h2>
-                    <p class="text-gray-600">Explore our video content featuring product demonstrations, testimonials, and company highlights.</p>
-                </div>
-            `;
-        }
-
-        function loadHelp(event) {
-            event.preventDefault();
-            setActiveLink(event.target);
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Help</h2>
-                    <p>
-                        For assistance, please contact us at 
-                        <a href="mailto:indcaremkt@gmail.com" class="text-blue-600 underline">
-                            indcaremkt@gmail.com
-                        </a>
-                    </p>
-                </div>
-            `;
-        }
-
-        // Sidebar and Date Picker logic
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebarDate = document.getElementById('sidebar-date-picker');
-            const dashboardDate = document.getElementById('dashboard-date');
-            
-            // Set dashboard date to today's date on load
-            const today = new Date();
-            const todayFormatted = today.toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' });
-            dashboardDate.innerText = todayFormatted;
-
-            // Also set the date picker to today's date
-            const todayISO = today.toISOString().split('T')[0];
-            sidebarDate.value = todayISO;
-
-            // Set the "Welcome" page as the default active state
-            setActiveLink(null);
-
-            const toggleLeftBtn = document.getElementById('toggle-left-sidebar');
-            const toggleRightBtn = document.getElementById('toggle-right-sidebar');
-            const closeLeftBtn = document.getElementById('close-left-sidebar');
-            const closeRightBtn = document.getElementById('close-right-sidebar');
-            
-            const leftSidebar = document.getElementById('sidebar-left');
-            const rightSidebar = document.getElementById('sidebar-right');
-            const overlay = document.getElementById('overlay');
-
-            function toggleSidebar(sidebar, isOpen) {
-                if (isOpen) {
-                    sidebar.classList.remove('translate-x-full', '-translate-x-full');
-                    overlay.classList.remove('hidden');
-                } else {
-                    if (sidebar.id === 'sidebar-left') {
-                        sidebar.classList.add('-translate-x-full');
-                    } else {
-                        sidebar.classList.add('translate-x-full');
-                    }
-                    overlay.classList.add('hidden');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const increment = target / 200;
+                    const updateCounter = () => {
+                        const value = +counter.innerText;
+                        if (value < target) {
+                            counter.innerText = Math.ceil(value + increment);
+                            setTimeout(updateCounter, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                    observer.unobserve(counter);
                 }
-            }
-
-            // Event Listeners for sidebars
-            toggleLeftBtn.addEventListener('click', () => toggleSidebar(leftSidebar, true));
-            closeLeftBtn.addEventListener('click', () => toggleSidebar(leftSidebar, false));
-            toggleRightBtn.addEventListener('click', () => toggleSidebar(rightSidebar, true));
-            closeRightBtn.addEventListener('click', () => toggleSidebar(rightSidebar, false));
-            
-            // Clicking the overlay closes both sidebars
-            overlay.addEventListener('click', () => {
-                toggleSidebar(leftSidebar, false);
-                toggleSidebar(rightSidebar, false);
             });
+        }, options);
 
-            // Handle date picker functionality
-            sidebarDate.addEventListener('change', () => {
-                const date = new Date(sidebarDate.value);
-                const formatted = date.toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' });
-                dashboardDate.innerText = formatted;
-                
-                // Load the events page with the selected date
-                loadEvents(null, sidebarDate.value);
-            });
+        counters.forEach(counter => {
+            observer.observe(counter);
         });
-    </script>
+    });
+
+    // Helper function to manage active link styling
+    function setActiveLink(clickedLink) {
+        const links = document.querySelectorAll('.quick-links a');
+        links.forEach(link => link.classList.remove('active-link'));
+        if (clickedLink) {
+            clickedLink.classList.add('active-link');
+        }
+    }
+
+    // Functionality for loading content
+    function loadBusinessIdeas(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
+                <ul class="list-disc pl-5 space-y-3">
+                    <li>
+                        <strong>Water Kiosk:</strong> A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.
+                    </li>
+                    <li>
+                        <strong>Water ATM:</strong> A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.
+                    </li>
+                    <li>
+                        <strong>Milk ATM:</strong> Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.
+                    </li>
+                </ul>
+            </div>
+        `;
+    }
+
+    function loadEvents() {
+        const today = new Date();
+        const allEvents = [
+            // Past Events
+            {
+                date: '16–18 July 2025',
+                name: 'Water Africa Expo',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '29–31 July 2025',
+                name: 'Daily Tech Africa Exhibition',
+                venue: 'KICC, Nairobi'
+            },
+
+            // Upcoming Events
+            {
+                date: '12–14 August 2025',
+                name: 'Dairy Tech Expo',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '21–23 August 2025',
+                name: 'Paper & Tissue Africa 2025',
+                venue: 'Sarit Expo Centre'
+            },
+            {
+                date: '21–23 August 2025',
+                name: '9th Interplast Pack East Africa 2025',
+                venue: 'Sarit Expo Centre'
+            },
+            {
+                date: '27–31 August 2025',
+                name: 'Homes & Gardens Expo 2025',
+                venue: 'Sarit Expo Centre'
+            },
+            {
+                date: '4–6 September 2025',
+                name: 'Engineering Expo by Chaina',
+                venue: 'Sarit Centre'
+            },
+            {
+                date: '9–11 September 2025',
+                name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '16–17 September 2025',
+                name: 'Africa Pharma Expo 2025',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '19–20 September 2025',
+                name: 'Naivasha Horticultural Fair',
+                venue: 'Naivasha Showgrounds'
+            },
+            {
+                date: '23–27 September 2025',
+                name: '30th Colloquium of African Genealogy Conference',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '6–8 October 2025',
+                name: 'Medic East Africa Expo',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '23–26 October 2025',
+                name: 'Kenya Homes Expo',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '28–31 October 2025',
+                name: 'Agri Expo',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '4–8 November 2025',
+                name: 'Changamka Festival',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '5–7 November 2025',
+                name: 'The Big 5 Construct Kenya 2025',
+                venue: 'Sarit Expo Centre'
+            },
+            {
+                date: '17–20 November 2025',
+                name: 'PRO-Expo',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '18–20 November 2025',
+                name: 'KHE – Kenyan Hospitality Event 2025',
+                venue: 'Sarit Expo Centre'
+            },
+            {
+                date: '2–4 December 2025',
+                name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '16–17 December 2025',
+                name: 'Kenya Water Expo 2025',
+                venue: 'KICC, Nairobi'
+            },
+            {
+                date: '3–5 March 2026',
+                name: 'Print East Africa 2026',
+                venue: 'Sarit Expo Centre'
+            },
+            {
+                date: '2–4 June 2026',
+                name: 'Visha Oswal @ IFTEX',
+                venue: 'IFTEX Expo, Nairobi'
+            }
+        ];
+
+        // Helper function to extract the start date for sorting and comparison
+        const getStartDate = (dateString) => {
+            const months = {
+                'January': 0,
+                'February': 1,
+                'March': 2,
+                'April': 3,
+                'May': 4,
+                'June': 5,
+                'July': 6,
+                'August': 7,
+                'September': 8,
+                'October': 9,
+                'November': 10,
+                'December': 11
+            };
+            const parts = dateString.split(' ');
+            let dayPart = parts[0].split('–').pop();
+            const month = months[parts[1]];
+            const year = parseInt(parts[2]);
+            const day = parseInt(dayPart);
+            return new Date(year, month, day);
+        };
+
+        // Sort all events chronologically
+        allEvents.sort((a, b) => {
+            const dateA = getStartDate(a.date);
+            const dateB = getStartDate(b.date);
+            return dateA - dateB;
+        });
+
+        const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
+        const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
+
+        const initialUpcomingCount = 5; // Display only the first 5 events initially
+
+        let htmlContent = `
+            <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+                <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
+                
+                <p class="text-lg text-center text-gray-600 mb-8">
+                    Stay updated with the latest events and exhibitions.
+                </p>
+        `;
+
+        if (upcomingEvents.length > 0) {
+            htmlContent += `
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <table class="min-w-full table-auto border-collapse">
+                            <thead class="bg-blue-600 text-white">
+                                <tr>
+                                    <th class="p-4 text-left">Date</th>
+                                    <th class="p-4 text-left">Event</th>
+                                    <th class="p-4 text-left">Venue</th>
+                                </tr>
+                            </thead>
+                            <tbody id="upcoming-events-body">
+                                ${upcomingEvents.slice(0, initialUpcomingCount).map((event, index) => `
+                                    <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
+                                        <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                        <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
+                                        <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                        ${upcomingEvents.length > initialUpcomingCount ? `
+                            <div class="text-center p-4">
+                                <button id="show-more-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Show More</button>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (pastEvents.length > 0) {
+            htmlContent += `
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <table class="min-w-full table-auto border-collapse">
+                            <thead class="bg-gray-200 text-gray-700">
+                                <tr>
+                                    <th class="p-4 text-left">Date</th>
+                                    <th class="p-4 text-left">Event</th>
+                                    <th class="p-4 text-left">Venue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${pastEvents.map((event, index) => `
+                                    <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
+                                        <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                        <td class="p-4 border-t border-gray-200">${event.name}</td>
+                                        <td class="p-4 border-t border-gray-200">${event.venue}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+
+        htmlContent += `</div>`;
+        document.getElementById('main-content').innerHTML = htmlContent;
+
+        // Add event listener for the "Show More" button
+
+
+        const showMoreBtn = document.getElementById('show-more-btn');
+        if (showMoreBtn) {
+            showMoreBtn.addEventListener('click', () => {
+                const tableBody = document.getElementById('upcoming-events-body');
+                const remainingEvents = upcomingEvents.slice(initialUpcomingCount);
+
+                const remainingHtml = remainingEvents.map((event, index) => `
+                    <tr class="${(initialUpcomingCount + index) % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
+                        <td class="p-4 border-t border-gray-200">${event.date}</td>
+                        <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
+                        <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
+                    </tr>
+                `).join('');
+
+                tableBody.innerHTML += remainingHtml;
+                showMoreBtn.style.display = 'none'; // Hide the button after all events are shown
+            });
+        }
+    }
+
+    // Call the function to display the events
+    // REMOVE THIS LINE
+    // loadEvents();
+    function loadNews(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto text-center py-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 002 2h2m-7.6-4.4l-9-9m0 0l-1 1m1-1l-1 1M14 14l-5-5m5 5l1 1m-1-1l1 1"/>
+                </svg>
+                <h2 class="text-3xl font-bold mb-4">Latest News</h2>
+                <p class="text-gray-600">Our news feed is coming soon. Check back for the latest updates on our products, services, and industry insights.</p>
+            </div>
+        `;
+    }
+
+    function loadTechnologyToday(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-4">Technology Today</h2>
+                <p>Explore smart filtration, automation, and IoT applications reshaping the water industry.</p>
+            </div>
+        `;
+    }
+
+    function loadServiceProvided(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-4">Service Provided</h2>
+                <p>This is the Service Provider page. Add details about available services, contacts, and forms here.</p>
+            </div>
+        `;
+    }
+
+    function loadPhotoGallery(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto text-center py-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
+                <p class="text-gray-600 mb-2">Our collection of project photos and event highlights will be available soon.</p>
+                <p class="text-gray-500 text-sm">Thank you for your patience!</p>
+            </div>
+        `;
+    }
+
+    function loadVideoGallery(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto text-center py-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4zm-2 2h-2.5a2.5 2.5 0 00-2.5 2.5v1.5a2.5 2.5 0 002.5 2.5H13v-6zm-4.5 6.5a.5.5 0 11-1 0 .5.5 0 011 0z" fill="none"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 14v-4m-6 4v-4m-2 4v-4m8 0v4m-2-4v4m-2-4v4m-4 0v4m-2-4v4m2-4v4"></path>
+                    <rect x="3" y="6" width="12" height="12" rx="2" ry="2"></rect>
+                </svg>
+                <h2 class="text-3xl font-bold mb-4">Video Gallery</h2>
+                <p class="text-gray-600">Explore our video content featuring product demonstrations, testimonials, and company highlights.</p>
+            </div>
+        `;
+    }
+
+    function loadHelp(event) {
+        event.preventDefault();
+        setActiveLink(event.target);
+        document.getElementById('main-content').innerHTML = `
+            <div class="prose max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-4">Help</h2>
+                <p>
+                    For assistance, please contact us at
+                    <a href="mailto:indcaremkt@gmail.com" class="text-blue-600 underline">
+                        indcaremkt@gmail.com
+                    </a>
+                </p>
+            </div>
+        `;
+    }
+
+    // Sidebar and Date Picker logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebarDate = document.getElementById('sidebar-date-picker');
+        const dashboardDate = document.getElementById('dashboard-date');
+
+        // Set dashboard date to today's date on load
+        const today = new Date();
+        const todayFormatted = today.toLocaleDateString('en-UK', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+        dashboardDate.innerText = todayFormatted;
+
+        // Also set the date picker to today's date
+        const todayISO = today.toISOString().split('T')[0];
+        sidebarDate.value = todayISO;
+
+        // Set the "Welcome" page as the default active state
+        setActiveLink(null);
+
+        const toggleLeftBtn = document.getElementById('toggle-left-sidebar');
+        const toggleRightBtn = document.getElementById('toggle-right-sidebar');
+        const closeLeftBtn = document.getElementById('close-left-sidebar');
+        const closeRightBtn = document.getElementById('close-right-sidebar');
+
+        const leftSidebar = document.getElementById('sidebar-left');
+        const rightSidebar = document.getElementById('sidebar-right');
+        const overlay = document.getElementById('overlay');
+
+        function toggleSidebar(sidebar, isOpen) {
+            if (isOpen) {
+                sidebar.classList.remove('translate-x-full', '-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                if (sidebar.id === 'sidebar-left') {
+                    sidebar.classList.add('-translate-x-full');
+                } else {
+                    sidebar.classList.add('translate-x-full');
+                }
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Event Listeners for sidebars
+        toggleLeftBtn.addEventListener('click', () => toggleSidebar(leftSidebar, true));
+        closeLeftBtn.addEventListener('click', () => toggleSidebar(leftSidebar, false));
+        toggleRightBtn.addEventListener('click', () => toggleSidebar(rightSidebar, true));
+        closeRightBtn.addEventListener('click', () => toggleSidebar(rightSidebar, false));
+
+        // Clicking the overlay closes both sidebars
+        overlay.addEventListener('click', () => {
+            toggleSidebar(leftSidebar, false);
+            toggleSidebar(rightSidebar, false);
+        });
+
+        // Handle date picker functionality
+        sidebarDate.addEventListener('change', () => {
+            const date = new Date(sidebarDate.value);
+            const formatted = date.toLocaleDateString('en-UK', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            dashboardDate.innerText = formatted;
+
+            // Load the events page with the selected date
+            loadEvents(null, sidebarDate.value);
+        });
+    });
+</script>
 
 <!-- FOOTER -->
    <footer id="contact" class="bg-gray-800 text-white py-12">
