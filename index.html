@@ -3,12 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrut Expo Dashboard</title>
+    <title>Indcare Africa Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    /* Old footer classes kept for future use */
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .social-links a,
+    .contact-info a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 24px;
+    }
+    .social-links a:hover,
+    .contact-info a:hover {
+      color: #ccc;
+    }
+    .contact-info {
+      margin-top: 15px;
+    }
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .contact-info a {
+      color: #fff;
+      text-decoration: none;
+    }
+  
+
+
+
+    
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -19,6 +55,99 @@
         .sidebar {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
+        }
+
+
+
+        .counter-section {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 60px 0; /* Add some space above and below */
+    text-align: center;
+}
+
+.counter-section .container {
+    display: flex; /* Arrange items in a row */
+    justify-content: space-around; /* Distribute items evenly */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 20px; /* Space between items */
+    max-width: 1100px;
+    margin: 0 auto; /* Center the container */
+}
+
+.counter-item {
+    flex-basis: 200px; /* Set a base width for each item */
+    padding: 20px;
+    background-color: #ffffff; /* White background for each item */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.counter-item:hover {
+    transform: translateY(-5px); /* Lift up on hover */
+}
+
+.counter-item h3 {
+    font-size: 3rem; /* Larger font size for the number */
+    font-weight: 700;
+    color: #007bff; /* A nice blue color for the numbers */
+    margin: 0;
+    line-height: 1.2;
+}
+
+.counter-item p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d; /* Darker gray for the text */
+    margin-top: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .counter-section .container {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center;
+    }
+    .counter-item {
+        width: 80%;
+    }
+}
+
+
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .social-links a, .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .social-links a:hover, .contact-info a:hover {
+            color: #ccc;
+        }
+        .contact-info {
+            margin-top: 15px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+
+        /* Active link highlight style */
+        .active-link {
+            background-color: #007bff;
+            color: white;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -41,14 +170,13 @@
     </div>
 
     <div class="flex">
-
         <aside id="sidebar-left" class="transform -translate-x-full fixed top-0 left-0 h-full w-3/4 md:w-80 md:relative md:transform-none bg-blue-900 text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:min-h-screen">
             <div class="flex justify-between items-center mb-6 md:hidden">
-                <h2 class="text-xl font-bold">Amrut Expo</h2>
+                <h2 class="text-xl font-bold">Indcare Africa</h2>
                 <button id="close-left-sidebar" aria-label="Close left sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
             </div>
             <div class="hidden md:block">
-                <h2 class="text-xl font-bold mb-4">Amrut Expo</h2>
+                <h2 class="text-xl font-bold mb-4">Indcare Africa</h2>
             </div>
             
             <div class="mb-6">
@@ -58,17 +186,15 @@
             
             <div class="quick-links">
                 <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-                <a href="#" onclick="loadNews()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Latest News</a>
-                <a href="#" onclick="loadTechnologyToday()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Technology Today</a>
+                <a href="#" onclick="loadNews(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Latest News</a>
+                <a href="#" onclick="loadTechnologyToday(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Technology Today</a>
                 <a href="engineering-library.html" target="_blank" rel="noopener" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Engineering Library</a>
-                
-                <a href="#" onclick="loadEvents()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Event Calendar</a>
-                <a href="#" onclick="loadBusinessIdeas()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Business Ideas</a>
-                <a href="#" onclick="loadServiceProvided()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Service Provided</a>
-                <a href="#" onclick="loadPhotoGallery()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Photo Gallery</a>
-                <a href="#" onclick="loadVideoGallery()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Video Gallery</a>       
-                <a href="#" onclick="loadHelp()" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Help</a>       
-                
+                <a href="#" onclick="loadEvents(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Event Calendar</a>
+                <a href="#" onclick="loadBusinessIdeas(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Business Ideas</a>
+                <a href="#" onclick="loadServiceProvided(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Service Provided</a>
+                <a href="#" onclick="loadPhotoGallery(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Photo Gallery</a>
+                <a href="#" onclick="loadVideoGallery(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Video Gallery</a>
+                <a href="#" onclick="loadHelp(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Help</a>
             </div>
 
             <h3 class="text-lg font-semibold mt-8 mb-4">Our Associates</h3>
@@ -85,7 +211,7 @@
         </aside>
 
         <main class="flex-1 p-6 md:p-8 min-h-screen bg-white" id="main-content">
-            <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Amrut+Expo+Dashboard';">
+            <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Indcare+Africa+Dashboard';">
             
             <div class="prose max-w-4xl mx-auto">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to the Dashboard</h2>
@@ -104,9 +230,11 @@
             
             <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
             <p class="mb-2"><strong>Location:</strong> 30 Butere Road, Industrial Area, Nairobi, Kenya</p>
-            <p class="mb-2"><strong>Phone:</strong> +254 711 895 312</p>
+            <p class="mb-2"><strong>Phone:</strong> +254 777 895 312</p>
             <p class="mb-4"><strong>Email:</strong> <a href="mailto:indcaremkt@gmail.com" class="text-white underline">indcaremkt@gmail.com</a></p>
 
+            
+            
             <h3 class="text-lg font-semibold mt-8 mb-4">Our Clients</h3>
             <div class="client-logos flex flex-wrap gap-2">
                 <img src="devki-steel.png" alt="Devki Steel" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Devki';">
@@ -115,32 +243,54 @@
                 <img src="the-print-exchange.png" alt="The Print Exchange" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Print';">
                 <img src="sanpac.png" alt="Sanpac Africa" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Sanpac';">
             </div>
-            <div class="mt-8 bg-blue-800 p-3 rounded-md">
-                <h3 class="text-base font-semibold text-white mb-2 text-center">Visitors</h3>
-                <div class="flex justify-center">
-                    <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=2be190368c249647d8e0d18f30213a5380fd1879'></script>
-                    <script type="text/javascript" src="https://freevisitorcounters.com./en/home/counter/1375651/t/0"></script>
-                </div>
-            </div>
-            <div class="mt-8 text-center">
-              <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
-              <div class="flex justify-center space-x-6">
-                <a href="https://www.facebook.com/indcareafrica" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-blue-700 transition-colors duration-200">
-                  <svg class="w-6 h-6" fill="#1877F2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.35c0 .732.593 1.325 1.325 1.325h11.494v-9.294h-3.125v-3.625h3.125v-2.688c0-3.094 1.894-4.781 4.656-4.781 1.325 0 2.469.099 2.803.144v3.25l-1.925-.001c-1.506 0-1.794.716-1.794 1.766v2.313h3.588l-.467 3.625h-3.121v9.294h6.116c.732 0 1.325-.593 1.325-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
-                  </svg>
-                </a>
-                <a href="https://www.instagram.com/indcareafrica/" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-pink-600 transition-colors duration-200">
-                  <svg class="w-6 h-6" fill="#E4405F" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.666 4.924 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.069 4.849-.152 3.25-1.67 4.772-4.924 4.924-1.265.058-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.252-.152-4.772-1.67-4.924-4.924-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.069-4.849.152-3.251 1.67-4.773 4.924-4.924 1.264-.058 1.644-.069 4.849-.069zm0-2.163c-3.259 0-3.668.014-4.949.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.69-.073 4.949 0 3.259.014 3.668.072 4.949.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.69.073 4.949.073 3.259 0 3.668-.014 4.949-.072 4.354-.2 6.78-2.618 6.979-6.98.059-1.281.073-1.69.073-4.949 0-3.259-.014-3.668-.072-4.949-.199-4.358-2.618-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.462 0-6.262 2.8-6.262 6.262s2.8 6.262 6.262 6.262 6.262-2.8 6.262-6.262-2.8-6.262-6.262-6.262zm0 10.375c-2.263 0-4.113-1.85-4.113-4.113s1.85-4.113 4.113-4.113 4.113 1.85 4.113 4.113-1.85 4.113-4.113 4.113zm6.208-11.517c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1z"/>
-                  </svg>
-                </a>
-                <a href="https://wa.me/254777895312" target="_blank" rel="noopener" aria-label="WhatsApp" class="hover:text-green-500 transition-colors duration-200">
-                  <svg class="w-6 h-6" fill="#25D366" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.75 3.13C15.11 2.37 13.06 2 12 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.94.57 3.8 1.63 5.38L2 22l5.52-1.44c1.55.84 3.3 1.3 5.08 1.3 5.5 0 9.96-4.46 9.96-9.96.01-1.25-.26-2.48-.77-3.6zM12 20.15c-1.6 0-3.11-.4-4.45-1.1L6.15 20l.85-2.65-1.43-1.43c-.76-1.57-1.16-3.32-1.16-5.12C4.41 6.54 7.82 3.13 12 3.13c2.19 0 4.26.86 5.82 2.42 1.56 1.56 2.42 3.63 2.42 5.82 0 4.19-3.41 7.6-7.6 7.6zm4.64-5.91c-.25-.12-.49-.24-.74-.35s-.5-.2-.74-.3c-.24-.1-.5-.14-.74-.14c-.24 0-.5.05-.74.15s-.45.24-.65.4c-.2.16-.36.35-.49.52s-.22.37-.29.56c-.07.19-.1.38-.1.57 0 .19.03.38.1.57s.17.37.3.56c.13.19.29.35.49.52.2.16.4.3.65.4s.5.15.74.15c.24 0 .5-.05.74-.15s.49-.24.74-.4c.25-.16.45-.35.61-.52s.29-.37.34-.56c.05-.19.08-.38.08-.57s-.03-.38-.08-.57-.22-.37-.34-.56zm-.97-2.1c.32.1.6.21.82.35s.4.29.5.42.17.27.23.41.08.3.08.45c0 .15-.03.3-.08.45s-.12.27-.23.41-.24.29-.4.42c-.16.14-.34.24-.54.3s-.4.1-.63.1c-.23 0-.45-.03-.66-.1-.21-.07-.4-.15-.59-.26s-.34-.24-.45-.36-.18-.24-.23-.35c-.05-.12-.08-.23-.08-.35 0-.12.03-.24.08-.35s.12-.23.23-.35c.11-.12.23-.21.36-.29s.29-.14.44-.18.3-.07.45-.07c.15 0 .3.02.45.07.15.05.29.11.44.18s.27.17.41.29.25.26.35.41c.1.15.17.3.2.45z"/>
-                  </svg>
-                </a>
-              </div>
+
+          
+ <section class="counter-section">
+
+                <div class="container">
+
+                    <div class="counter-item">
+
+                        <h3 class="counter" data-target="2500+">0</h3>
+
+                        <p>Household Served</p>
+
+                    </div>
+
+                    <div class="counter-item">
+
+                        <h3 class="counter" data-target="100+">0</h3>
+
+                        <p>Satisfied Clients</p>
+
+                    </div>
+
+                   
+
+       
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+            
+          
             </div>
         </aside>
 
@@ -149,8 +299,105 @@
     <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-40 md:hidden"></div>
 
     <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target').replace('+', '');
+                let count = 0;
+
+                const updateCounter = setInterval(() => {
+                    if (count < target) {
+                        count += Math.ceil(target / 200); // Adjust speed
+                        if (count > target) count = target;
+                        counter.innerText = count + (counter.getAttribute('data-target').includes('+') ? '+' : '');
+                    } else {
+                        clearInterval(updateCounter);
+                    }
+                }, 10);
+                observer.unobserve(counter); // Stop observing once the animation is complete
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            const options = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.5 // 50% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        const increment = target / 200;
+                        const updateCounter = () => {
+                            const value = +counter.innerText;
+                            if (value < target) {
+                                counter.innerText = Math.ceil(value + increment);
+                                setTimeout(updateCounter, 1);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, options);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+
+        // Helper function to manage active link styling
+        function setActiveLink(clickedLink) {
+            const links = document.querySelectorAll('.quick-links a');
+            links.forEach(link => link.classList.remove('active-link'));
+            if (clickedLink) {
+                clickedLink.classList.add('active-link');
+            }
+        }
+
         // Functionality for loading content
-        function loadBusinessIdeas() {
+        function loadBusinessIdeas(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
                 <div class="prose max-w-4xl mx-auto">
                     <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
@@ -169,61 +416,175 @@
             `;
         }
 
-        function loadEvents() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Event Calendar</h2>
-                    <table class="w-full border-collapse mt-4">
-                        <caption class="text-xl font-bold mb-4 text-left text-blue-900">Upcoming Events</caption>
-                        <thead class="bg-gray-100">
+      function loadEvents() {
+    const today = new Date();
+    const allEvents = [
+        // Past Events
+        { date: '16–18 July 2025', name: 'Water Africa Expo', venue: 'KICC, Nairobi' },
+        { date: '29–31 July 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
+        
+        // Upcoming Events
+        { date: '12–14 August 2025', name: 'Dairy Tech Expo', venue: 'KICC, Nairobi' },
+        { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
+        { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
+        { date: '27–31 August 2025', name: 'Homes & Gardens Expo 2025', venue: 'Sarit Expo Centre' },
+        { date: '4–6 September 2025', name: 'Engineering Expo by Chaina', venue: 'Sarit Centre' },
+        { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
+        { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
+        { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
+        { date: '6–8 October 2025', name: 'Medic East Africa Expo', venue: 'KICC, Nairobi' },
+        { date: '23–26 October 2025', name: 'Kenya Homes Expo', venue: 'KICC, Nairobi' },
+        { date: '28–31 October 2025', name: 'Agri Expo', venue: 'KICC, Nairobi' },
+        { date: '4–8 November 2025', name: 'Changamka Festival', venue: 'KICC, Nairobi' },
+        { date: '5–7 November 2025', name: 'The Big 5 Construct Kenya 2025', venue: 'Sarit Expo Centre' },
+        { date: '17–20 November 2025', name: 'PRO-Expo', venue: 'KICC, Nairobi' },
+        { date: '18–20 November 2025', name: 'KHE – Kenyan Hospitality Event 2025', venue: 'Sarit Expo Centre' },
+        { date: '2–4 December 2025', name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators', venue: 'KICC, Nairobi' },
+        { date: '16–17 December 2025', name: 'Kenya Water Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '3–5 March 2026', name: 'Print East Africa 2026', venue: 'Sarit Expo Centre' },
+        { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' }
+    ];
+
+    // Helper function to extract the start date for sorting and comparison
+    const getStartDate = (dateString) => {
+        const months = {
+            'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5,
+            'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11
+        };
+        const parts = dateString.split(' ');
+        let dayPart = parts[0].split('–').pop();
+        const month = months[parts[1]];
+        const year = parseInt(parts[2]);
+        const day = parseInt(dayPart);
+        return new Date(year, month, day);
+    };
+
+    // Sort all events chronologically
+    allEvents.sort((a, b) => {
+        const dateA = getStartDate(a.date);
+        const dateB = getStartDate(b.date);
+        return dateA - dateB;
+    });
+
+    const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
+    const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
+
+    const initialUpcomingCount = 5; // Display only the first 5 events initially
+
+    let htmlContent = `
+        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+            <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
+            
+            <p class="text-lg text-center text-gray-600 mb-8">
+                Stay updated with the latest events and exhibitions.
+            </p>
+    `;
+
+    if (upcomingEvents.length > 0) {
+        htmlContent += `
+            <div class="mb-10">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <table class="min-w-full table-auto border-collapse">
+                        <thead class="bg-blue-600 text-white">
                             <tr>
-                                <th class="border border-gray-300 p-3 text-left">Date</th>
-                                <th class="border border-gray-300 p-3 text-left">Event</th>
-                                <th class="border border-gray-300 p-3 text-left">Venue</th>
+                                <th class="p-4 text-left">Date</th>
+                                <th class="p-4 text-left">Event</th>
+                                <th class="p-4 text-left">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody id="upcoming-events-body">
+                            ${upcomingEvents.slice(0, initialUpcomingCount).map((event, index) => `
+                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
+                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                    <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
+                                    <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                    ${upcomingEvents.length > initialUpcomingCount ? `
+                        <div class="text-center p-4">
+                            <button id="show-more-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors">Show More</button>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }
+
+    if (pastEvents.length > 0) {
+        htmlContent += `
+            <div>
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <table class="min-w-full table-auto border-collapse">
+                        <thead class="bg-gray-200 text-gray-700">
+                            <tr>
+                                <th class="p-4 text-left">Date</th>
+                                <th class="p-4 text-left">Event</th>
+                                <th class="p-4 text-left">Venue</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="border border-gray-300 p-3">16–18 July 2025</td>
-                                <td class="border border-gray-300 p-3">Water Africa Expo</td>
-                                <td class="border border-gray-300 p-3">KICC, Nairobi</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 p-3">29–31 July 2025</td>
-                                <td class="border border-gray-300 p-3">Daily Tech Africa Exhibition</td>
-                                <td class="border border-gray-300 p-3">KICC, Nairobi</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 p-3">4–6 September 2025</td>
-                                <td class="border border-gray-300 p-3">Engineering Expo by Chaina</td>
-                                <td class="border border-gray-300 p-3">Sarit Centre</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 p-3">19–20 September 2025</td>
-                                <td class="border border-gray-300 p-3">Naivasha Horticultural Fair</td>
-                                <td class="border border-gray-300 p-3">Naivasha Showgrounds</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 p-3">2–4 June 2026</td>
-                                <td class="border border-gray-300 p-3">Visha Oswal @ IFTEX</td>
-                                <td class="border border-gray-300 p-3">IFTEX Expo, Nairobi</td>
-                            </tr>
+                            ${pastEvents.map((event, index) => `
+                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
+                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                    <td class="p-4 border-t border-gray-200">${event.name}</td>
+                                    <td class="p-4 border-t border-gray-200">${event.venue}</td>
+                                </tr>
+                            `).join('')}
                         </tbody>
                     </table>
                 </div>
-            `;
-        }
+            </div>
+        `;
+    }
 
-        function loadNews() {
+    htmlContent += `</div>`;
+    document.getElementById('main-content').innerHTML = htmlContent;
+
+    // Add event listener for the "Show More" button
+    const showMoreBtn = document.getElementById('show-more-btn');
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            const tableBody = document.getElementById('upcoming-events-body');
+            const remainingEvents = upcomingEvents.slice(initialUpcomingCount);
+            
+            const remainingHtml = remainingEvents.map((event, index) => `
+                <tr class="${(initialUpcomingCount + index) % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
+                    <td class="p-4 border-t border-gray-200">${event.date}</td>
+                    <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
+                    <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
+                </tr>
+            `).join('');
+            
+            tableBody.innerHTML += remainingHtml;
+            showMoreBtn.style.display = 'none'; // Hide the button after all events are shown
+        });
+    }
+}
+
+// Call the function to display the events
+loadEvents();
+        function loadNews(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Latest News</h2>
-                    <p>Coming soon...</p>
+                <div class="prose max-w-4xl mx-auto text-center py-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 002 2h2m-7.6-4.4l-9-9m0 0l-1 1m1-1l-1 1M14 14l-5-5m5 5l1 1m-1-1l1 1"/>
+                    </svg>
+                    <h2 class="text-3xl font-bold mb-4">Latest News</h2>
+                    <p class="text-gray-600">Our news feed is coming soon. Check back for the latest updates on our products, services, and industry insights.</p>
                 </div>
             `;
         }
 
-        function loadTechnologyToday() {
+        function loadTechnologyToday(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
                 <div class="prose max-w-4xl mx-auto">
                     <h2 class="text-2xl font-bold mb-4">Technology Today</h2>
@@ -232,7 +593,9 @@
             `;
         }
 
-        function loadServiceProvided() {
+        function loadServiceProvided(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
                 <div class="prose max-w-4xl mx-auto">
                     <h2 class="text-2xl font-bold mb-4">Service Provided</h2>
@@ -241,25 +604,41 @@
             `;
         }
 
-        function loadPhotoGallery() {
+        function loadPhotoGallery(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Photo Gallery</h2>
-                    <p>Coming soon...</p>
+                <div class="prose max-w-4xl mx-auto text-center py-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
+                    <p class="text-gray-600 mb-2">Our collection of project photos and event highlights will be available soon.</p>
+                    <p class="text-gray-500 text-sm">Thank you for your patience!</p>
                 </div>
             `;
         }
 
-        function loadVideoGallery() {
+        function loadVideoGallery(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
-                <div class="prose max-w-4xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-4">Video Gallery</h2>
-                    <p>Coming soon...</p>
+                <div class="prose max-w-4xl mx-auto text-center py-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4zm-2 2h-2.5a2.5 2.5 0 00-2.5 2.5v1.5a2.5 2.5 0 002.5 2.5H13v-6zm-4.5 6.5a.5.5 0 11-1 0 .5.5 0 011 0z" fill="none"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 14v-4m-6 4v-4m-2 4v-4m8 0v4m-2-4v4m-2-4v4m-4 0v4m-2-4v4m2-4v4"></path>
+                        <rect x="3" y="6" width="12" height="12" rx="2" ry="2"></rect>
+                    </svg>
+                    <h2 class="text-3xl font-bold mb-4">Video Gallery</h2>
+                    <p class="text-gray-600">Explore our video content featuring product demonstrations, testimonials, and company highlights.</p>
                 </div>
             `;
         }
 
-        function loadHelp() {
+        function loadHelp(event) {
+            event.preventDefault();
+            setActiveLink(event.target);
             document.getElementById('main-content').innerHTML = `
                 <div class="prose max-w-4xl mx-auto">
                     <h2 class="text-2xl font-bold mb-4">Help</h2>
@@ -286,6 +665,9 @@
             // Also set the date picker to today's date
             const todayISO = today.toISOString().split('T')[0];
             sidebarDate.value = todayISO;
+
+            // Set the "Welcome" page as the default active state
+            setActiveLink(null);
 
             const toggleLeftBtn = document.getElementById('toggle-left-sidebar');
             const toggleRightBtn = document.getElementById('toggle-right-sidebar');
@@ -327,8 +709,61 @@
                 const date = new Date(sidebarDate.value);
                 const formatted = date.toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' });
                 dashboardDate.innerText = formatted;
+                
+                // Load the events page with the selected date
+                loadEvents(null, sidebarDate.value);
             });
         });
     </script>
+
+<!-- FOOTER -->
+   <footer id="contact" class="bg-gray-800 text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center">
+
+      <!-- Title -->
+      <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+
+      <!-- Contact Details -->
+      <div class="mb-6 space-y-2">
+        <p class="text-lg">
+          <a href="mailto:indcaremkt@gmail.com" class="hover:underline">
+            <i class="fas fa-envelope mr-2"></i>indcaremkt@gmail.com
+          </a>
+        </p>
+        <p class="text-lg">
+          <a href="tel:+254777895312" class="hover:underline">
+            <i class="fas fa-phone-alt mr-2"></i>+254 777 895 312
+          </a>
+        </p>
+        <p class="text-lg">
+          <a href="http://www.indcareafrica.com" target="_blank" rel="noopener" class="hover:underline">
+            <i class="fas fa-globe mr-2"></i>Visit Us
+          </a>
+        </p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="https://www.facebook.com/indcareafrica" target="_blank" rel="noopener" aria-label="Facebook" class="text-white hover:text-blue-500 transition-colors duration-200">
+          <i class="fab fa-facebook text-4xl"></i>
+        </a>
+        <a href="https://www.instagram.com/indcareafrica/" target="_blank" rel="noopener" aria-label="Instagram" class="text-white hover:text-pink-500 transition-colors duration-200">
+          <i class="fab fa-instagram text-4xl"></i>
+        </a>
+        <a href="https://ke.linkedin.com/company/indcare-africa-ltd" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-white hover:text-blue-700 transition-colors duration-200">
+          <i class="fab fa-linkedin text-4xl"></i>
+        </a>
+        <a href="https://wa.me/254777895312" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-white hover:text-green-500 transition-colors duration-200">
+          <i class="fab fa-whatsapp text-4xl"></i>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-gray-400 text-sm">© 2025 IndCare Africa</p>
+    </div>
+  </footer>
+
+
+
 </body>
 </html>
