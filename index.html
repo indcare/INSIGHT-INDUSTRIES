@@ -134,18 +134,20 @@
             </div>
         </aside>
         
-        <main id="main-content" class="flex-grow p-6 md:p-10 transition-all duration-300 ease-in-out">
-            <div id="home-content">
-                <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Indcare+Africa+Dashboard';">
-                <div>
-                    <h2>Welcome to the Dashboard</h2>
-                    <p>Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you’re a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-                    <p>Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-                    <p>Take a moment to explore, and don’t miss the <strong>Event Calendar</strong> for a preview of what’s ahead. If you’re new, the sidebar is a great place to start.</p>
-                    <p>We’re building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-                </div>
-            </div>
-        </main>
+     <main id="main-content" class="flex-grow p-6 md:p-10 transition-all duration-300 ease-in-out">
+    <div id="home-content" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="md:order-2">
+            <img src="heading.jpg" alt="Amrut Filtration & Indcare Africa" class="w-full h-auto object-cover rounded-xl shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Amrut+Indcare+Dashboard';">
+        </div>
+        <div class="md:order-1">
+            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+            <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+        </div>
+    </div>
+</main>
         
         <aside id="sidebar-right" class="transform translate-x-full fixed top-0 right-0 h-full w-3/4 md:w-80 md:transform-none bg-[#87CEEB] text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:relative md:min-h-screen">
             <div class="flex justify-between items-center mb-6 md:hidden">
@@ -235,7 +237,7 @@
             const dashboardDate = document.getElementById('dashboard-date');
             
             // Initial load to show the Home content
-            loadHome();
+           
             
             // Set initial date
             const today = new Date();
@@ -247,6 +249,7 @@
             // Loaders
             function loadHome(event) {
                 if (event) event.preventDefault();
+               
                 mainContent.innerHTML = `
                     <div id="home-content">
                         <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Indcare+Africa+Dashboard';">
@@ -307,7 +310,9 @@
                     { date: '29–31 July 2025', name: 'Dairy Tech Africa Exhibition', venue: 'KICC, Nairobi' },
                     { date: '5–7 August 2025', name: 'Regions International Industrial Tools and Hardware Trade Exhibiiton', venue: 'Tanzania' },
                     { date: '12–14 August 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
-                   { date: '21–23 August 2025', name: 'Gourav Global Group', venue: 'Sarit Expo Centre, Nairobi' },
+              
+                    { date: '19–21 August 2025', name: 'EAC Global Connect Summit and Expo 2025 ', venue: 'KICC, Nairobi' },
+                    { date: '21–23 August 2025', name: 'Gourav Global Group', venue: 'Sarit Expo Centre, Nairobi' },
                     { date: '21–23 August 2025', name: 'Grains Africa and Agro Food 2025', venue: 'Sarit Expo Centre' },
                     { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
                     { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
