@@ -99,7 +99,7 @@
                 <button id="close-left-sidebar" aria-label="Close left sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
             </div>
             <div class="hidden md:block">
-                <h2 class="text-xl font-bold mb-4">Indcare Africa</h2>
+                <h2 class="text-xl font-bold mb-4">WELCOME</h2>
             </div>
             
             <div class="mb-6">
@@ -113,7 +113,7 @@
                 <a href="#" onclick="loadNews(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Latest News</a>
                 <a href="#" onclick="loadTechnologyToday(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Technology Today</a>
                 <a href="engineering-library.html" target="_blank" rel="noopener" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Engineering Library</a>
-                <a href="#" onclick="loadEvents(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Event Calendar</a>
+                
                 <a href="#" onclick="loadBusinessIdeas(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Business Ideas</a>
                 <a href="#" onclick="loadServiceProvided(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Service Provided</a>
                 <a href="#" onclick="loadPhotoGallery(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Photo Gallery</a>
@@ -122,43 +122,132 @@
                 <a href="#" onclick="loadAbout(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">About</a>
             </div>
 
-            <h3 class="text-lg font-semibold mt-8 mb-4">Our Associates</h3>
-            <div class="associate-logos flex flex-wrap gap-2">
-                <img src="rex.png" alt="Rexnord" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Rexnord';">
-                <img src="lovato.png" alt="Lovato Electric" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Lovato';">
-                <img src="autonics.png" alt="Autonics" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Autonics';">
-                <img src="fluke.png" alt="Fluke" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Fluke';">
-                <img src="delta.png" alt="Delta" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Delta';">
-                <img src="logoo.png" alt="AMRUT" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=AMRUT';">
-                <img src="seltech.png" alt="Seltech" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Seltech';">
-            </div>
         </aside>
         
-     <main id="main-content" class="flex-grow p-6 md:p-10 transition-all duration-300 ease-in-out">
-    <div id="home-content" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-        <div class="md:order-2">
-            <img src="heading.jpg" alt="Amrut Filtration & Indcare Africa" class="w-full h-auto object-cover rounded-xl shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Amrut+Indcare+Dashboard';">
-        </div>
-        <div class="md:order-1">
-            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
-            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
-            <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-        </div>
-    </div>
-</main>
-        
-        <aside id="sidebar-right" class="transform translate-x-full fixed top-0 right-0 h-full w-3/4 md:w-80 md:transform-none bg-[#87CEEB] text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:relative md:min-h-screen">
-            <div class="flex justify-between items-center mb-6 md:hidden">
-                <h2 class="text-xl font-bold">Contact & Clients</h2>
-                <button id="close-right-sidebar" aria-label="Close right sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
+        <main id="main-content" class="flex-grow p-6 md:p-10 transition-all duration-300 ease-in-out">
+            <div class="max-w-4xl mx-auto mb-8 relative">
+                <div class="slideshow-container w-full relative">
+                    
+                    <div class="mySlides fade">
+                        <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="slide 2.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="slide 3 new.jpg" alt="Slide 3" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="WhatsApp Image 2025-08-01 at 08.27.59 (3).jpeg" alt="Slide 4" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="drinking water.jpg" alt="Slide 5" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                    </div>
+                    
+                    <a class="prev cursor-pointer absolute top-1/2 -translate-y-1/2 left-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-l-lg transition-all" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
+                    <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
+                    <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
+                    <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(4)"></span>
+                    <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(5)"></span>
+                </div>
             </div>
             
-            <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-            <p class="mb-2"><strong>Location:</strong> 30 Butere Road, Industrial Area, Nairobi, Kenya</p>
-            <p class="mb-2"><strong>Phone:</strong> +254 777 895 312</p>
-            <p class="mb-4"><strong>Email:</strong> <a href="mailto:indcaremkt@gmail.com" class="text-white underline">indcaremkt@gmail.com</a></p>
+            <div id="home-content" class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+                <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+                <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+                <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+                <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+            </div>
+        </main>
+
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Dot controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("bg-gray-800");
+                dots[i].classList.add("bg-gray-400/50");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].classList.remove("bg-gray-400/50");
+            dots[slideIndex-1].classList.add("bg-gray-800"); // active dot is darker
+        }
+
+        // Auto play every 5s
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000);
+        </script>
+
+        <aside id="sidebar-right" class="transform translate-x-full fixed top-0 right-0 h-full w-3/4 md:w-80 md:transform-none bg-[#87CEEB] text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:relative md:min-h-screen">
+            <div class="flex justify-between items-center mb-6 md:hidden">
+                <h2 class="text-xl font-bold">More</h2>
+                <button id="close-right-sidebar" aria-label="Close right sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
+            </div>
+
+            <div class="mb-6 relative z-10">
+                <h3 class="text-lg font-semibold mb-4 relative z-20">UPCOMING EVENTS</h3>
+                <div class="event-slideshow-container relative w-full h-64 z-10">
+                    <div class="mySlides-event fade-event absolute w-full h-full">
+                        <img src="event 1.jpeg" alt="Event Photo 1" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                    <div class="mySlides-event fade-event absolute w-full h-full hidden">
+                        <img src="expo 2.png" alt="Event Photo 2" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                    <div class="mySlides-event fade-event absolute w-full h-full hidden">
+                        <img src="expo 3.jpeg" alt="Event Photo 3" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                    <div class="mySlides-event fade-event absolute w-full h-full hidden">
+                        <img src="expo 4.jpeg" alt="Event Photo 4" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                    <div class="mySlides-event fade-event absolute w-full h-full hidden">
+                        <img src="expo 5.jpeg" alt="Event Photo 5" class="w-full h-full object-contain rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-4">SEE MORE EVENTS</h3>
+            <nav class="space-y-2 mb-6 quick-links">
+                <a href="#" onclick="loadEvents(event)" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                    Events Calendar
+                </a>
+            </nav>
 
             <h3 class="text-lg font-semibold mt-8 mb-4">Our Clients</h3>
             <div class="client-logos flex flex-wrap gap-2">
@@ -183,7 +272,55 @@
             </section>
         </aside>
 
+        <script>
+        let slideIndexEvent = 0;
+        function showSlidesEvent() {
+            let slides = document.querySelectorAll(".mySlides-event");
+            slides.forEach(slide => slide.classList.add("hidden"));
+            slideIndexEvent++;
+            if (slideIndexEvent > slides.length) {slideIndexEvent = 1}
+            slides[slideIndexEvent - 1].classList.remove("hidden");
+            setTimeout(showSlidesEvent, 3000); // ⏱ Change every 3 seconds
+        }
+        document.addEventListener("DOMContentLoaded", showSlidesEvent);
+        </script>
+        
     </div>
+
+
+
+<div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-6">
+        <h3 class="text-2xl font-bold text-gray-800">Our Associates</h3>
+    </div>
+    <div class="associate-logos flex flex-wrap justify-center items-center gap-4">
+        <img src="rex.png" alt="Rexnord" class="w-24 h-16 object-contain">
+        <img src="lovato.png" alt="Lovato Electric" class="w-24 h-16 object-contain">
+        <img src="autonics.png" alt="Autonics" class="w-24 h-16 object-contain">
+        <img src="fluke.png" alt="Fluke" class="w-24 h-16 object-contain">
+        <img src="delta.png" alt="Delta" class="w-24 h-16 object-contain">
+        <img src="logoo.png" alt="AMRUT" class="w-24 h-16 object-contain">
+        <img src="seltech.png" alt="Seltech" class="w-24 h-16 object-contain">
+    </div>
+</div>
+
+<footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-40 md:hidden"></div>
 
@@ -237,7 +374,7 @@
             const dashboardDate = document.getElementById('dashboard-date');
             
             // Initial load to show the Home content
-           
+           loadHome();
             
             // Set initial date
             const today = new Date();
@@ -247,23 +384,55 @@
             sidebarDate.value = todayISO;
 
             // Loaders
-            function loadHome(event) {
-                if (event) event.preventDefault();
-               
-                mainContent.innerHTML = `
-                    <div id="home-content">
-                        <img src="heading.jpg" alt="Company Logo" class="w-full max-w-4xl h-auto aspect-video object-cover rounded-xl shadow-lg mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/800x380/e5e7eb/6b7280?text=Indcare+Africa+Dashboard';">
-                        <div>
-                            <h2>Welcome to the Dashboard</h2>
-                            <p>Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you’re a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-                            <p>Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-                            <p>Take a moment to explore, and don’t miss the <strong>Event Calendar</strong> for a preview of what’s ahead. If you’re new, the sidebar is a great place to start.</p>
-                            <p>We’re building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-                        </div>
-                    </div>
-                `;
-                setActiveLink(quickLinks[0]);
-            }
+           function loadHome(event) {
+    if (event) event.preventDefault();
+
+    const mainContent = document.getElementById("main-content");
+
+    mainContent.innerHTML = `
+        <div class="max-w-4xl mx-auto mb-8 relative">
+            <div class="slideshow-container w-full relative">
+                <div class="mySlides fade">
+                    <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="slide 2.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="slide 3 new.jpg" alt="Slide 3" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="WhatsApp Image 2025-08-01 at 08.27.59 (3).jpeg" alt="Slide 4" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="drinking water.jpg" alt="Slide 5" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+
+                <a class="prev cursor-pointer absolute top-1/2 -translate-y-1/2 left-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-l-lg transition-all" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <div class="text-center mt-4">
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(4)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+
+        <div id="home-content" class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+            <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+        </div>
+    `;
+
+    // restart slideshow after injecting
+    showSlides(slideIndex = 1);
+}
 
             function loadAbout(event) {
                 if (event) event.preventDefault();
@@ -321,6 +490,8 @@
                     { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
                     { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
                     { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
+                   { date: '21–23 September 2025', name: 'Tasty Arica Expo 2025', venue: 'KICC, Nairobi' },
+                  
                     { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
                      { date: '29–5 October 2025', name: 'The Nairobi International Trade Fair (Nairobi Show)', venue: 'Jamhuri Park, Nairobi' },
                      { date: '1–3 October 2025', name: 'The Magical Kenya Travel Expo (MKTE) Tourism Capital', venue: 'Uhuru Grounds, Nairobi' },
@@ -563,6 +734,7 @@
             });
 
             // Make the load functions globally accessible for the `onclick` attributes
+            document.addEventListener("DOMContentLoaded", loadHome);
             window.loadHome = loadHome;
             window.loadNews = loadNews;
             window.loadTechnologyToday = loadTechnologyToday;
@@ -574,6 +746,28 @@
             window.loadHelp = loadHelp;
             window.loadAbout = loadAbout;
         });
+
+
+let eventSlideIndex = 0;
+function showEventSlides() {
+    let slides = document.getElementsByClassName("mySlides-event");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    eventSlideIndex++;
+    if (eventSlideIndex > slides.length) {eventSlideIndex = 1}    
+    slides[eventSlideIndex-1].style.display = "block";  
+    setTimeout(showEventSlides, 3000); // 3 seconds per slide
+}
+document.addEventListener("DOMContentLoaded", showEventSlides);
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
