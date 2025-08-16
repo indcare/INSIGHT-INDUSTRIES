@@ -98,29 +98,25 @@
                 <h2 class="text-xl font-bold">Indcare Africa</h2>
                 <button id="close-left-sidebar" aria-label="Close left sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
             </div>
-            <div class="hidden md:block">
-                <h2 class="text-xl font-bold mb-4">WELCOME</h2>
-            </div>
+       
             
             <div class="mb-6">
                 <strong>Date:</strong> 
                 <input type="date" id="sidebar-date-picker" class="ml-2 px-2 py-1 text-gray-900 rounded-md">
             </div>
-            
             <div class="quick-links">
-                <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-                <a href="#" onclick="loadHome(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Home</a>
-                <a href="#" onclick="loadNews(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Latest News</a>
-                <a href="#" onclick="loadTechnologyToday(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Technology Today</a>
-                <a href="engineering-library.html" target="_blank" rel="noopener" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Engineering Library</a>
-                
-                <a href="#" onclick="loadBusinessIdeas(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Business Ideas</a>
-                <a href="#" onclick="loadServiceProvided(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Service Provided</a>
-                <a href="#" onclick="loadPhotoGallery(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Photo Gallery</a>
-                <a href="#" onclick="loadVideoGallery(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Video Gallery</a>
-                <a href="#" onclick="loadHelp(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Help</a>
-                <a href="#" onclick="loadAbout(event)" class="block bg-black/50 hover:bg-black/70 rounded-md p-3 mb-2 transition-colors duration-200 font-medium">About</a>
-            </div>
+    <h3 class="text-lg font-semibold mb-2"></h3>
+    <a href="#" onclick="loadHome(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Home</a>
+    <a href="#" onclick="loadNews(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Latest News</a>
+    <a href="#" onclick="loadTechnologyToday(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Technology Today</a>
+    <a href="engineering-library.html" target="_blank" rel="noopener" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Engineering Library</a>
+    <a href="#" onclick="loadBusinessIdeas(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Business Ideas</a>
+    <a href="#" onclick="loadServiceProvided(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Service Provided</a>
+    <a href="#" onclick="loadPhotoGallery(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Photo Gallery</a>
+    <a href="#" onclick="loadVideoGallery(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Video Gallery</a>
+    <a href="#" onclick="loadHelp(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Help</a>
+    <a href="#" onclick="loadAbout(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">About</a>
+</div>
 
         </aside>
         
@@ -219,7 +215,9 @@
             </div>
 
             <div class="mb-6 relative z-10">
-                <h3 class="text-lg font-semibold mb-4 relative z-20">UPCOMING EVENTS</h3>
+              <div class="bg-blue-600 p-4 rounded-t-lg relative z-20">
+    <h3 class="text-lg font-semibold text-white">UPCOMING EVENTS</h3>
+</div>
                 <div class="event-slideshow-container relative w-full h-64 z-10">
                     <div class="mySlides-event fade-event absolute w-full h-full">
                         <img src="event 1.jpeg" alt="Event Photo 1" class="w-full h-full object-contain rounded-lg">
@@ -236,18 +234,21 @@
                     <div class="mySlides-event fade-event absolute w-full h-full hidden">
                         <img src="expo 5.jpeg" alt="Event Photo 5" class="w-full h-full object-contain rounded-lg">
                     </div>
+                      <div class="mySlides-event fade-event absolute w-full h-full hidden">
+                        <img src="picute.jpg" alt="Event Photo 5" class="w-full h-full object-contain rounded-lg">
+                    </div>
                 </div>
             </div>
 
-            <h3 class="text-lg font-semibold mt-8 mb-4">SEE MORE EVENTS</h3>
-            <nav class="space-y-2 mb-6 quick-links">
-                <a href="#" onclick="loadEvents(event)" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                    </svg>
-                    Events Calendar
-                </a>
-            </nav>
+           <h3 class="text-lg font-semibold mt-8 mb-4">SEE MORE EVENTS</h3>
+<nav class="space-y-2 mb-6 quick-links">
+    <a href="#" onclick="loadEvents(event)" class="flex items-center p-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+        </svg>
+        Events Calendar
+    </a>
+</nav>
 
             <h3 class="text-lg font-semibold mt-8 mb-4">Our Clients</h3>
             <div class="client-logos flex flex-wrap gap-2">
@@ -293,14 +294,22 @@
     <div class="text-center mb-6">
         <h3 class="text-2xl font-bold text-gray-800">Our Associates</h3>
     </div>
-    <div class="associate-logos flex flex-wrap justify-center items-center gap-4">
-        <img src="rex.png" alt="Rexnord" class="w-24 h-16 object-contain">
-        <img src="lovato.png" alt="Lovato Electric" class="w-24 h-16 object-contain">
-        <img src="autonics.png" alt="Autonics" class="w-24 h-16 object-contain">
-        <img src="fluke.png" alt="Fluke" class="w-24 h-16 object-contain">
-        <img src="delta.png" alt="Delta" class="w-24 h-16 object-contain">
-        <img src="logoo.png" alt="AMRUT" class="w-24 h-16 object-contain">
-        <img src="seltech.png" alt="Seltech" class="w-24 h-16 object-contain">
+    <div class="associate-logos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center">
+         <img src="logoo.png" alt="AMRUT" class="w-full h-16 object-contain">
+         <img src="indcare nrw.png" alt="AMRUT" class="w-full h-16 object-contain">
+           <img src="blue h20.png" alt="Blue H20" class="w-full h-16 object-contain">
+             <img src="tata.png" alt="Tata" class="w-full h-16 object-contain">
+        <img src="rex.png" alt="Rexnord" class="w-full h-16 object-contain">
+        <img src="lovato.png" alt="Lovato Electric" class="w-full h-16 object-contain">
+        <img src="autonics.png" alt="Autonics" class="w-full h-16 object-contain">
+        <img src="fluke.png" alt="Fluke" class="w-full h-16 object-contain">
+        <img src="delta.png" alt="Delta" class="w-full h-16 object-contain">
+      
+        <img src="seltech.png" alt="Seltech" class="w-full h-16 object-contain">
+        <img src="Kenya Homes.jpg" alt="Kenya Homes" class="w-full h-16 object-contain">
+      
+        <img src="rtex.png" alt="Rtex" class="w-full h-16 object-contain">
+      
     </div>
 </div>
 
@@ -469,134 +478,132 @@
                     </div>
                 `;
             }
+function loadEvents(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    
+    const allEvents = [
+        { date: '16–18 July 2025', name: 'Water Africa Expo', venue: 'KICC, Nairobi' },
+        { date: '29–31 July 2025', name: 'Dairy Tech Africa Exhibition', venue: 'KICC, Nairobi' },
+        { date: '5–7 August 2025', name: 'Regions International Industrial Tools and Hardware Trade Exhibiiton', venue: 'Tanzania' },
+        { date: '12–14 August 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
+    
+        { date: '19–21 August 2025', name: 'EAC Global Connect Summit and Expo 2025 ', venue: 'KICC, Nairobi' },
+        { date: '21–23 August 2025', name: 'Gourav Global Group', venue: 'Sarit Expo Centre, Nairobi' },
+        { date: '21–23 August 2025', name: 'Grains Africa and Agro Food 2025', venue: 'Sarit Expo Centre' },
+        { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
+        { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
+        { date: '27–31 August 2025', name: 'Homes & Gardens Expo 2025', venue: 'Sarit Expo Centre' },
+        { date: '4–6 September 2025', name: 'Engineering Expo by China', venue: 'Sarit Centre' },
+        { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
+        { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
+       { date: '21–23 September 2025', name: 'Tasty Arica Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
+         { date: '29–5 October 2025', name: 'The Nairobi International Trade Fair (Nairobi Show)', venue: 'Jamhuri Park, Nairobi' },
+         { date: '1–3 October 2025', name: 'The Magical Kenya Travel Expo (MKTE) Tourism Capital', venue: 'Uhuru Grounds, Nairobi' },
+        { date: '6–8 October 2025', name: 'Medic East Africa Expo', venue: 'KICC, Nairobi' },
+        { date: '10–12 October 2025', name: 'Sharia Compliance and Halal Business Expo 2025', venue: 'BBS Mall Eastleigh, Nairobi' },     
+        { date: '23–26 October 2025', name: 'Kenya Homes Expo', venue: 'KICC, Nairobi' },
+        { date: '28–31 October 2025', name: 'Agri Expo', venue: 'KICC, Nairobi' },
+        { date: '4–8 November 2025', name: 'Changamka Festival', venue: 'KICC, Nairobi' },
+        { date: '5–7 November 2025', name: 'The Big 5 Construct Kenya 2025', venue: 'Sarit Expo Centre' },
+        { date: '17–20 November 2025', name: 'PRO-Expo', venue: 'KICC, Nairobi' },
+        { date: '18–20 November 2025', name: 'KHE – Kenyan Hospitality Event 2025', venue: 'Sarit Expo Centre' },
+        { date: '2–4 December 2025', name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators', venue: 'KICC, Nairobi' },
+        { date: '16–17 December 2025', name: 'Kenya Water Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '3–5 March 2026', name: 'Print East Africa 2026', venue: 'Sarit Expo Centre' },
+        { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' }
+    ];
 
-            function loadEvents(event) {
-                if (event) event.preventDefault();
-                setActiveLink(event.target);
-                
-                const allEvents = [
-                    { date: '16–18 July 2025', name: 'Water Africa Expo', venue: 'KICC, Nairobi' },
-                    { date: '29–31 July 2025', name: 'Dairy Tech Africa Exhibition', venue: 'KICC, Nairobi' },
-                    { date: '5–7 August 2025', name: 'Regions International Industrial Tools and Hardware Trade Exhibiiton', venue: 'Tanzania' },
-                    { date: '12–14 August 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
-              
-                    { date: '19–21 August 2025', name: 'EAC Global Connect Summit and Expo 2025 ', venue: 'KICC, Nairobi' },
-                    { date: '21–23 August 2025', name: 'Gourav Global Group', venue: 'Sarit Expo Centre, Nairobi' },
-                    { date: '21–23 August 2025', name: 'Grains Africa and Agro Food 2025', venue: 'Sarit Expo Centre' },
-                    { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
-                    { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
-                    { date: '27–31 August 2025', name: 'Homes & Gardens Expo 2025', venue: 'Sarit Expo Centre' },
-                    { date: '4–6 September 2025', name: 'Engineering Expo by China', venue: 'Sarit Centre' },
-                    { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
-                    { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
-                    { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
-                   { date: '21–23 September 2025', name: 'Tasty Arica Expo 2025', venue: 'KICC, Nairobi' },
-                  
-                    { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
-                     { date: '29–5 October 2025', name: 'The Nairobi International Trade Fair (Nairobi Show)', venue: 'Jamhuri Park, Nairobi' },
-                     { date: '1–3 October 2025', name: 'The Magical Kenya Travel Expo (MKTE) Tourism Capital', venue: 'Uhuru Grounds, Nairobi' },
-                
-                     { date: '6–8 October 2025', name: 'Medic East Africa Expo', venue: 'KICC, Nairobi' },
-                    { date: '10–12 October 2025', name: 'Sharia Compliance and Halal Business Expo 2025', venue: 'BBS Mall Eastleigh, Nairobi' },
-                   
-                    { date: '23–26 October 2025', name: 'Kenya Homes Expo', venue: 'KICC, Nairobi' },
-                    { date: '28–31 October 2025', name: 'Agri Expo', venue: 'KICC, Nairobi' },
-                    { date: '4–8 November 2025', name: 'Changamka Festival', venue: 'KICC, Nairobi' },
-                    { date: '5–7 November 2025', name: 'The Big 5 Construct Kenya 2025', venue: 'Sarit Expo Centre' },
-                    { date: '17–20 November 2025', name: 'PRO-Expo', venue: 'KICC, Nairobi' },
-                    { date: '18–20 November 2025', name: 'KHE – Kenyan Hospitality Event 2025', venue: 'Sarit Expo Centre' },
-                    { date: '2–4 December 2025', name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators', venue: 'KICC, Nairobi' },
-                    { date: '16–17 December 2025', name: 'Kenya Water Expo 2025', venue: 'KICC, Nairobi' },
-                    { date: '3–5 March 2026', name: 'Print East Africa 2026', venue: 'Sarit Expo Centre' },
-                    { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' }
-                ];
-            
-                // Helper function to extract the start date for sorting and comparison
-                const getStartDate = (dateString) => {
-                    const months = { 'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5, 'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11 };
-                    const parts = dateString.split(' ');
-                    const dayPart = parts[0].split('–').pop();
-                    const month = months[parts[1]];
-                    const year = parseInt(parts[2]);
-                    const day = parseInt(dayPart);
-                    return new Date(year, month, day);
-                };
-                
-                // Sort all events chronologically
-                allEvents.sort((a, b) => getStartDate(a.date) - getStartDate(b.date));
-            
-                const today = new Date();
-                const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
-                const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
-            
-                let htmlContent = `
-                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-                        <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
-                        <p class="text-lg text-center text-gray-600 mb-8">
-                            Stay updated with the latest events and exhibitions.
-                        </p>
-                `;
-            
-                if (upcomingEvents.length > 0) {
-                    htmlContent += `
-                        <div class="mb-10">
-                            <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
-                            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                                <table class="min-w-full table-auto border-collapse">
-                                    <thead class="bg-blue-600 text-white">
-                                        <tr>
-                                            <th class="p-4 text-left">Date</th>
-                                            <th class="p-4 text-left">Event</th>
-                                            <th class="p-4 text-left">Venue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        ${upcomingEvents.map((event, index) => `
-                                            <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
-                                                <td class="p-4 border-t border-gray-200">${event.date}</td>
-                                                <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
-                                                <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
-                                            </tr>
-                                        `).join('')}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    `;
-                }
-            
-                if (pastEvents.length > 0) {
-                    htmlContent += `
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
-                            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                                <table class="min-w-full table-auto border-collapse">
-                                    <thead class="bg-gray-200 text-gray-700">
-                                        <tr>
-                                            <th class="p-4 text-left">Date</th>
-                                            <th class="p-4 text-left">Event</th>
-                                            <th class="p-4 text-left">Venue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        ${pastEvents.map((event, index) => `
-                                            <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
-                                                <td class="p-4 border-t border-gray-200">${event.date}</td>
-                                                <td class="p-4 border-t border-gray-200">${event.name}</td>
-                                                <td class="p-4 border-t border-gray-200">${event.venue}</td>
-                                            </tr>
-                                        `).join('')}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    `;
-                }
-            
-                htmlContent += `</div>`;
-                mainContent.innerHTML = htmlContent;
-            }
+    // Helper function to extract the start date for sorting and comparison
+    const getStartDate = (dateString) => {
+        const months = { 'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5, 'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11 };
+        const parts = dateString.split(' ');
+        const dayPart = parts[0].split('–').pop();
+        const month = months[parts[1]];
+        const year = parseInt(parts[2]);
+        const day = parseInt(dayPart);
+        return new Date(year, month, day);
+    };
+    
+    // Sort all events chronologically
+    allEvents.sort((a, b) => getStartDate(a.date) - getStartDate(b.date));
 
+    const today = new Date();
+    const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
+    const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
+
+    let htmlContent = `
+      <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+    <div class="mb-8 overflow-hidden rounded-xl shadow-lg" style="aspect-ratio: 16 / 9;">
+        <img src="heading.jpg" alt="Exhibition calendar" class="w-full h-full object-cover">
+    </div>
+    <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
+    <p class="text-lg text-center text-gray-600 mb-8">
+        Stay updated with the latest events and exhibitions.
+    </p>
+    `;
+
+    if (upcomingEvents.length > 0) {
+        htmlContent += `
+            <div class="mb-10">
+               <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
+                <div class="bg-white shadow-lg rounded-b-lg overflow-hidden">
+                    <table class="min-w-full table-auto border-collapse">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="p-4 text-left">Date</th>
+                                <th class="p-4 text-left">Event</th>
+                                <th class="p-4 text-left">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${upcomingEvents.map((event, index) => `
+                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
+                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                    <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
+                                    <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+    }
+
+    if (pastEvents.length > 0) {
+        htmlContent += `
+            <div>
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <table class="min-w-full table-auto border-collapse">
+                        <thead class="bg-gray-200 text-gray-700">
+                            <tr>
+                                <th class="p-4 text-left">Date</th>
+                                <th class="p-4 text-left">Event</th>
+                                <th class="p-4 text-left">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${pastEvents.map((event, index) => `
+                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
+                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                    <td class="p-4 border-t border-gray-200">${event.name}</td>
+                                    <td class="p-4 border-t border-gray-200">${event.venue}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+    }
+
+    htmlContent += `</div>`;
+    mainContent.innerHTML = htmlContent;
+}
             function loadBusinessIdeas(event) {
                 if (event) event.preventDefault();
                 setActiveLink(event.target);
@@ -760,12 +767,6 @@ function showEventSlides() {
     setTimeout(showEventSlides, 3000); // 3 seconds per slide
 }
 document.addEventListener("DOMContentLoaded", showEventSlides);
-
-
-
-
-
-
 
 
     </script>
