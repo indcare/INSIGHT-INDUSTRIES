@@ -479,42 +479,70 @@
                 `;
             }
 function loadEvents(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    
+    const allEvents = [
+        { date: '16–18 July 2025', name: 'Water Africa Expo', venue: 'KICC, Nairobi' },
+        { date: '29–31 July 2025', name: 'Dairy Tech Africa Exhibition', venue: 'KICC, Nairobi' },
+        { date: '5–7 August 2025', name: 'Regions International Industrial Tools and Hardware Trade Exhibiiton', venue: 'Tanzania' },
+        { date: '12–14 August 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
+    
+        { date: '19–21 August 2025', name: 'EAC Global Connect Summit and Expo 2025 ', venue: 'KICC, Nairobi' },
+        { date: '21–23 August 2025', name: 'Gourav Global Group', venue: 'Sarit Expo Centre, Nairobi' },
+        { date: '21–23 August 2025', name: 'Grains Africa and Agro Food 2025', venue: 'Sarit Expo Centre' },
+        { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
+        { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
+        { date: '26–27 August 2025', name: 'Solar and Storage Live Kenya', venue: 'KICC, Nairobi' },
+        { date: '27–31 August 2025', name: 'Homes & Gardens Expo 2025', venue: 'Sarit Expo Centre' },
+        { date: '3–5 September 2025', name: 'All Things Lab and Testing ', venue: 'KICC, Nairobi' },
+        { date: '4–6 September 2025', name: 'Engineering Expo by China', venue: 'Sarit Centre' },
+        { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
+        { date: '11 September 2025', name: 'Med Tour Health Expo', venue: 'KICC, Nairobi' },  
+        { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '16–17 September 2025', name: 'East Africa Lab Expo', venue: 'KICC, Nairobi' },
+        { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
+        { date: '21–23 September 2025', name: 'Tasty Arica Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
+        { date: '29–30 September 2025', name: 'Africa Travel Tech Summit & Expo', venue: 'Argyle Grand Hotel, Nairobi' },
+        { date: '29 Sept–5 October 2025', name: 'The Nairobi International Trade Fair (Nairobi Show)', venue: 'Jamhuri Park, Nairobi' },
+        { date: '1–2 October 2025', name: ' Pharma Futures 2025', venue: 'Sarit Centre' },
+        { date: '1–3 October 2025', name: 'The Magical Kenya Travel Expo (MKTE) Tourism Capital', venue: 'Uhuru Grounds, Nairobi' },
+        { date: '6–8 October 2025', name: 'Medic East Africa Expo', venue: 'KICC, Nairobi' },
+        { date: '10–12 October 2025', name: 'Sharia Compliance and Halal Business Expo 2025', venue: 'BBS Mall Eastleigh, Nairobi' },     
+        { date: '23–26 October 2025', name: 'Kenya Homes Expo', venue: 'KICC, Nairobi' },
+        { date: '26–28 October 2025', name: 'Kenya Trade Expo', venue: 'KICC, Nairobi' },  
+        { date: '28–31 October 2025', name: 'Agri Expo', venue: 'KICC, Nairobi' },
+        { date: '4–8 November 2025', name: 'Changamka Festival', venue: 'KICC, Nairobi' },
+        { date: '5–7 November 2025', name: 'The Big 5 Construct Kenya 2025', venue: 'Sarit Expo Centre' },
+        { date: '11–13 November 2025', name: 'Powerelec Kenya', venue: 'Sarit Expo Centre'  },
+        { date: '14–16 November 2025', name: 'Kenya Food & Drink Expo ', venue: 'Sarit Expo Centre'  },
+        { date: '17–20 November 2025', name: 'PRO-Expo', venue: 'KICC, Nairobi' },
+        { date: '18–20 November 2025', name: 'KHE – Kenyan Hospitality Event 2025', venue: 'Sarit Expo Centre' },
+        { date: '2–4 December 2025', name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators', venue: 'KICC, Nairobi' },
+        { date: '5–7 December 2025', name: 'Kenya Clean Expo', venue: 'Sarit Expo Centre'  },
+        { date: '16–17 December 2025', name: 'Kenya Water Expo 2025', venue: 'KICC, Nairobi' },
+        { date: '5–7 February 2026', name: 'Kenya International Trade Show (KITS)', venue: 'Sarit Expo Centre'  },
+        { date: '11–12 February 2026', name: 'Africa Agri Expo', venue: 'KICC, Nairobi' },
+        { date: '3–5 March 2026', name: 'Print East Africa 2026', venue: 'Sarit Expo Centre' },
+        { date: 'April 2026', name: 'Trade and Finance Summit', venue: 'KICC, Nairobi' },
+        { date: '30 April 2026', name: 'East Africa Textile and Leather ', venue: 'Sarit Expo Centre' },
+        { date: ' May 2026', name: 'Kenya Pharma and Health Care Expo ', venue: 'Sarit Expo Centre' },
+        { date: ' May 2026', name: 'AfriLab East Africa ', venue: 'Sarit Expo Centre' },
+        { date: ' 12-14 May 2026', name: 'DentExpo ', venue: 'Sarit Expo Centre' },
+        { date: ' May 2026', name: 'MedExpo ', venue: 'Sarit Expo Centre' },
+        { date: 'May 2026', name: 'East Africa Oil & Gas Kenya ', venue: 'KICC, Nairobi' },
+        { date: ' May 2026', name: 'AutoExpo', venue: 'KICC, Nairobi' },
+        { date: '15-17 May 2026', name: 'Beauty Kenya', venue: 'Sarit Expo Centre' },
+        { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' },
+        { date: 'June 2026', name: 'Power and Energy Africa ', venue: 'KICC, Nairobi' },
+        { date: 'June 2026', name: 'Kenya Solar Expo', venue: 'KICC, Nairobi' },
+        { date: 'June 2026', name: 'Dairy, Livestock & Poultry Expo',venue: 'KICC, Nairobi'},
+        { date: ' 8-9 June 2026', name: 'AgriTech Africa',venue: 'KICC, Nairobi'},
+        { date: 'June 2026', name: 'Kenya BuildCon International Expo',venue: 'Sarit Expo Centre'}
+    ];
+        
     
-    const allEvents = [
-        { date: '16–18 July 2025', name: 'Water Africa Expo', venue: 'KICC, Nairobi' },
-        { date: '29–31 July 2025', name: 'Dairy Tech Africa Exhibition', venue: 'KICC, Nairobi' },
-        { date: '5–7 August 2025', name: 'Regions International Industrial Tools and Hardware Trade Exhibiiton', venue: 'Tanzania' },
-        { date: '12–14 August 2025', name: 'Daily Tech Africa Exhibition', venue: 'KICC, Nairobi' },
-    
-        { date: '19–21 August 2025', name: 'EAC Global Connect Summit and Expo 2025 ', venue: 'KICC, Nairobi' },
-        { date: '21–23 August 2025', name: 'Gourav Global Group', venue: 'Sarit Expo Centre, Nairobi' },
-        { date: '21–23 August 2025', name: 'Grains Africa and Agro Food 2025', venue: 'Sarit Expo Centre' },
-        { date: '21–23 August 2025', name: 'Paper & Tissue Africa 2025', venue: 'Sarit Expo Centre' },
-        { date: '21–23 August 2025', name: '9th Interplast Pack East Africa 2025', venue: 'Sarit Expo Centre' },
-        { date: '27–31 August 2025', name: 'Homes & Gardens Expo 2025', venue: 'Sarit Expo Centre' },
-        { date: '4–6 September 2025', name: 'Engineering Expo by China', venue: 'Sarit Centre' },
-        { date: '9–11 September 2025', name: 'International Tower Exchange Conference & Expo (ITW 2025) / Africa MICE Summit 2025', venue: 'KICC, Nairobi' },
-        { date: '16–17 September 2025', name: 'Africa Pharma Expo 2025', venue: 'KICC, Nairobi' },
-        { date: '19–20 September 2025', name: 'Naivasha Horticultural Fair', venue: 'Naivasha Showgrounds' },
-       { date: '21–23 September 2025', name: 'Tasty Arica Expo 2025', venue: 'KICC, Nairobi' },
-        { date: '23–27 September 2025', name: '30th Colloquium of African Genealogy Conference', venue: 'KICC, Nairobi' },
-         { date: '29–5 October 2025', name: 'The Nairobi International Trade Fair (Nairobi Show)', venue: 'Jamhuri Park, Nairobi' },
-         { date: '1–3 October 2025', name: 'The Magical Kenya Travel Expo (MKTE) Tourism Capital', venue: 'Uhuru Grounds, Nairobi' },
-        { date: '6–8 October 2025', name: 'Medic East Africa Expo', venue: 'KICC, Nairobi' },
-        { date: '10–12 October 2025', name: 'Sharia Compliance and Halal Business Expo 2025', venue: 'BBS Mall Eastleigh, Nairobi' },     
-        { date: '23–26 October 2025', name: 'Kenya Homes Expo', venue: 'KICC, Nairobi' },
-        { date: '28–31 October 2025', name: 'Agri Expo', venue: 'KICC, Nairobi' },
-        { date: '4–8 November 2025', name: 'Changamka Festival', venue: 'KICC, Nairobi' },
-        { date: '5–7 November 2025', name: 'The Big 5 Construct Kenya 2025', venue: 'Sarit Expo Centre' },
-        { date: '17–20 November 2025', name: 'PRO-Expo', venue: 'KICC, Nairobi' },
-        { date: '18–20 November 2025', name: 'KHE – Kenyan Hospitality Event 2025', venue: 'Sarit Expo Centre' },
-        { date: '2–4 December 2025', name: 'ISEEE – International Sourcing Exposition for Elevators & Escalators', venue: 'KICC, Nairobi' },
-        { date: '16–17 December 2025', name: 'Kenya Water Expo 2025', venue: 'KICC, Nairobi' },
-        { date: '3–5 March 2026', name: 'Print East Africa 2026', venue: 'Sarit Expo Centre' },
-        { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' }
-    ];
 
     // Helper function to extract the start date for sorting and comparison
     const getStartDate = (dateString) => {
