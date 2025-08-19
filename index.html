@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/png" href="favicon.png"> <title>INSIGHTS INDUSTRIES</title>
+   <link rel="icon" type="image/png" href="favicon.png"> <title>INSIGHT INDUSTRIES</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,7 +112,7 @@
     <div class="flex">
         <aside id="sidebar-left" class="transform -translate-x-full fixed top-0 left-0 h-full w-3/4 md:w-80 md:relative md:transform-none bg-[#87CEEB] text-white p-6 shadow-xl transition-transform duration-300 ease-in-out z-50 overflow-y-auto sidebar md:min-h-screen">
             <div class="flex justify-between items-center mb-6 md:hidden">
-                <h2 class="text-xl font-bold">Indcare Africa</h2>
+              
                 <button id="close-left-sidebar" aria-label="Close left sidebar" class="text-white text-3xl font-light leading-none">&times;</button>
             </div>
        
@@ -390,6 +390,27 @@
     </footer>
     
     <script>
+
+// Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+    
+    // Set it as default in the date picker
+    document.getElementById("sidebar-date-picker").value = today;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Use a single, consolidated script block to avoid conflicts and improve performance.
         document.addEventListener('DOMContentLoaded', () => {
             const sidebarLeft = document.getElementById('sidebar-left');
