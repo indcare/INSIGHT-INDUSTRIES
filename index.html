@@ -390,13 +390,11 @@
     </footer>
     
     <script>
-
-// Get today's date in YYYY-MM-DD format
-    const today = new Date().toISOString().split('T')[0];
-    
-    // Set it as default in the date picker
-    document.getElementById("sidebar-date-picker").value = today;
-
+  // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+    
+    // Set it as default in the date picker
+    document.getElementById("sidebar-date-picker").value = today;
 
 
 
@@ -411,180 +409,183 @@
 
 
 
-        // Use a single, consolidated script block to avoid conflicts and improve performance.
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebarLeft = document.getElementById('sidebar-left');
-            const sidebarRight = document.getElementById('sidebar-right');
-            const overlay = document.getElementById('overlay');
-            const mainContent = document.getElementById('main-content');
-            const quickLinks = document.querySelectorAll('.quick-links a');
-            const sidebarDate = document.getElementById('sidebar-date-picker');
-            const dashboardDate = document.getElementById('dashboard-date');
-            
-            // Initial load to show the Home content
-           loadHome();
-            
-            // Set initial date
-            const today = new Date();
-            const todayFormatted = today.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-            dashboardDate.innerText = todayFormatted;
-            const todayISO = today.toISOString().split('T')[0];
-            sidebarDate.value = todayISO;
 
-            // Loaders
-           function loadHome(event) {
-    if (event) event.preventDefault();
+        // Use a single, consolidated script block to avoid conflicts and improve performance.
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLeft = document.getElementById('sidebar-left');
+            const sidebarRight = document.getElementById('sidebar-right');
+            const overlay = document.getElementById('overlay');
+            const mainContent = document.getElementById('main-content');
+            const sidebarDate = document.getElementById('sidebar-date-picker');
+            
+            // Initial load to show the Home content
+           loadHome();
+            
+            // Set initial date
+            const today = new Date();
+            const todayFormatted = today.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+            const todayISO = today.toISOString().split('T')[0];
+            sidebarDate.value = todayISO;
 
-    const mainContent = document.getElementById("main-content");
+            // Loaders
+           function loadHome(event) {
+    if (event) event.preventDefault();
 
-    mainContent.innerHTML = `
-        <div class="max-w-4xl mx-auto mb-8 relative">
-            <div class="slideshow-container w-full relative">
-                <div class="mySlides fade">
-                    <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
-                </div>
-                <div class="mySlides fade">
-                    <img src="slide 2.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
-                </div>
-                <div class="mySlides fade">
-                    <img src="slide 3 new.jpg" alt="Slide 3" class="w-full object-cover rounded-xl shadow-lg aspect-video">
-                </div>
-                <div class="mySlides fade">
-                    <img src="WhatsApp Image 2025-08-01 at 08.27.59 (3).jpeg" alt="Slide 4" class="w-full object-cover rounded-xl shadow-lg aspect-video">
-                </div>
-                <div class="mySlides fade">
-                    <img src="drinking water.jpg" alt="Slide 5" class="w-full object-cover rounded-xl shadow-lg aspect-video">
-                </div>
+    const mainContent = document.getElementById("main-content");
+    const quickLinks = document.querySelectorAll('.quick-links a');
+    
+    setActiveLink(quickLinks[0]);
 
-                <a class="prev cursor-pointer absolute top-1/2 -translate-y-1/2 left-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-l-lg transition-all" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+    mainContent.innerHTML = `
+        <div class="max-w-4xl mx-auto mb-8 relative">
+            <div class="slideshow-container w-full relative">
+                <div class="mySlides fade">
+                    <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="slide 2.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="slide 3 new.jpg" alt="Slide 3" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="WhatsApp Image 2025-08-01 at 08.27.59 (3).jpeg" alt="Slide 4" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
+                <div class="mySlides fade">
+                    <img src="drinking water.jpg" alt="Slide 5" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                </div>
 
-            <div class="text-center mt-4">
-                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
-                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
-                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
-                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(4)"></span>
-                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(5)"></span>
-            </div>
-        </div>
+                <a class="prev cursor-pointer absolute top-1/2 -translate-y-1/2 left-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-l-lg transition-all" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
+            </div>
 
-        <div id="home-content" class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
-            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
-            <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-        </div>
-    `;
+            <div class="text-center mt-4">
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(4)"></span>
+                <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
 
-    // restart slideshow after injecting
-    showSlides(slideIndex = 1);
+        <div id="home-content" class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+            <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+        </div>
+    `;
+
+    // restart slideshow after injecting
+    showSlides(slideIndex = 1);
 }
 
-           function loadAbout(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
-    mainContent.innerHTML = `
-        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-            <h2 class="text-2xl font-bold mb-4">ABOUT US </h2>
-            
-            <p class="mb-4">
-                Indcare Africa is dedicated to providing 
-                sustainable water treatment, filtration, and smart water conditioning solutions across Africa 
-                and beyond. With a focus on innovation, we combine proven technology with modern automation 
-                and IoT applications to deliver efficient, chemical-free, and maintenance-free solutions.
-            </p>
-            
-            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Mission </h4>
-            <p class="mb-4">
-                To empower industries, communities, and households with clean water solutions 
-                that are affordable, reliable, and environmentally friendly.
-            </p>
-            
-            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Vision </h4>
-            <p class="mb-4">
-                To be a leading force in Africa’s water technology transformation, 
-                setting new benchmarks in smart filtration, industrial spares supply, 
-                and sustainable water management.
-            </p>
-            
-        
-            
-            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Team</h4>
-            <p>
-                Our team is made up of engineers, innovators, and customer-focused professionals 
-                who work closely with clients to understand their challenges and provide 
-                the most effective solutions.
-            </p>
-        </div>
-    `;
+           function loadAbout(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    mainContent.innerHTML = `
+        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+            <h2 class="text-2xl font-bold mb-4">ABOUT US </h2>
+            
+            <p class="mb-4">
+                Indcare Africa is dedicated to providing 
+                sustainable water treatment, filtration, and smart water conditioning solutions across Africa 
+                and beyond. With a focus on innovation, we combine proven technology with modern automation 
+                and IoT applications to deliver efficient, chemical-free, and maintenance-free solutions.
+            </p>
+            
+            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Mission </h4>
+            <p class="mb-4">
+                To empower industries, communities, and households with clean water solutions 
+                that are affordable, reliable, and environmentally friendly.
+            </p>
+            
+            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Vision </h4>
+            <p class="mb-4">
+                To be a leading force in Africa’s water technology transformation, 
+                setting new benchmarks in smart filtration, industrial spares supply, 
+                and sustainable water management.
+            </p>
+            
+        
+            
+            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Team</h4>
+            <p>
+                Our team is made up of engineers, innovators, and customer-focused professionals 
+                who work closely with clients to understand their challenges and provide 
+                the most effective solutions.
+            </p>
+        </div>
+    `;
 }
 
 
-            function loadNews(event) {
-                if (event) event.preventDefault();
-                setActiveLink(event.target);
-                mainContent.innerHTML = `
-                    <div class="prose max-w-4xl mx-auto text-center py-20">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 002 2h2m-7.6-4.4l-9-9m0 0l-1 1m1-1l-1 1M14 14l-5-5m5 5l1 1m-1-1l1 1"/>
-                        </svg>
-                        <h2 class="text-3xl font-bold mb-4">Latest News</h2>
-                        <p class="text-gray-600">Our news feed is coming soon. Check back for the latest updates on our products, services, and industry insights.</p>
-                    </div>
-                `;
-            }
+            function loadNews(event) {
+                if (event) event.preventDefault();
+                setActiveLink(event.target);
+                mainContent.innerHTML = `
+                    <div class="prose max-w-4xl mx-auto text-center py-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 002 2h2m-7.6-4.4l-9-9m0 0l-1 1m1-1l-1 1M14 14l-5-5m5 5l1 1m-1-1l1 1"/>
+                        </svg>
+                        <h2 class="text-3xl font-bold mb-4">Latest News</h2>
+                        <p class="text-gray-600">Our news feed is coming soon. Check back for the latest updates on our products, services, and industry insights.</p>
+                    </div>
+                `;
+            }
 
-          function loadTechnologyToday(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
-    mainContent.innerHTML = `
-        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-            <h2 class="text-2xl font-bold mb-4">Technology Today</h2>
-            
-            <p class="mb-6">
-                The water and engineering industries are undergoing rapid transformation. 
-                From smart monitoring to sustainable filtration, technology is reshaping 
-                how we manage resources, improve efficiency, and protect the environment.
-            </p>
+          function loadTechnologyToday(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    mainContent.innerHTML = `
+       <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+    <h2 class="text-2xl font-bold mb-4">Technology Today</h2>
+    <p class="mb-6">
+        The water and engineering industries are undergoing rapid transformation.
+        From smart monitoring to sustainable filtration, technology is reshaping
+        how we manage resources, improve efficiency, and protect the environment.
+    </p>
 
-            <h3 class="text-xl font-semibold mt-6 mb-3">💧 Smart Filtration</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Advanced filter cartridges (PP, carbon, nano) for improved water quality.</li>
-                <li>Amrut Scale Guard – chemical-free scale prevention with zero maintenance.</li>
-                <li>Modular filtration systems designed for industries and households.</li>
-            </ul>
+    <h3 class="text-xl font-semibold mt-6 mb-3">💧 Smart Filtration</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Advanced filter cartridges (PP, carbon, nano) for improved water quality.</li>
+        <li>Amrut Scale Guard – chemical-free scale prevention with zero maintenance.</li>
+        <li>Modular filtration systems designed for industries and households.</li>
+    </ul>
 
-            <h3 class="text-xl font-semibold mt-6 mb-3">📡 Automation & IoT</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Smart meters & sensors for real-time water usage tracking.</li>
-                <li>IoT-enabled pumps, valves, and gauges for predictive maintenance.</li>
-                <li>Remote monitoring to reduce downtime and improve performance.</li>
-            </ul>
+    <h3 class="text-xl font-semibold mt-6 mb-3">📡 Automation & IoT</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Smart meters & sensors for real-time water usage tracking.</li>
+        <li>IoT-enabled pumps, valves, and gauges for predictive maintenance.</li>
+        <li>Remote monitoring to reduce downtime and improve performance.</li>
+    </ul>
 
-            <h3 class="text-xl font-semibold mt-6 mb-3">🌍 Sustainability</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Energy-efficient treatment systems to cut operating costs.</li>
-                <li>Wastewater recycling & reuse for industries and communities.</li>
-                <li>Eco-friendly, chemical-free conditioning solutions.</li>
-            </ul>
+    <h3 class="text-xl font-semibold mt-6 mb-3">🌍 Sustainability</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Energy-efficient treatment systems to cut operating costs.</li>
+        <li>Wastewater recycling & reuse for industries and communities.</li>
+        <li>Eco-friendly, chemical-free conditioning solutions.</li>
+    </ul>
 
-            <p class="mt-8">
-                <strong>Indcare Africa</strong> and <strong>Amrut Filtration</strong> continue to 
-                adopt and showcase these technologies through solutions, events, and client support, 
-                ensuring industries stay ahead in innovation.
-            </p>
-<div class="mt-8 flex flex-col sm:flex-row gap-4">
-  <a href="engineering-library.html" 
-     class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition text-center"
-     target="_blank">
-     📚 Explore Engineering Library
-  </a>
+    <p class="mt-8">
+        <strong>Indcare Africa</strong> and <strong>Amrut Filtration</strong> continue to
+        adopt and showcase these technologies through solutions, events, and client support,
+        ensuring industries stay ahead in innovation.
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="engineering-library.html"
+            class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition text-center"
+            target="_blank">
+            📚 Explore Engineering Library
+        </a>
+    </div>
 </div>
-        </div>
-    `;
+    `;
 }
+
+
 function loadEvents(event) {
     if (event) event.preventDefault();
     setActiveLink(event.target);
@@ -642,333 +643,339 @@ function loadEvents(event) {
         { date: ' 28–30 May 2026', name: 'AutoExpo', venue: 'KICC, Nairobi' },
         { date: '15-17 May 2026', name: 'Beauty Kenya', venue: 'Sarit Expo Centre' },
         { date: '2–4 June 2026', name: 'Visha Oswal @ IFTEX', venue: 'IFTEX Expo, Nairobi' },
-        { date: 'June 2026', name: 'Power and Energy Africa ', venue: 'KICC, Nairobi' },
-        { date: 'June 2026', name: 'Kenya Solar Expo', venue: 'KICC, Nairobi' },
-        { date: 'June 2026', name: 'Dairy, Livestock & Poultry Expo',venue: 'KICC, Nairobi'},
-        { date: ' 8-9 June 2026', name: 'AgriTech Africa',venue: 'KICC, Nairobi'},
-        { date: 'June 2026', name: 'Kenya BuildCon International Expo',venue: 'Sarit Expo Centre'}
+        { date: 'June 2026', name: 'Power and Energy Africa ', venue: 'KICC, Nairobi' },
+        { date: 'June 2026', name: 'Kenya Solar Expo', venue: 'KICC, Nairobi' },
+        { date: 'June 2026', name: 'Dairy, Livestock & Poultry Expo',venue: 'KICC, Nairobi'},
+        { date: ' 8-9 June 2026', name: 'AgriTech Africa',venue: 'KICC, Nairobi'},
+        { date: 'June 2026', name: 'Kenya BuildCon International Expo',venue: 'Sarit Expo Centre'}
     ];
-        
-    
+        
+    
 
-    // Helper function to extract the start date for sorting and comparison
-    const getStartDate = (dateString) => {
-        const months = { 'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5, 'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11 };
-        const parts = dateString.split(' ');
-        const dayPart = parts[0].split('–').pop();
-        const month = months[parts[1]];
-        const year = parseInt(parts[2]);
-        const day = parseInt(dayPart);
-        return new Date(year, month, day);
-    };
-    
-    // Sort all events chronologically
-    allEvents.sort((a, b) => getStartDate(a.date) - getStartDate(b.date));
+    // Helper function to extract the start date for sorting and comparison
+    const getStartDate = (dateString) => {
+        const months = { 'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5, 'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11 };
+        const parts = dateString.split(' ');
+        const dayPart = parts[0].split('–').pop();
+        const month = months[parts[1]];
+        const year = parseInt(parts[2]);
+        const day = parseInt(dayPart);
+        return new Date(year, month, day);
+    };
+    
+    // Sort all events chronologically
+    allEvents.sort((a, b) => getStartDate(a.date) - getStartDate(b.date));
 
-    const today = new Date();
-    const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
-    const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
+    const today = new Date();
+    const upcomingEvents = allEvents.filter(event => getStartDate(event.date) >= today);
+    const pastEvents = allEvents.filter(event => getStartDate(event.date) < today);
 
-    let htmlContent = `
-      <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-    <div class="mb-8 overflow-hidden rounded-xl shadow-lg" style="aspect-ratio: 16 / 9;">
-        <img src="heading.jpg" alt="Exhibition calendar" class="w-full h-full object-cover">
-    </div>
-    <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
-    <p class="text-lg text-center text-gray-600 mb-8">
-        Stay updated with the latest events and exhibitions.
-    </p>
+    let htmlContent = `
+      <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+    <div class="mb-8 overflow-hidden rounded-xl shadow-lg" style="aspect-ratio: 16 / 9;">
+        <img src="heading.jpg" alt="Exhibition calendar" class="w-full h-full object-cover">
+    </div>
+    <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-6">🗓️ Event Calendar</h2>
+    <p class="text-lg text-center text-gray-600 mb-8">
+        Stay updated with the latest events and exhibitions.
+    </p>
+    `;
+
+   if (upcomingEvents.length > 0) {
+    htmlContent += `
+        <div class="mb-10">
+            <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
+            <div class="bg-white shadow-lg rounded-b-lg overflow-hidden">
+                <table class="min-w-full table-auto border-collapse">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="p-4 text-left">Date</th>
+                            <th class="p-4 text-left">Event</th>
+                            <th class="p-4 text-left">Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${upcomingEvents.map((event, index) => `
+                            <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
+                                <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     `;
-
-    if (upcomingEvents.length > 0) {
-        htmlContent += `
-            <div class="mb-10">
-               <h3 class="text-2xl font-bold text-blue-800 mb-4">⭐ Upcoming Events</h3>
-                <div class="bg-white shadow-lg rounded-b-lg overflow-hidden">
-                    <table class="min-w-full table-auto border-collapse">
-                        <thead class="bg-blue-600 text-white">
-                            <tr>
-                                <th class="p-4 text-left">Date</th>
-                                <th class="p-4 text-left">Event</th>
-                                <th class="p-4 text-left">Venue</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${upcomingEvents.map((event, index) => `
-                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-gray-100 transition-colors duration-200">
-                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
-                                    <td class="p-4 border-t border-gray-200 font-medium">${event.name}</td>
-                                    <td class="p-4 border-t border-gray-200 text-gray-600">${event.venue}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        `;
-    }
-
-    if (pastEvents.length > 0) {
-        htmlContent += `
-            <div>
-                <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <table class="min-w-full table-auto border-collapse">
-                        <thead class="bg-gray-200 text-gray-700">
-                            <tr>
-                                <th class="p-4 text-left">Date</th>
-                                <th class="p-4 text-left">Event</th>
-                                <th class="p-4 text-left">Venue</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${pastEvents.map((event, index) => `
-                                <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
-                                    <td class="p-4 border-t border-gray-200">${event.date}</td>
-                                    <td class="p-4 border-t border-gray-200">${event.name}</td>
-                                    <td class="p-4 border-t border-gray-200">${event.venue}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        `;
-    }
-
-    htmlContent += `</div>`;
-    mainContent.innerHTML = htmlContent;
 }
-            function loadBusinessIdeas(event) {
-                if (event) event.preventDefault();
-                setActiveLink(event.target);
-                mainContent.innerHTML = `
-                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-                        <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
-                        <ul class="list-disc pl-5 space-y-3">
-                            <li><strong>Water Kiosk:</strong> A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.</li>
-                            <li><strong>Water ATM:</strong> A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.</li>
-                            <li><strong>Milk ATM:</strong> Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.</li>
-                        </ul>
-                    </div>
-                `;
-            }
 
-          function loadServiceProvided(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
-    mainContent.innerHTML = `
-        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+if (pastEvents.length > 0) {
+    htmlContent += `
+        <div>
+            <h3 class="text-2xl font-bold text-gray-700 mb-4">✅ Past Events</h3>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <table class="min-w-full table-auto border-collapse">
+                    <thead class="bg-gray-200 text-gray-700">
+                        <tr>
+                            <th class="p-4 text-left">Date</th>
+                            <th class="p-4 text-left">Event</th>
+                            <th class="p-4 text-left">Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${pastEvents.map((event, index) => `
+                            <tr class="${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} text-gray-500 line-through">
+                                <td class="p-4 border-t border-gray-200">${event.date}</td>
+                                <td class="p-4 border-t border-gray-200">${event.name}</td>
+                                <td class="p-4 border-t border-gray-200">${event.venue}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    `;
+}
+    htmlContent += `</div>`;
+    mainContent.innerHTML = htmlContent;
+}
+      
+      function loadBusinessIdeas(event) {
+                if (event) event.preventDefault();
+                setActiveLink(event.target);
+                mainContent.innerHTML = `
+                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+                        <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
+                        <ul class="list-disc pl-5 space-y-3">
+                            <li><strong>Water Kiosk:</strong> A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.</li>
+                            <li><strong>Water ATM:</strong> A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.</li>
+                            <li><strong>Milk ATM:</strong> Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+          function loadServiceProvided(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    mainContent.innerHTML = `
+        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
             <h2 class="text-2xl font-bold mb-4">Services Provided</h2>
             
             <p class="mb-6">
-                At Indcare Africa, we deliver 
+                At <strong>Amrut Filtration</strong> and <strong>Indcare Africa</strong>, we deliver 
                 innovative, chemical-free solutions for water treatment and industrial support. 
                 Our mission is to provide clean water, efficient processes, and reliable technical 
                 resources for homes, businesses, and industries across Africa.
             </p>
 
-            <h3 class="text-xl font-semibold mt-6 mb-3">🌊 Water Treatment Services</h3>
+            <h3 class="text-xl font-semibold mt-6 mb-3">🌊 Amrut Filtration</h3>
             <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Smart water conditioning with Amrut Scale Guard – no chemicas, no maintenance.</li>
-                <li>Supply of carbon filters, PP filters, and cartridge systems for industrial & domestic use.</li>
+                🌊Smart water conditioning with <strong>Amrut Scale Guard</strong> – no chemicals, no maintenance.</li>
+                <li>Supply of <strong>carbon filters, PP filters, and cartridge systems</strong> for industrial & domestic use.</li>
                 <li>Custom filtration setups tailored to client requirements.</li>
                 <li>After-sales technical support & performance monitoring.</li>
             </ul>
 
-            <h3 class="text-xl font-semibold mt-6 mb-3">⚙️ Indcare Africa Products </h3>
+            <h3 class="text-xl font-semibold mt-6 mb-3">⚙️ Indcare Africa</h3>
             <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Supplier of instrument spares, gauges, valves, and accessories.</li>
-                <li>Organizer of expos and knowledge-sharing events in the water & engineering sector.</li>
+                <li>Supplier of <strong>instrument spares</strong>, gauges, valves, and accessories.</li>
+                <li>Organizer of <strong>expos and knowledge-sharing events</strong> in the water & engineering sector.</li>
                 <li>Technical consulting for process optimization and fluid mechanics.</li>
                 <li>Networking platform for industry leaders, engineers, and suppliers.</li>
             </ul>
 
             <h3 class="text-xl font-semibold mt-6 mb-3">🤝 Why Work With Us?</h3>
             <p>
-                We combine cutting-edge technology, local expertise, 
-                and global partnerships to provide sustainable solutions. 
+                We combine <strong>cutting-edge technology</strong>, <strong>local expertise</strong>, 
+                and <strong>global partnerships</strong> to provide sustainable solutions. 
                 Whether it’s a household, a factory, or a large-scale project, we ensure 
                 reliable results with minimal maintenance.
             </p>
 
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition text-center">📩 Contact Us</a>
+                <a href="https://www.youtube.com/@YOURCHANNEL" target="_blank" class="px-6 py-3 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition text-center">▶ Visit YouTube Channel</a>
+            </div>
         </div>
     `;
 }
 
 
-          function loadPhotoGallery(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
+          function loadPhotoGallery(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
 
-    mainContent.innerHTML = `
-        <div class="max-w-5xl mx-auto py-12">
+    mainContent.innerHTML = `
+       <div class="max-w-5xl mx-auto py-12">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Photo Gallery</h2>
             <p class="text-center text-gray-600 mb-8">
-                📸 Stay tuned for the full gallery.
+                📸 Our best moments are being framed! Stay tuned for the full gallery.
             </p>
 
-            <!-- Placeholder grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <img src="pg 2.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
-                <img src="pg 3.jpg " alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
-               <img src="photo gallry 1.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
-                <img src="pg 5.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
-                  <img src="pg 6.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
-               <img src="photo gallry 1.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
-            </div>
-
-           
-            
-        </div>
-    `;
-}
-
-
-          function loadVideoGallery(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
-
-    mainContent.innerHTML = `
-        <div class="max-w-4xl mx-auto text-center py-20">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                 class="h-20 w-20 text-red-500 mx-auto mb-6" 
-                 fill="currentColor" 
-                 viewBox="0 0 24 24">
-                <path d="M23.498 6.186a2.97 2.97 0 00-2.09-2.103C19.63 3.5 12 3.5 12 3.5s-7.63 0-9.408.583a2.97 2.97 0 00-2.09 2.103C0 8.03 0 12 0 12s0 3.97.502 5.814a2.97 2.97 0 002.09 2.103C4.37 20.5 12 20.5 12 20.5s7.63 0 9.408-.583a2.97 2.97 0 002.09-2.103C24 15.97 24 12 24 12s0-3.97-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
-            </svg>
-
-            <h2 class="text-3xl font-bold mb-4">Video Gallery</h2>
-            <p class="text-gray-600 mb-6">
-                🎥 Watch our latest product demos, testimonials, and event highlights on our official YouTube channel.
-            </p>
-
-            <!-- Featured Video (optional) -->
-            <div class="mb-8">
-             <div class="w-full max-w-2xl mx-auto rounded-lg shadow-lg overflow-hidden">
-  <img src="Africa Trade Expo Thumbnail.png" 
-       alt="Water Treatment Preview" 
-       class="w-full h-auto">
+         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <img src="photo gallry 1.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
+    <img src="pg 2.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
+    <img src="pg 3.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
+    <img src="pg 5.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
+    <img src="pg 6.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
+    <img src="photo gallry 1.jpg" alt="Exhibition photo" class="w-full h-full object-cover rounded-lg">
 </div>
-            </div>
 
-            <!-- Call to Action -->
-            <a href="https://www.youtube.com/@indcareafricaltd5815" 
-               target="_blank" 
-               class="inline-block px-6 py-3 bg-red-600 text-white font-medium rounded-lg shadow hover:bg-red-700 transition">
-                Visit Our YouTube Channel
-            </a>
+            <!-- Call-to-action -->
+            <div class="text-center mt-8">
+                <a href="#events" class="inline-block px-6 py-2 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700 transition">
+                    Explore Our Events
+                </a>
+            </div>
         </div>
     `;
 }
 
-            function loadHelp(event) {
-                if (event) event.preventDefault();
-                setActiveLink(event.target);
-                mainContent.innerHTML = `
-                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-                        <h2 class="text-2xl font-bold mb-4">Help</h2>
-                        <p>For assistance, please contact us at <a href="mailto:indcaremkt@gmail.com" class="text-blue-600 underline">indcaremkt@gmail.com</a></p>
-                    </div>
-                `;
-            }
 
-            // Centralized Active Link Management
-            function setActiveLink(clickedLink) {
-                quickLinks.forEach(link => link.classList.remove('active-link'));
-                if (clickedLink) {
-                    clickedLink.classList.add('active-link');
-                }
-            }
+          function loadVideoGallery(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
 
-            // Sidebar Toggling
-            function toggleSidebar(sidebar, isOpen) {
-                if (isOpen) {
-                    sidebar.classList.remove('translate-x-full', '-translate-x-full');
-                    overlay.classList.remove('hidden');
-                } else {
-                    if (sidebar.id === 'sidebar-left') {
-                        sidebar.classList.add('-translate-x-full');
-                    } else {
-                        sidebar.classList.add('translate-x-full');
-                    }
-                    overlay.classList.add('hidden');
-                }
-            }
+    mainContent.innerHTML = `
+        <div class="max-w-4xl mx-auto text-center py-20">
+        
 
-            // Event listeners
-            document.getElementById('toggle-left-sidebar').addEventListener('click', () => toggleSidebar(sidebarLeft, true));
-            document.getElementById('close-left-sidebar').addEventListener('click', () => toggleSidebar(sidebarLeft, false));
-            document.getElementById('toggle-right-sidebar').addEventListener('click', () => toggleSidebar(sidebarRight, true));
-            document.getElementById('close-right-sidebar').addEventListener('click', () => toggleSidebar(sidebarRight, false));
-            overlay.addEventListener('click', () => {
-                toggleSidebar(sidebarLeft, false);
-                toggleSidebar(sidebarRight, false);
-            });
-            
-            // Date Picker Functionality
-            sidebarDate.addEventListener('change', () => {
-                const date = new Date(sidebarDate.value);
-                const formatted = date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-                dashboardDate.innerText = formatted;
-            });
-            
-            // Counter Animation Logic
-            const counters = document.querySelectorAll('.counter');
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = +counter.getAttribute('data-target').replace('+', '');
-                        let count = 0;
-                        const updateCounter = setInterval(() => {
-                            if (count < target) {
-                                count += Math.ceil(target / 200);
-                                if (count > target) count = target;
-                                counter.innerText = count + (counter.getAttribute('data-target').includes('+') ? '+' : '');
-                            } else {
-                                clearInterval(updateCounter);
-                            }
-                        }, 10);
-                        observer.unobserve(counter);
-                    }
-                });
-            }, observerOptions);
+                        <div class="mb-8">
+             <div class="w-full max-w-2xl mx-auto rounded-lg shadow-lg overflow-hidden">
+  <img src="Africa Trade Expo Thumbnail.png" 
+       alt="Water Treatment Preview" 
+       class="w-full h-auto">
+</div>
+            </div>
 
-            counters.forEach(counter => {
-                observer.observe(counter);
-            });
+                        <a href="https://www.youtube.com/@indcareafricaltd5815" 
+               target="_blank" 
+               class="inline-block px-6 py-3 bg-red-600 text-white font-medium rounded-lg shadow hover:bg-red-700 transition">
+                Visit Our YouTube Channel
+            </a>
+        </div>
+    `;
+}
 
-            // Make the load functions globally accessible for the `onclick` attributes
-            document.addEventListener("DOMContentLoaded", loadHome);
-            window.loadHome = loadHome;
-            window.loadNews = loadNews;
-            window.loadTechnologyToday = loadTechnologyToday;
-            window.loadEvents = loadEvents;
-            window.loadBusinessIdeas = loadBusinessIdeas;
-            window.loadServiceProvided = loadServiceProvided;
-            window.loadPhotoGallery = loadPhotoGallery;
-            window.loadVideoGallery = loadVideoGallery;
-            window.loadHelp = loadHelp;
-            window.loadAbout = loadAbout;
-        });
+            function loadHelp(event) {
+                if (event) event.preventDefault();
+                setActiveLink(event.target);
+                mainContent.innerHTML = `
+                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+                        <h2 class="text-2xl font-bold mb-4">Help</h2>
+                        <p>For assistance, please contact us at <a href="mailto:indcaremkt@gmail.com" class="text-blue-600 underline">indcaremkt@gmail.com</a></p>
+                    </div>
+                `;
+            }
+
+            // Centralized Active Link Management
+            function setActiveLink(clickedLink) {
+                const quickLinks = document.querySelectorAll('.quick-links a');
+                quickLinks.forEach(link => link.classList.remove('active-link'));
+                if (clickedLink) {
+                    clickedLink.classList.add('active-link');
+                }
+            }
+
+            // Sidebar Toggling
+            function toggleSidebar(sidebar, isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('translate-x-full', '-translate-x-full');
+                    overlay.classList.remove('hidden');
+                } else {
+                    if (sidebar.id === 'sidebar-left') {
+                        sidebar.classList.add('-translate-x-full');
+                    } else {
+                        sidebar.classList.add('translate-x-full');
+                    }
+                    overlay.classList.add('hidden');
+                }
+            }
+
+            // Event listeners
+            document.getElementById('toggle-left-sidebar').addEventListener('click', () => toggleSidebar(sidebarLeft, true));
+            document.getElementById('close-left-sidebar').addEventListener('click', () => toggleSidebar(sidebarLeft, false));
+            
+            
+            // Add a listener for the right sidebar toggle button (if it exists)
+            const toggleRightSidebarBtn = document.getElementById('toggle-right-sidebar');
+            if (toggleRightSidebarBtn) {
+                toggleRightSidebarBtn.addEventListener('click', () => toggleSidebar(sidebarRight, true));
+            }
+            
+            const closeRightSidebarBtn = document.getElementById('close-right-sidebar');
+            if (closeRightSidebarBtn) {
+                closeRightSidebarBtn.addEventListener('click', () => toggleSidebar(sidebarRight, false));
+            }
+            
+            overlay.addEventListener('click', () => {
+                toggleSidebar(sidebarLeft, false);
+                toggleSidebar(sidebarRight, false);
+            });
+            
+            // Date Picker Functionality
+            sidebarDate.addEventListener('change', () => {
+                const date = new Date(sidebarDate.value);
+                const formatted = date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+            });
+            
+            // Counter Animation Logic
+            const counters = document.querySelectorAll('.counter');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target').replace('+', '');
+                        let count = 0;
+                        const updateCounter = setInterval(() => {
+                            if (count < target) {
+                                count += Math.ceil(target / 200);
+                                if (count > target) count = target;
+                                counter.innerText = count + (counter.getAttribute('data-target').includes('+') ? '+' : '');
+                            } else {
+                                clearInterval(updateCounter);
+                            }
+                        }, 10);
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // Make the load functions globally accessible for the `onclick` attributes
+            document.addEventListener("DOMContentLoaded", loadHome);
+            window.loadHome = loadHome;
+            window.loadNews = loadNews;
+            window.loadTechnologyToday = loadTechnologyToday;
+            window.loadEvents = loadEvents;
+            window.loadBusinessIdeas = loadBusinessIdeas;
+            window.loadServiceProvided = loadServiceProvided;
+            window.loadPhotoGallery = loadPhotoGallery;
+            window.loadVideoGallery = loadVideoGallery;
+            window.loadHelp = loadHelp;
+            window.loadAbout = loadAbout;
+        });
 
 
 let eventSlideIndex = 0;
 function showEventSlides() {
-    let slides = document.getElementsByClassName("mySlides-event");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    eventSlideIndex++;
-    if (eventSlideIndex > slides.length) {eventSlideIndex = 1}    
-    slides[eventSlideIndex-1].style.display = "block";  
-    setTimeout(showEventSlides, 3000); // 3 seconds per slide
+    let slides = document.getElementsByClassName("mySlides-event");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    eventSlideIndex++;
+    if (eventSlideIndex > slides.length) {eventSlideIndex = 1}    
+    slides[eventSlideIndex-1].style.display = "block";  
+    setTimeout(showEventSlides, 3000); // 3 seconds per slide
 }
 document.addEventListener("DOMContentLoaded", showEventSlides);
 
 
-    </script>
+    </script>
 </body>
 </html>
