@@ -95,6 +95,9 @@
   <img src="INDUSTRIES.jpg" alt="Your Picture" class="rounded-full h-20 w-20 object-cover">
 </a>
 
+
+
+
 <!-- Slightly smaller text -->
 <h3 class="text-base md:text-lg font-semibold">
   <span style="color:#483248;">INSIGHT</span>
@@ -111,7 +114,19 @@
 <div>
     <img src="Far right logo.png" alt="Right Logo" class="h-20 w-20 rounded-full object-cover">
   </div>
+<div>
+  <button id="toggle-right-sidebar" aria-label="Toggle right sidebar" class="p-2 rounded-lg bg-blue-900 text-white md:hidden">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6H4M20 12H4M20 18H4"></path>
+    </svg>
+  </button>
+
 </div>
+
+
+</div>
+
+
        
 
 
@@ -170,9 +185,9 @@
 </div>
         </aside>
         
-        <main id="main-content" class="flex-grow p-4 md:p-6 transition-all duration-300 ease-in-out">
-    <div class="max-w-2xl mx-auto mb-2 relative"> <!-- Changed mb-4 to mb-2 -->
-        <div class="slideshow-container w-full relative mt-0"> <!-- Added mt-0 to remove any top margin -->
+        <main id="main-content" class="flex-grow p-6 md:p-10 transition-all duration-300 ease-in-out">
+            <div class="max-w-4xl mx-auto mb-8 relative">
+                <div class="slideshow-container w-full relative">
                     
                     <div class="mySlides fade">
                         <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
@@ -197,22 +212,24 @@
                     <a class="prev cursor-pointer absolute top-1/2 -translate-y-1/2 left-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-l-lg transition-all" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                <div class="text-center mt-1"> <!-- Reduced mt-2 to mt-1 -->
+                
+                <div class="text-center mt-4">
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(4)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(5)"></span>
                 </div>
-    </div>
-    <div id="home-content" class="max-w-3xl mx-auto mt-2"> <!-- Added mt-2 for slight spacing -->
-        <h2 class="text-2xl font-bold mb-2">Welcome to the Dashboard</h2>
-        <p class="mb-2 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-        <p class="mb-2 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-        <p class="mb-2 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
-        <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-    </div>
-</main>
+            </div>
+            
+            <div id="home-content" class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+                <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+                <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+                <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+                <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+            </div>
+        </main>
 
         <script>
         let slideIndex = 1;
@@ -264,7 +281,7 @@
 
             <div class="mb-6 relative z-10">
               <div class="bg-blue-600 p-4 rounded-t-lg relative z-20">
-    <h3 class="text-lg font-semibold text-white">UPCOMING EVENTS</h3>
+    <h3 class="text-lg font-semibold text-white">Upcoming Events</h3>
 </div>
                 <div class="event-slideshow-container relative w-full h-64 z-10">
                     <div class="mySlides-event fade-event absolute w-full h-full">
@@ -288,7 +305,7 @@
                 </div>
             </div>
 
-           <h3 class="text-lg font-semibold mt-8 mb-4">SEE MORE EVENTS</h3>
+           <h3 class="text-lg font-semibold mt-8 mb-4">Explore More</h3>
 <nav class="space-y-2 mb-6 quick-links">
     <a href="#" onclick="loadEvents(event)" class="flex items-center p-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
@@ -298,7 +315,36 @@
     </a>
 </nav>
 
-            <h3 class="text-lg font-semibold mt-8 mb-4">Our Clients</h3>
+<!-- Video Section -->
+<div class="mb-6">
+    <h3 class="text-lg font-semibold mb-2">Check this Out</h3>
+    <video controls class="w-full rounded-lg shadow-md">
+        <source src="SMALL BUSINESS IDEA FOR ENTREPRENEUR _ AI - CHA _.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <!-- YouTube Button -->
+    <div class="mt-3">
+        <a href="https://www.youtube.com/@INSIGHTINDUSTRES" target="_blank" 
+           class="inline-flex items-center px-4 py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-red-700 transition">
+            <!-- YouTube Icon (play button triangle) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.615 3.184c-1.55-.417-7.784-.417-7.784-.417s-6.234 0-7.784.417C2.454 3.6 2 5.165 2 8.5v7c0 3.335.454 4.9 2.047 5.316 1.55.417 7.784.417 7.784.417s6.234 0 7.784-.417C21.546 20.4 22 18.835 22 15.5v-7c0-3.335-.454-4.9-2.385-5.316zM10 15.5v-7l6 3.5-6 3.5z"/>
+            </svg>
+            See More
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+            <h3 class="text-lg font-semibold mt-8 mb-4">Our Clients  </h3>
             <div class="client-logos flex flex-wrap gap-2">
                 <img src="devki-steel.png" alt="Devki Steel" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Devki';">
                 <img src="sparr.png" alt="Sparr" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Sparr';">
@@ -308,13 +354,25 @@
             </div>
 
 
+<!-- Visitor Counter Section -->
+<div class="mt-6">
+  <div class="counter-item flex flex-col items-center justify-center p-6 rounded-lg shadow-lg bg-white transition transform hover:-translate-y-1">
+    <h3 class="text-3xl font-bold text-blue-600 mb-2">Site Visitors</h3>
 
-<!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=21435761&style=0001&nbdigits=5&type=page&initCount=0" title="Counters Online Convertors" Alt="Counters Online Convertors" border="0" />
-</a>
+    <!-- HitWebCounter -->
+    <div class="bg-gray-100 p-3 rounded-lg shadow-inner">
+      <a href="https://www.hitwebcounter.com" target="_blank">
+        <img 
+          src="https://hitwebcounter.com/counter/counter.php?page=21435761&style=0001&nbdigits=5&type=page&initCount=0" 
+          alt="Website Visitor Counter"
+          class="mx-auto w-32"
+        />
+      </a>
+    </div>
 
-
+    <p class="font-medium text-gray-500 mt-3">Total Visitors</p>
+  </div>
+</div>
 
 
 
@@ -434,6 +492,25 @@
     </footer>
     
     <script>
+
+document.getElementById('toggle-right-sidebar').addEventListener('click', () => toggleSidebar(sidebarRight, true));
+document.getElementById('close-right-sidebar').addEventListener('click', () => toggleSidebar(sidebarRight, false));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Get today's date in YYYY-MM-DD format
     const today = new Date().toISOString().split('T')[0];
     
@@ -503,7 +580,7 @@
                 <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
             </div>
 
-            <div class="text-center mt-1">
+            <div class="text-center mt-4">
                 <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
                 <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
                 <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
@@ -512,11 +589,11 @@
             </div>
         </div>
 
-        <div id="home-content" class="max-w-3xl mx-auto mt-2">
-            <h2 class="text-2xl font-bold mb-2">Welcome to the Dashboard</h2>
-            <p class="mb-2 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-            <p class="mb-2 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-            <p class="mb-2 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+        <div id="home-content" class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
+            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
             <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
         </div>
     `;
@@ -524,44 +601,40 @@
     // restart slideshow after injecting
     showSlides(slideIndex = 1);
 }
+function loadAbout(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
 
-           function loadAbout(event) {
-    if (event) event.preventDefault();
-    setActiveLink(event.target);
-    mainContent.innerHTML = `
-        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-            <h2 class="text-2xl font-bold mb-4">ABOUT US </h2>
-            
-            <p class="mb-4">
-                Indcare Africa is dedicated to providing 
-                sustainable water treatment, filtration, and smart water conditioning solutions across Africa 
-                and beyond. With a focus on innovation, we combine proven technology with modern automation 
-                and IoT applications to deliver efficient, chemical-free, and maintenance-free solutions.
-            </p>
-            
-            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Mission </h4>
-            <p class="mb-4">
-                To empower industries, communities, and households with clean water solutions 
-                that are affordable, reliable, and environmentally friendly.
-            </p>
-            
-            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Vision </h4>
-            <p class="mb-4">
-                To be a leading force in Africa’s water technology transformation, 
-                setting new benchmarks in smart filtration, industrial spares supply, 
-                and sustainable water management.
-            </p>
-            
-        
-            
-            <h4 class="text-xl font-semibold mt-6 mb-2"> Our Team</h4>
-            <p>
-                Our team is made up of engineers, innovators, and customer-focused professionals 
-                who work closely with clients to understand their challenges and provide 
-                the most effective solutions.
-            </p>
-        </div>
-    `;
+    mainContent.innerHTML = `
+        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+            <h2 class="text-2xl font-bold mb-4">ABOUT US</h2>
+            
+            <p class="mb-4">
+                Indcare Africa is dedicated to providing sustainable water treatment, filtration, 
+                and smart water conditioning solutions across Africa and beyond. With a focus on innovation, 
+                we combine proven technology with modern automation and IoT applications to deliver efficient, 
+                chemical-free, and maintenance-free solutions.
+            </p>
+            
+            <h4 class="text-xl font-semibold mt-6 mb-2">Our Mission</h4>
+            <p class="mb-4">
+                To empower industries, communities, and households with clean water solutions 
+                that are affordable, reliable, and environmentally friendly.
+            </p>
+            
+            <h4 class="text-xl font-semibold mt-6 mb-2">Our Vision</h4>
+            <p class="mb-4">
+                To be a leading force in Africa’s water technology transformation, setting new benchmarks 
+                in smart filtration, industrial spares supply, and sustainable water management.
+            </p>
+            
+            <h4 class="text-xl font-semibold mt-6 mb-2">Our Team</h4>
+            <p>
+                Our team is made up of engineers, innovators, and customer-focused professionals 
+                who work closely with clients to understand their challenges and provide the most effective solutions.
+            </p>
+        </div>
+    `;
 }
 
 
@@ -842,8 +915,7 @@ if (pastEvents.length > 0) {
 
             <div class="mt-8 flex flex-col sm:flex-row gap-4">
                 <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition text-center">📩 Contact Us</a>
-                <a href="https://www.youtube.com/@YOURCHANNEL" target="_blank" class="px-6 py-3 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition text-center">▶ Visit YouTube Channel</a>
-            </div>
+              
         </div>
     `;
 }
