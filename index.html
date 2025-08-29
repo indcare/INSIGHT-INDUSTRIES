@@ -170,9 +170,9 @@
 </div>
         </aside>
         
-        <main id="main-content" class="flex-grow p-6 md:p-10 transition-all duration-300 ease-in-out">
-            <div class="max-w-4xl mx-auto mb-8 relative">
-                <div class="slideshow-container w-full relative">
+        <main id="main-content" class="flex-grow p-4 md:p-6 transition-all duration-300 ease-in-out">
+    <div class="max-w-2xl mx-auto mb-2 relative"> <!-- Changed mb-4 to mb-2 -->
+        <div class="slideshow-container w-full relative mt-0"> <!-- Added mt-0 to remove any top margin -->
                     
                     <div class="mySlides fade">
                         <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
@@ -197,24 +197,22 @@
                     <a class="prev cursor-pointer absolute top-1/2 -translate-y-1/2 left-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-l-lg transition-all" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                
-                <div class="text-center mt-4">
+                <div class="text-center mt-1"> <!-- Reduced mt-2 to mt-1 -->
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(4)"></span>
                     <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(5)"></span>
                 </div>
-            </div>
-            
-            <div id="home-content" class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
-                <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-                <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-                <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
-                <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
-            </div>
-        </main>
+    </div>
+    <div id="home-content" class="max-w-3xl mx-auto mt-2"> <!-- Added mt-2 for slight spacing -->
+        <h2 class="text-2xl font-bold mb-2">Welcome to the Dashboard</h2>
+        <p class="mb-2 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+        <p class="mb-2 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+        <p class="mb-2 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+        <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
+    </div>
+</main>
 
         <script>
         let slideIndex = 1;
@@ -308,6 +306,31 @@
                 <img src="the-print-exchange.png" alt="The Print Exchange" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Print';">
                 <img src="sanpac.png" alt="Sanpac Africa" class="w-20 h-16 object-contain rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/80x60/d4d4d4/6b7280?text=Sanpac';">
             </div>
+
+
+
+
+<p>Unique Visitors: <span id="visitors">Loading...</span></p>
+
+<script>
+  // change "insight-industries" and "unique" to your own namespace & key
+  fetch('https://api.countapi.xyz/hit/insight-industries/unique')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visitors').innerText = data.value;
+    })
+    .catch(err => {
+      console.error("Counter error:", err);
+      document.getElementById('visitors').innerText = "Error";
+    });
+</script>
+
+
+
+
+
+
+
 
             <section class="counter-section mt-8">
                 <div class="container">
@@ -491,7 +514,7 @@
                 <a class="next cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 text-white font-bold p-4 bg-gray-800/50 hover:bg-gray-800 rounded-r-lg transition-all" onclick="plusSlides(1)">&#10095;</a>
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center mt-1">
                 <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(1)"></span>
                 <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(2)"></span>
                 <span class="dot cursor-pointer h-3 w-3 mx-1 bg-gray-400/50 rounded-full inline-block transition-all" onclick="currentSlide(3)"></span>
@@ -500,11 +523,11 @@
             </div>
         </div>
 
-        <div id="home-content" class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4">Welcome to the Dashboard</h2>
-            <p class="mb-4 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
-            <p class="mb-4 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
-            <p class="mb-4 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
+        <div id="home-content" class="max-w-3xl mx-auto mt-2">
+            <h2 class="text-2xl font-bold mb-2">Welcome to the Dashboard</h2>
+            <p class="mb-2 text-gray-700">Welcome to your central hub for the Amrut Filtration and Indcare Africa exhibition! Whether you're a visitor, exhibitor, or partner, everything you need is just a click away.</p>
+            <p class="mb-2 text-gray-700">Use the <strong>Quick Links</strong> on the left to access the latest news, technical resources, and upcoming events. Stay up to date with announcements right here, or explore our Engineering and Technology Libraries for deeper insights.</p>
+            <p class="mb-2 text-gray-700">Take a moment to explore, and don't miss the <strong>Event Calendar</strong> for a preview of what's ahead. If you're new, the sidebar is a great place to start.</p>
             <p class="text-gray-700">We're building this dashboard to be clear, dynamic, and genuinely useful—just like the work we do. Welcome aboard!</p>
         </div>
     `;
