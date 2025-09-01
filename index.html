@@ -73,6 +73,10 @@
             color: white;
             font-weight: 700;
         }
+        /* Hide all slides by default */
+.mySlides { display: none; }
+/* Show the first slide by default */
+.mySlides:first-child { display: block; }
     </style>
 </head>
 
@@ -84,11 +88,7 @@
     
 
   <!-- Header replaced with landscape banner -->
-  <div class="w-full">
-    <img src="new header.jpg" 
-         alt="Landscape Banner" 
-         class="w-full h-34 object-cover md:h-64" />
-  </div>
+<div> <img src="new banner.jpg" alt="Landscape Banner" width="1900" height="500" /> </div>
   
   <!-- Left Side: Logo + Text -->
   <div class="flex items-center space-x-4">
@@ -206,23 +206,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </aside>
 
 
@@ -252,11 +235,11 @@
     <div class="slideshow-container w-full relative mt-0">
                     
                     <div class="mySlides fade">
-                        <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                        <img src="ss2.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
                     </div>
 
                     <div class="mySlides fade">
-                        <img src="slide 2.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                        <img src="slideshow 1.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
                     </div>
                     <div class="mySlides fade">
                         <img src="slide 3 new.jpg" alt="Slide 3" class="w-full object-cover rounded-xl shadow-lg aspect-video">
@@ -602,7 +585,7 @@ document.getElementById('close-right-sidebar').addEventListener('click', () => t
         <div class="max-w-4xl mx-auto mb-8 relative">
             <div class="slideshow-container w-full relative">
                 <div class="mySlides fade">
-                    <img src="slide 1.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
+                    <img src="ss2.jpg" alt="Slide 1" class="w-full object-cover rounded-xl shadow-lg aspect-video">
                 </div>
                 <div class="mySlides fade">
                     <img src="slide 2.jpg" alt="Slide 2" class="w-full object-cover rounded-xl shadow-lg aspect-video">
@@ -1168,9 +1151,9 @@ function showEventSlides() {
     slides[eventSlideIndex-1].style.display = "block";  
     setTimeout(showEventSlides, 3000); // 3 seconds per slide
 }
-document.addEventListener("DOMContentLoaded", showEventSlides);
-
-
-    </script>
+document.addEventListener("DOMContentLoaded", function() {
+    showSlides(slideIndex = 1);
+});
+    </script>
 </body>
 </html>
