@@ -178,7 +178,8 @@
     <a href="#" onclick="loadPhotoGallery(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Photo Gallery</a>
     <a href="#" onclick="loadVideoGallery(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Video Gallery</a>
  <a href="#" onclick="loadMotivationCorner(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Motivation Corner</a>
-    <a href="#" onclick="loadAbout(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">About</a>
+   <a href="get-involved.html" target="_blank" rel="noopener" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Get Involved</a>
+ <a href="#" onclick="loadAbout(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">About</a>
       
     <a href="#" onclick="loadHelp(event)" class="block bg-blue-600 hover:bg-blue-700 text-white rounded-md p-3 mb-2 transition-colors duration-200 font-medium">Help</a>
 </div>
@@ -446,8 +447,10 @@
  <img src="RTECH.jpg" alt="Rtex" class="w-full h-16 object-contain">
          
              <img src="tata.png" alt="Tata" class="w-full h-16 object-contain">
-        <img src="rex.png" alt="Rexnord" class="w-full h-16 object-contain">
-        <img src="lovato.png" alt="Lovato Electric" class="w-full h-16 object-contain">
+       <img src="blue h20.png" alt="Blue H20" class="w-full h-16 object-contain">
+      
+             <img src="rex.png" alt="Rexnord" class="w-full h-16 object-contain">
+       
         <img src="autonics.png" alt="Autonics" class="w-full h-16 object-contain">
         <img src="fluke.png" alt="Fluke" class="w-full h-16 object-contain">
         <img src="delta.png" alt="Delta" class="w-full h-16 object-contain">
@@ -455,7 +458,7 @@
         <img src="seltech.png" alt="Seltech" class="w-full h-16 object-contain">
         <img src="Kenya Homes.jpg" alt="Kenya Homes" class="w-full h-16 object-contain">
       
-         <img src="blue h20.png" alt="Blue H20" class="w-full h-16 object-contain">
+         <img src="lovato.png" alt="Lovato Electric" class="w-full h-16 object-contain">
       
     </div>
 </div>
@@ -485,15 +488,11 @@
             <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
             <div class="mb-6 space-y-2">
                 <p class="text-lg">
-                    <a href="mailto:indcaremkt@gmail.com" class="hover:underline">
-                        <i class="fas fa-envelope mr-2"></i>indcaremkt@gmail.com
+                    <a href="mailto:infoinsightindustries@gmail.com" class="hover:underline">
+                        <i class="fas fa-envelope mr-2"></i>infoinsightindustries@gmail.com
                     </a>
                 </p>
-                <p class="text-lg">
-                    <a href="tel:+254777895312" class="hover:underline">
-                        <i class="fas fa-phone-alt mr-2"></i>+254 777 895 312
-                    </a>
-                </p>
+             
                 <p class="text-lg">
                     <a href="http://www.indcareafrica.com" target="_blank" rel="noopener" class="hover:underline">
                         <i class="fas fa-globe mr-2"></i>Visit Us
@@ -945,6 +944,13 @@ if (pastEvents.length > 0) {
     `;
 }
 
+
+
+
+
+
+
+
 function loadPhotoGallery(event) {
   if (event) event.preventDefault();
   setActiveLink(event.target);
@@ -1239,6 +1245,10 @@ function loadVideoGallery(event) {
                     </div>
                 `;
             }
+
+
+
+
 
             // Centralized Active Link Management
             function setActiveLink(clickedLink) {

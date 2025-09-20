@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved - Insight Industries</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      line-height: 1.7;
+      color: #333;
+      background: #fdfdfd;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    /* --- HERO INTRO SECTION WITH IMAGE --- */
+    .hero-intro {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      text-align: center;
+    }
+
+    .hero-intro .img-container {
+      position: relative;
+      width: 100%;
+      height: 500px; /* Adjust height as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-intro img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5); /* Darken the image to make text pop */
+    }
+
+    .hero-intro .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #77b0e9; /* Light blue from your partners section */
+      font-size: 80px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      z-index: 2;
+      white-space: nowrap;
+    }
+
+    .hero-intro .below-image-content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .hero-intro .below-image-content h2 {
+      font-size: 30px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #011324;
+    }
+
+    .hero-intro .below-image-content p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    /* Partners Section */
+    .partners {
+      background: linear-gradient(135deg, #053f86, #1e3a56);
+      text-align: center;
+      color: #fff;
+    }
+
+    .partners h2 {
+      font-size: 32px;
+      margin-bottom: 50px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .partners h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background:  #77b0e9;
+      margin: 12px auto 0;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .partner-item {
+      background: rgba(119, 131, 243, 0.05);
+      padding: 25px 15px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .partner-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+
+    .partner-icon {
+      background:  #74b3f3;
+      color: #fff;
+      font-size: 30px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .partner-item p {
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Form Section */
+    .form-section {
+      background: #f7f9fc;
+      text-align: center;
+    }
+
+    .form-section h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #1e3a56;
+    }
+
+    .partner-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .partner-form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-size: 14px;
+      color: #3431c5;
+    }
+
+    .partner-form input,
+    .partner-form select,
+    .partner-form textarea {
+      margin-top: 6px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    .partner-form input:focus,
+    .partner-form select:focus,
+    .partner-form textarea:focus {
+      border-color:  #77b0e9;
+      box-shadow: 0 0 5px rgba(30,58,86,0.3);
+      outline: none;
+    }
+
+    .partner-form textarea {
+      grid-column: span 2;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .partner-form button {
+      grid-column: span 2;
+      background: #77b0e9;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .partner-form button:hover {
+      background: #b5d62f;
+      color: #000;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero-intro">
+    <div class="img-container">
+      <img src="team-business-people-stacking-hands.jpg" alt="Hands of people together in a team, signifying involvement and partnership.">
+      <h1 class="overlay-text">GET INVOLVED</h1>
+    </div>
+
+    <div class="below-image-content">
+        <p>Curious about how you can be part of our journey?</p>
+
+        <h2>Global Partnerships</h2>
+        <p>
+          At Insight Industries, collaboration drives everything we do.
+          Our success is built on strong relationships with partners across the globe 
+          from government bodies and industry associations to suppliers, agents, and local communities.
+        </p>
+        <p>
+          We’ve built an extensive international network that allows us to connect businesses,
+          professionals, and organizations in ways that accelerate growth and create opportunities for everyone involved.
+        </p>
+        <p>
+          But our partnerships go beyond just business. Every project and every event we deliver has a ripple effect
+          on local economies. From hospitality and transport to tourism and trade, our presence creates new opportunities
+          for surrounding businesses and the communities we serve.
+        </p>
+        <p>
+          That’s why we actively seek partnerships that not only support our initiatives but also ensure local industries
+          and communities benefit directly from the opportunities we create.
+        </p>
+    </div>
+  </section>
+
+  <section class="partners">
+    <h2>Entities we partner with</h2>
+    <div class="partners-grid">
+      <div class="partner-item"><div class="partner-icon">🏛️</div><p>Governments</p></div>
+      <div class="partner-item"><div class="partner-icon">🧑‍💼</div><p>Agents</p></div>
+      <div class="partner-item"><div class="partner-icon">🎥</div><p>Media</p></div>
+      <div class="partner-item"><div class="partner-icon">💰</div><p>Funding Bodies</p></div>
+      <div class="partner-item"><div class="partner-icon">👥</div><p>Associations</p></div>
+      <div class="partner-item"><div class="partner-icon">🚢</div><p>Export Agencies</p></div>
+      <div class="partner-item"><div class="partner-icon">🚚</div><p>Suppliers</p></div>
+      <div class="partner-item"><div class="partner-icon">👨‍👩‍👧‍👦</div><p>Local Communities</p></div>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h2>Partnership Enquiry Form</h2>
+    <form class="partner-form">
+      <label>Email: *<input type="email" name="email" required></label>
+      <label>First name: *<input type="text" name="first_name" required></label>
+      <label>Last name: *<input type="text" name="last_name" required></label>
+      <label>Company name: *<input type="text" name="company_name" required></label>
+      <label>Job title: *<input type="text" name="job_title" required></label>
+      <label>Country: *
+        <select name="country" required>
+          <option value="">Please select</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+      <label>How do you wish to partner with us? *<textarea name="partnership_details" required></textarea></label>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+</body>
+</html>
