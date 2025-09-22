@@ -276,27 +276,57 @@
     </div>
   </section>
 
-  <section class="form-section">
-    <h2>Partnership Enquiry Form</h2>
-    <form class="partner-form">
-      <label>Email: *<input type="email" name="email" required></label>
-      <label>First name: *<input type="text" name="first_name" required></label>
-      <label>Last name: *<input type="text" name="last_name" required></label>
-      <label>Company name: *<input type="text" name="company_name" required></label>
-      <label>Job title: *<input type="text" name="job_title" required></label>
-      <label>Country: *
-        <select name="country" required>
-          <option value="">Please select</option>
-          <option value="Kenya">Kenya</option>
-          <option value="Tanzania">Tanzania</option>
-          <option value="Uganda">Uganda</option>
-          <option value="Other">Other</option>
-        </select>
-      </label>
-      <label>How do you wish to partner with us? *<textarea name="partnership_details" required></textarea></label>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+ <section class="form-section">
+  <h2>Partnership Enquiry Form</h2>
+  <form class="partner-form" 
+        action="https://script.google.com/macros/s/AKfycbw5whlKaMBijV6K4imtcUOhtS-p9-H-D2wxGcwSM0qiAaVriRt0skfdyYMuXqX87Ug3dQ/exec" 
+        method="POST" 
+        onsubmit="submitForm(event)">
+        
+    <label>Email: *<input type="email" name="email" required></label>
+    <label>First name: *<input type="text" name="first_name" required></label>
+    <label>Last name: *<input type="text" name="last_name" required></label>
+    <label>Company name: *<input type="text" name="company_name" required></label>
+    <label>Job title: *<input type="text" name="job_title" required></label>
+    <label>Country: *
+      <select name="country" required>
+        <option value="">Please select</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Uganda">Uganda</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label>How do you wish to partner with us? *
+      <textarea name="partnership_details" required></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
 
+  <!-- Confirmation Message -->
+  <div id="form-success" style="display:none; margin-top:20px; padding:15px; background:#d4edda; color:#155724; border:1px solid #c3e6cb; border-radius:5px;">
+    ✅ Thank you! Your submission has been received.
+  </div>
+</section>
+
+<script>
+async function submitForm(event) {
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: JSON.stringify(data)
+  });
+
+  if (response.ok) {
+    form.reset();
+    document.getElementById("form-success").style.display = "block";
+  } else {
+    alert("Oops! Something went wrong. Try again.");
+  }
+}
+</script>
 </body>
 </html>
