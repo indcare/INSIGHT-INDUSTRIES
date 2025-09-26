@@ -884,21 +884,66 @@ if (pastEvents.length > 0) {
     mainContent.innerHTML = htmlContent;
 }
       
-      function loadBusinessIdeas(event) {
-                if (event) event.preventDefault();
-                setActiveLink(event.target);
-                mainContent.innerHTML = `
-                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-                        <h2 class="text-2xl font-bold mb-4">Business Ideas</h2>
-                        <ul class="list-disc pl-5 space-y-3">
-                            <li><strong>Water Kiosk:</strong> A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.</li>
-                            <li><strong>Water ATM:</strong> A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.</li>
-                            <li><strong>Milk ATM:</strong> Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.</li>
-                        </ul>
-                    </div>
-                `;
-            }
+    function loadBusinessIdeas(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    mainContent.innerHTML = `
+        <div class="prose max-w-4xl mx-auto p-4 md:p-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Automated Vending Business Concepts</h2>
+            
+            <div class="space-y-8">
+                
+                <div class="border rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-4 bg-green-500 text-white">
+                        <h3 class="text-xl font-bold">💧 Water Kiosk</h3>
+                        <p class="text-sm">A fixed water dispensing point serving communities with clean water at low cost. Ideal for urban and peri-urban areas.</p>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-green-700 mb-2 border-b pb-1">Key Enhancements (Product & Service):</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                            <li>Offer Container Sales/Swap for branded, reusable bottles.</li>
+                            <li>Build loyalty with a Subscription/Loyalty Program for discounted refills.</li>
+                            <li>Increase trust by displaying Water Quality Certification.</li>
+                            <li>Cross-sell with Purified Ice Sales.</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <div class="border rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-4 bg-blue-500 text-white">
+                        <h3 class="text-xl font-bold">💳 Water ATM</h3>
+                        <p class="text-sm">A self-service, card- or coin-operated water dispenser that runs 24/7 with minimal staffing.</p>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-blue-700 mb-2 border-b pb-1">Key Enhancements (Technology & Reliability):</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                            <li>Ensure reliability with Solar Power or Battery Backup for 24/7 operation.</li>
+                            <li>Integrate IoT/Cloud Monitoring for real-time tracking of levels and faults.</li>
+                            <li>Accept payments via Mobile Money, Smart Cards, and Coins.</li>
+                            <li>Highlight the In-Built UV/RO System for advanced purification.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-4 bg-yellow-500 text-gray-900">
+                        <h3 class="text-xl font-bold">🥛 Milk ATM</h3>
+                        <p class="text-sm">Vending machines for fresh milk, refrigerated and metered. Useful near estates, markets, and busy pedestrian areas.</p>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="font-semibold text-yellow-700 mb-2 border-b pb-1">Key Enhancements (Product & Safety):</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                            <li>Add product variety by dispensing Flavored Milk (e.g., chocolate, vanilla).</li>
+                            <li>Expand dairy offerings with a separate Yoghurt/Fermented Milk ATM.</li>
+                            <li>Assure customers with a visible Digital Temperature Monitor and Automatic Cleaning Cycles.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    `;
+}
           function loadServiceProvided(event) {
     if (event) event.preventDefault();
     setActiveLink(event.target);
@@ -1265,16 +1310,35 @@ function loadVideoGallery(event) {
 }
 
 
-            function loadMotivationCorner(event) {
-                if (event) event.preventDefault();
-                setActiveLink(event.target);
-                mainContent.innerHTML = `
-                    <div class="prose max-w-4xl mx-auto p-4 md:p-8">
-                        <h2 class="text-2xl font-bold mb-4">Help</h2>
-                        <p>WELCOME TO OUR MOTIVATION CORNER </p>
-                    </div>
-                `;
-            }
+     function loadMotivationCorner(event) {
+    if (event) event.preventDefault();
+    setActiveLink(event.target);
+    mainContent.innerHTML = `
+        <div class="prose max-w-6xl mx-auto p-4 md:p-8 text-center">
+            <h2 class="text-2xl font-bold mb-4">WELCOME TO OUR MOTIVATION CORNER</h2>
+          
+
+            <!-- Structured Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Left: horizontal image spans 2 columns -->
+                <div class="md:col-span-2 overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="motivation 1.jpg" alt="Motivation 1" class="w-full h-auto object-cover">
+                </div>
+                
+                <!-- Right: two vertical images stacked -->
+                <div class="flex flex-col gap-6">
+                    <div class="overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="motivation 2.jpeg" alt="Motivation 2" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="motivation 3.jpg" alt="Motivation 3" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
 
 
 

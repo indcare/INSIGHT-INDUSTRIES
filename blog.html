@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights Industries Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden-content { display: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Blog Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Insight Industries Blog</h1>
+      <p class="text-lg text-gray-600">Guides, tips, and industry insights to help you choose the right solutions</p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Blog Card 1 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg overflow-hidden transition">
+        <img src="filter.jpeg" alt="Filter Cartridges" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h2 class="text-xl font-semibold mb-2">How to Choose the Right Filter Cartridge</h2>
+          <p class="text-gray-600 mb-4">Learn how to pick the right filter cartridge based on water quality, size, and application...</p>
+          <button onclick="toggleBlog('blog1')" class="text-blue-600 font-medium hover:underline">Read More →</button>
+
+          <!-- Hidden Content -->
+          <div id="blog1" class="hidden-content mt-4 text-gray-700 text-sm leading-relaxed">
+            <p>Filter cartridges are essential in ensuring water and process fluids are clean. To choose the right one, you should consider:</p>
+            <ul class="list-disc pl-5 mt-2">
+              <li>Type of contaminants (sediment, chlorine, organics)</li>
+              <li>Micron rating required</li>
+              <li>Flow rate and system pressure</li>
+              <li>Material compatibility (PP, carbon, resin)</li>
+            </ul>
+            <p class="mt-2">By matching the cartridge to your system’s needs, you avoid premature clogging and get maximum lifespan.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg overflow-hidden transition">
+        <img src="gauge.jpeg" alt="Pressure Gauges" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h2 class="text-xl font-semibold mb-2">Top 5 Mistakes When Choosing Pressure Gauges</h2>
+          <p class="text-gray-600 mb-4">Avoid common errors when selecting industrial pressure gauges for your systems...</p>
+          <button onclick="toggleBlog('blog2')" class="text-blue-600 font-medium hover:underline">Read More →</button>
+
+          <!-- Hidden Content -->
+          <div id="blog2" class="hidden-content mt-4 text-gray-700 text-sm leading-relaxed">
+            <p>Common mistakes include:</p>
+            <ol class="list-decimal pl-5 mt-2">
+              <li>Choosing the wrong pressure range</li>
+              <li>Not considering vibration resistance</li>
+              <li>Ignoring material compatibility with process fluid</li>
+              <li>Overlooking accuracy class</li>
+              <li>Skipping regular calibration</li>
+            </ol>
+            <p class="mt-2">A correct pressure gauge ensures system safety and efficiency.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg overflow-hidden transition">
+        <img src="uv.jpeg" alt="UV Sterilizer" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h2 class="text-xl font-semibold mb-2">The Role of UV Sterilizers in Clean Water Systems</h2>
+          <p class="text-gray-600 mb-4">Why UV sterilization is one of the most effective ways to ensure safe, clean water...</p>
+          <button onclick="toggleBlog('blog3')" class="text-blue-600 font-medium hover:underline">Read More →</button>
+
+          <!-- Hidden Content -->
+          <div id="blog3" class="hidden-content mt-4 text-gray-700 text-sm leading-relaxed">
+            <p>UV sterilizers work by using UV-C light to destroy bacteria, viruses, and protozoa. Benefits include:</p>
+            <ul class="list-disc pl-5 mt-2">
+              <li>No chemicals required</li>
+              <li>Safe and environmentally friendly</li>
+              <li>Effective against chlorine-resistant organisms</li>
+              <li>Low maintenance and long-lasting lamps</li>
+            </ul>
+            <p class="mt-2">They are ideal for residential, industrial, and commercial water systems.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleBlog(id) {
+      const content = document.getElementById(id);
+      content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
