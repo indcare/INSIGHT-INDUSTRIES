@@ -3,157 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B2B - IndMart</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    section h2 {
-      font-size: 2.5rem;
-      color: #003366;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    section p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      color: #444;
-    }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 40px;
-    }
-    .card {
-      flex: 1;
-      min-width: 280px;
-      margin: 10px;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card h3 {
-      color: #003366;
-    }
-    .card button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #003366;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .card button:hover {
-      background: #0055aa;
-    }
-    .categories {
-      margin-top: 50px;
-      text-align: center;
-    }
-    .categories h3 {
-      color: #003366;
-    }
-    .categories-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .category-box {
-      width: 200px;
-      margin: 10px;
-      padding: 15px;
-      background: #eaf2f8;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-  </style>
+  <title>B2B - Opportunities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-  <header>
-    <h1>Insight Industries,  B2B Marketplace</h1>
-    <p>Connecting Buyers, Suppliers, and Partners </p>
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl md:text-2xl font-bold">B2B Opportunities</h1>
+      <nav class="space-x-4 hidden md:flex">
+        <a href="#distributors" class="hover:underline">Distributors</a>
+        <a href="#consultants" class="hover:underline">Consultants</a>
+        <a href="#associates" class="hover:underline">Associates</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Business to Business (B2B)</h2>
-    <p>
-      Discover trusted suppliers, request bulk quotations, and explore trade partnerships. 
-      Insight Industries helps businesses connect and grow in the industrial and water solutions sector.
-    </p>
+  <!-- Main Content -->
+  <main class="flex-grow">
 
-    <div class="cards">
-      <div class="card">
-        <h3>For Buyers</h3>
-        <p>Find reliable suppliers, compare products, and request bulk quotations easily.</p>
-        <button>Post Your Requirement</button>
-      </div>
+    <!-- Distributor Section -->
+    <section id="distributors" class="bg-white py-12">
+      <div class="max-w-6xl mx-auto p-6">
+        <h2 class="text-2xl font-bold mb-4">Looking for Distributors</h2>
+        <p class="text-gray-600 mb-6">Connect with companies currently seeking distributors worldwide.</p>
+        
+        <button 
+          onclick="document.getElementById('distributor-grid').classList.toggle('hidden')" 
+          class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+          Show/Hide Distributors
+        </button>
+        
+        <div id="distributor-grid" class="hidden mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <div class="card">
-        <h3>For Suppliers</h3>
-        <p>Showcase your products, reach new customers, and receive direct B2B leads.</p>
-        <button>Become a Supplier</button>
-      </div>
+          <!-- Company A -->
+          <div class="bg-white border rounded-lg p-5 shadow hover:shadow-xl transition relative">
+            <span class="absolute top-2 right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">⭐ Verified</span>
+            <div class="flex items-center mb-4">
+              <img src="https://via.placeholder.com/60" alt="Company Logo" class="w-14 h-14 object-contain rounded mr-3">
+              <h3 class="text-xl font-semibold">Company A</h3>
+            </div>
+            <p><strong>Origin:</strong> Country X</p>
+            <p><strong>Status:</strong> Seeking distributor</p>
+            <div class="mt-4 flex space-x-3">
+              <a href="tel:+123456789" class="px-4 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700"><i class="fas fa-phone"></i> Call</a>
+              <a href="mailto:companyA@example.com" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>For Partners</h3>
-        <p>Collaborate with Insight Industries for distribution, reseller, or trade partnerships.</p>
-        <button>Explore Partnerships</button>
+          <!-- Company B -->
+          <div class="bg-white border rounded-lg p-5 shadow hover:shadow-xl transition relative">
+            <span class="absolute top-2 right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">📢 Featured</span>
+            <div class="flex items-center mb-4">
+              <img src="https://via.placeholder.com/60" alt="Company Logo" class="w-14 h-14 object-contain rounded mr-3">
+              <h3 class="text-xl font-semibold">Company B</h3>
+            </div>
+            <p><strong>Origin:</strong> Country Y</p>
+            <p><strong>Status:</strong> Looking for partners</p>
+            <div class="mt-4 flex space-x-3">
+              <a href="tel:+987654321" class="px-4 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700"><i class="fas fa-phone"></i> Call</a>
+              <a href="mailto:companyB@example.com" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </section>
+
+    <!-- Consultants Section -->
+    <section id="consultants" class="bg-gray-100 py-12">
+      <div class="max-w-6xl mx-auto p-6">
+        <h2 class="text-2xl font-bold mb-6">Consultants</h2>
+
+        <!-- Tabs -->
+        <div class="flex flex-wrap gap-2 border-b pb-2 mb-6">
+          <button onclick="openTab(event, 'technical')" class="tab-btn px-4 py-2 text-gray-600 hover:text-blue-600 font-medium border-b-2 border-transparent">⚙️ Technical</button>
+          <button onclick="openTab(event, 'tax')" class="tab-btn px-4 py-2 text-gray-600 hover:text-blue-600 font-medium border-b-2 border-transparent">📑 Tax</button>
+          <button onclick="openTab(event, 'finance')" class="tab-btn px-4 py-2 text-gray-600 hover:text-blue-600 font-medium border-b-2 border-transparent">💰 Finance</button>
+          <button onclick="openTab(event, 'realestate')" class="tab-btn px-4 py-2 text-gray-600 hover:text-blue-600 font-medium border-b-2 border-transparent">🏢 Real Estate</button>
+        </div>
+
+        <!-- Technical -->
+        <div id="technical" class="tab-content bg-white rounded-lg p-6 shadow">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-blue-50 border rounded-lg p-5 shadow hover:shadow-lg transition">
+              <h3 class="text-lg font-bold">Tech Solutions Ltd</h3>
+              <p class="text-sm text-gray-600 mb-3">Expert in product design, industrial automation, and engineering strategy.</p>
+              <div class="flex space-x-3">
+                <a href="tel:+111222333" class="px-3 py-2 bg-green-600 text-white rounded text-sm"><i class="fas fa-phone"></i> Call</a>
+                <a href="mailto:tech@example.com" class="px-3 py-2 bg-blue-600 text-white rounded text-sm"><i class="fas fa-envelope"></i> Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tax -->
+        <div id="tax" class="tab-content hidden bg-white rounded-lg p-6 shadow">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-green-50 border rounded-lg p-5 shadow hover:shadow-lg transition">
+              <h3 class="text-lg font-bold">Global Tax Experts</h3>
+              <p class="text-sm text-gray-600 mb-3">Specialized in corporate tax compliance, VAT, and cross-border advisory.</p>
+              <div class="flex space-x-3">
+                <a href="tel:+444555666" class="px-3 py-2 bg-green-600 text-white rounded text-sm"><i class="fas fa-phone"></i> Call</a>
+                <a href="mailto:tax@example.com" class="px-3 py-2 bg-blue-600 text-white rounded text-sm"><i class="fas fa-envelope"></i> Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Finance -->
+        <div id="finance" class="tab-content hidden bg-white rounded-lg p-6 shadow">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-yellow-50 border rounded-lg p-5 shadow hover:shadow-lg transition">
+              <h3 class="text-lg font-bold">Finance Advisory Hub</h3>
+              <p class="text-sm text-gray-600 mb-3">Guidance on capital management, investment strategy, and financial planning.</p>
+              <div class="flex space-x-3">
+                <a href="tel:+777888999" class="px-3 py-2 bg-green-600 text-white rounded text-sm"><i class="fas fa-phone"></i> Call</a>
+                <a href="mailto:finance@example.com" class="px-3 py-2 bg-blue-600 text-white rounded text-sm"><i class="fas fa-envelope"></i> Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Estate -->
+        <div id="realestate" class="tab-content hidden bg-white rounded-lg p-6 shadow">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 border rounded-lg p-5 shadow hover:shadow-lg transition">
+              <h3 class="text-lg font-bold">Urban Realty Group</h3>
+              <p class="text-sm text-gray-600 mb-3">Helping with property acquisition, leasing, and commercial investments.</p>
+              <div class="flex space-x-3">
+                <a href="tel:+123987654" class="px-3 py-2 bg-green-600 text-white rounded text-sm"><i class="fas fa-phone"></i> Call</a>
+                <a href="mailto:realestate@example.com" class="px-3 py-2 bg-blue-600 text-white rounded text-sm"><i class="fas fa-envelope"></i> Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Associates Section (unchanged) -->
+   <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-6">
+        <h3 class="text-2xl font-bold text-gray-800">Our Associates</h3>
     </div>
-
-    <div class="categories">
-      <h3>Categories</h3>
-      <div class="categories-grid">
-        <div class="category-box">Automation Parts </div>
-        <div class="category-box">Industrial Hardware</div>
-        <div class="category-box">Industrial  Gauges </div>
-        <div class="category-box">Industrial Machine</div>
-       <div class="category-box">Pneumatic</div>
-         <div class="category-box">Pumps</div>
-         <div class="category-box">Water Treatment</div>
-
-
-      </div>
+    <div class="associate-logos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center">
+         <img src="logoo.png" alt="AMRUT" class="w-full h-16 object-contain">
+        <img src="BANNEER CLEAR.png" alt="AMRUT" class="w-full h-32 object-contain">
+ <img src="RTECH.jpg" alt="Rtex" class="w-full h-16 object-contain">
+         
+             <img src="tata.png" alt="Tata" class="w-full h-16 object-contain">
+       <img src="blue h20.png" alt="Blue H20" class="w-full h-16 object-contain">
+      
+             <img src="rex.png" alt="Rexnord" class="w-full h-16 object-contain">
+       
+        <img src="autonics.png" alt="Autonics" class="w-full h-16 object-contain">
+        <img src="fluke.png" alt="Fluke" class="w-full h-16 object-contain">
+        <img src="delta.png" alt="Delta" class="w-full h-16 object-contain">
+      
+        <img src="seltech.png" alt="Seltech" class="w-full h-16 object-contain">
+        <img src="Kenya Homes.jpg" alt="Kenya Homes" class="w-full h-16 object-contain">
+      
+         <img src="lovato.png" alt="Lovato Electric" class="w-full h-16 object-contain">
+      
     </div>
-  </section>
+</div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Insight Industries - All Rights Reserved</p>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-[#87CEEB] text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center">
+      <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+      <div class="mb-6 space-y-2">
+        <p class="text-lg">
+          <a href="mailto:infoinsightindustries@gmail.com" class="hover:underline">
+            <i class="fas fa-envelope mr-2"></i>infoinsightindustries@gmail.com
+          </a>
+        </p>
+        <p class="text-lg">
+          <a href="http://www.indcareafrica.com" target="_blank" rel="noopener" class="hover:underline">
+            <i class="fas fa-globe mr-2"></i>Visit Us
+          </a>
+        </p>
+      </div>
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="https://www.facebook.com/indcareafrica" target="_blank" rel="noopener" aria-label="Facebook" class="text-white hover:text-blue-500 transition-colors duration-200">
+          <i class="fab fa-facebook text-4xl"></i>
+        </a>
+        <a href="https://www.instagram.com/indcareafrica/" target="_blank" rel="noopener" aria-label="Instagram" class="text-white hover:text-pink-500 transition-colors duration-200">
+          <i class="fab fa-instagram text-4xl"></i>
+        </a>
+        <a href="https://ke.linkedin.com/company/indcare-africa-ltd" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-white hover:text-blue-700 transition-colors duration-200">
+          <i class="fab fa-linkedin text-4xl"></i>
+        </a>
+        <a href="https://wa.me/254777895312" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-white hover:text-green-500 transition-colors duration-200">
+          <i class="fab fa-whatsapp text-4xl"></i>
+        </a>
+      </div>
+      <p class="text-gray-200 text-sm">© 2025 IndCare Africa</p>
+    </div>
   </footer>
+
+  <!-- Script for Tabs -->
+  <script>
+    function openTab(evt, tabId) {
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
+      document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("text-blue-600", "border-blue-600"));
+      document.getElementById(tabId).classList.remove("hidden");
+      evt.currentTarget.classList.add("text-blue-600", "border-blue-600");
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".tab-btn").click();
+    });
+  </script>
 
 </body>
 </html>
+
