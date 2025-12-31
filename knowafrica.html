@@ -1,203 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Know Africa - Kenya</title>
-  <style>
-    /* --- CSS Variables for easy color management --- */
-    :root {
-      --primary-color: #E94E77; /* The Pink */
-      --secondary-color: #2c3e50; /* Dark Blue-Grey */
-      --bg-color: #f0f2f5;
-      --card-bg: #ffffff;
-      --text-color: #4a4a4a;
-      --shadow: 0 4px 6px rgba(0,0,0,0.1);
-      --shadow-hover: 0 10px 15px rgba(0,0,0,0.15);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Africa - EAC Portal</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: #333; background: #f9f6f2; }
+        header { background: #2d5a27; color: white; padding: 2rem 0; text-align: center; }
+        
+        /* Navigation Bar */
+        nav { background: #1b3d18; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; padding: 15px 20px; text-decoration: none; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        nav a:hover { background: #e67e22; }
 
-    /* --- General Reset --- */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.8; /* improved readability */
-    }
-
-    /* --- Navigation --- */
-    nav {
-      background: var(--primary-color);
-      padding: 15px 0;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      font-size: 1.1em;
-      cursor: pointer;
-      transition: opacity 0.3s;
-    }
-
-    nav a:hover {
-      opacity: 0.8;
-    }
-
-    nav a.active {
-      border-bottom: 2px solid white;
-      padding-bottom: 3px;
-    }
-
-    /* --- Header / Hero Section --- */
-    header {
-      background: linear-gradient(135deg, #2c3e50, #4ca1af);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-      margin-bottom: 40px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      letter-spacing: 1px;
-    }
-    
-    header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-
-    /* --- Main Content Layout --- */
-    #main-content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px 60px 20px;
-    }
-
-    h2 {
-      color: var(--primary-color);
-      font-size: 1.8em;
-      margin-top: 0;
-      border-bottom: 2px solid #f0f0f0;
-      padding-bottom: 10px;
-    }
-
-    /* --- Card Styling --- */
-    .article-block {
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      margin-bottom: 30px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .article-block:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    p {
-      margin-bottom: 15px;
-    }
-
-    /* --- Responsive Design --- */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2em; }
-      .article-block { padding: 20px; }
-      nav a { display: block; margin: 10px 0; }
-    }
-  </style>
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1, h2 { color: #2d5a27; }
+        .hero { width: 100%; height: 300px; background: #ddd url('https://via.placeholder.com/1000x300?text=Explore+Kenya+Landscapes') no-repeat center/cover; border-radius: 8px; margin-bottom: 20px; }
+        
+        .section { margin-bottom: 40px; }
+        .attraction-box { padding: 15px; border-left: 5px solid #e67e22; background: #fffcf5; margin-bottom: 20px; }
+        .icon-placeholder { width: 60px; height: 60px; background: #eee; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 10px; font-size: 24px; border: 2px dashed #bbb; }
+        
+        footer { text-align: center; padding: 20px; background: #2d5a27; color: white; margin-top: 40px; }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" onclick="loadNews(event)" id="know-africa-link">Know Africa</a>
-    </nav>
+<header>
+    <h1>KNOW AFRICA</h1>
+    <p>Discover the Wonders of the East African Community</p>
+</header>
 
-  <header>
-    <h1>Welcome to Kenya</h1>
-    <p>Discover the Magic of East Africa</p>
-  </header>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">EAC Overview</a>
+    <a href="#">Kenya</a>
+    <a href="#">Uganda</a>
+    <a href="#">Tanzania</a>
+    <a href="#">Rwanda</a>
+    <a href="#">Burundi</a>
+    <a href="#">South Sudan</a>
+    <a href="#">DRC</a>
+</nav>
 
-  <div id="main-content">
-    <p style="text-align:center; padding: 20px;">Loading content...</p>
-  </div>
+<div class="container">
+    <div class="hero"></div>
 
-  <script>
-    const mainContent = document.getElementById('main-content');
-    const navLink = document.getElementById('know-africa-link');
+    <div class="section">
+        <h2>Kenya: The Heart of the African Wilderness</h2>
+        <p>Kenya is widely regarded as the cradle of humanity and a global leader in wildlife conservation. From its snow-capped mountains to its sun-drenched beaches, it offers a diverse landscape unlike anywhere else on earth.</p>
+    </div>
 
-    // I stored the content data here so it's cleaner and easier to edit
-    const articleData = [
-      {
-        title: "Tourist Attractions in Kenya",
-        content: [
-          "Kenya is home to some of the world’s most stunning tourist destinations, celebrated for its incredible landscapes, abundant wildlife, and rich cultural diversity. From vast savannahs and pristine beaches with coral reefs, to dense equatorial forests and towering snow-capped mountains, Kenya offers a spectacular range of natural beauty.",
-          "Often called Africa’s original safari destination, Kenya has been attracting explorers, adventurers, and travelers for centuries. A safari here is truly a once-in-a-lifetime experience. But Kenya’s appeal goes far beyond safaris. Visitors can explore ancient archaeological sites, historical ruins, cultural landmarks, majestic mountains, and thrilling adventure and water sports. The country also hosts unique annual festivals that showcase its rich heritage."
-        ]
-      },
-      {
-        title: "Historical and Cultural Highlights",
-        content: [
-          "Kenya has one of the world’s most extensive records of human cultural development. Excavations in the Tugen Hills near Lake Baringo have uncovered some of the earliest fossil beds. Other remarkable sites include Sibiloi National Park on Lake Turkana’s shores, Hyrax Hill and Kariandusi near Nakuru, Rusinga Island in Lake Victoria, and Olorgesailie near Lake Magadi.",
-          "The country is also home to atmospheric ruins dating back to early civilizations that thrived along the Indian Ocean trade routes. Gede, near Watamu, flourished between the 13th and 17th centuries before being mysteriously abandoned, with local legends speaking of ghosts and unexplained events. Similarly, Takwa on Manda Island near Lamu was a thriving settlement before its 17th-century desertion."
-        ]
-      },
-      {
-        title: "Cultural Diversity",
-        content: [
-          "Kenya is home to 42 distinct tribes, each with its own customs and traditions. The Maasai are perhaps the most famous, known worldwide for their warrior heritage, striking red attire, and intricate beadwork. The El Molo, one of the smallest tribes, traditionally hunt fish, crocodiles, and hippos in Lake Turkana.",
-          "The nomadic Rendille depend on camels for food, milk, clothing, and transport, while the coastal Swahili have strong Arab and Persian cultural influences. The Kalenjin are celebrated for producing some of Kenya’s top marathon runners. A growing number of tour operators now offer cultural safaris, allowing visitors to engage with local communities and experience Kenya’s diverse heritage firsthand."
-        ]
-      }
-    ];
+    <div class="main-container">
+    <h2 class="section-title">Top Tourist Attractions in Kenya</h2>
 
-    function loadNews(event) {
-      if(event) event.preventDefault();
-      
-      // Highlight the active link
-      if(navLink) navLink.classList.add('active');
+    <div class="attraction-box">
+        <div class="attraction-image">
+            <img src="MASAAI.webp" alt="Maasai Mara">
+        </div>
+        <div class="attraction-content">
+            <h3>Maasai Mara National Reserve</h3>
+            <p>Known for the legendary "Great Migration," this is the world's most dramatic wildlife viewing theater. Watch millions of wildebeest and zebras brave crocodile-infested rivers while lions and cheetahs prowl the vast savanna plains.</p>
+        </div>
+    </div>
 
-      // Clear current content
-      mainContent.innerHTML = '';
+    <div class="attraction-box">
+        <div class="attraction-image">
+            <img src="amboseli-national-park-1110x700.webp" alt="Amboseli">
+        </div>
+        <div class="attraction-content">
+            <h3>Amboseli National Park</h3>
+            <p>Situated at the foot of Mount Kilimanjaro, Amboseli is the premier destination to encounter massive herds of free-ranging elephants. It offers the best landscape photography opportunities in Africa with the snow-capped mountain as a backdrop.</p>
+        </div>
+    </div>
 
-      // Loop through the data to create HTML
-      articleData.forEach(article => {
-        // Create the card div
-        const card = document.createElement('div');
-        card.className = 'article-block';
+    <div class="attraction-box">
+        <div class="attraction-image">
+            <img src="Attractions-in-Lake-Nakuru-National-Parksss.webp" alt="Lake Nakuru">
+        </div>
+        <div class="attraction-content">
+            <h3>Lake Nakuru National Park</h3>
+            <p>A vibrant sanctuary famous for its massive flocks of flamingos that turn the shoreline pink. Beyond the birds, it is one of Kenya's most successful rhino sanctuaries, providing a safe home for both black and white rhinos.</p>
+        </div>
+    </div>
 
-        // Add the title
-        const h2 = document.createElement('h2');
-        h2.textContent = article.title;
-        card.appendChild(h2);
+    <div class="attraction-box">
+        <div class="attraction-image">
+            <img src="LAMU.webp" alt="Lamu Island">
+        </div>
+        <div class="attraction-content">
+            <h3>Lamu Island</h3>
+            <p>A UNESCO World Heritage site and a living monument to Swahili culture. This car-free island invites you to wander through narrow stone alleys, sail on ancient dhows, and experience a pace of life that hasn't changed in centuries.</p>
+        </div>
+    </div>
 
-        // Add the paragraphs
-        article.content.forEach(text => {
-          const p = document.createElement('p');
-          p.textContent = text;
-          card.appendChild(p);
-        });
+    <div class="attraction-box">
+        <div class="attraction-image">
+            <img src="MOUNT K.webp" alt="Mount Kenya">
+        </div>
+        <div class="attraction-content">
+            <h3>Mount Kenya</h3>
+            <p>The second-highest peak in Africa offers a diverse range of ecosystems, from thick bamboo forests to glacial moorlands. While the summit is a technical climb, the lower peaks are accessible to any fit trekker looking for stunning views.</p>
+        </div>
+    </div>
 
-        // Add card to main content
-        mainContent.appendChild(card);
-      });
-    }
+</div>
 
-    // Automatically load the content when the page finishes loading
-    document.addEventListener('DOMContentLoaded', () => {
-      loadNews(null);
-    });
-  </script>
+<footer>
+    <p>&copy; 2025 Know Africa Website Project. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
