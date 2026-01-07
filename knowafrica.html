@@ -4,111 +4,808 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Know Africa - EAC Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: #333; background: #f9f6f2; }
-        header { background: #2d5a27; color: white; padding: 2rem 0; text-align: center; }
-        
-        /* Navigation Bar */
-        nav { background: #1b3d18; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: white; padding: 15px 20px; text-decoration: none; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: 0.3s; }
-        nav a:hover { background: #e67e22; }
-
-        .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1, h2 { color: #2d5a27; }
-        .hero { width: 100%; height: 300px; background: #ddd url('https://via.placeholder.com/1000x300?text=Explore+Kenya+Landscapes') no-repeat center/cover; border-radius: 8px; margin-bottom: 20px; }
-        
-        .section { margin-bottom: 40px; }
-        .attraction-box { padding: 15px; border-left: 5px solid #e67e22; background: #fffcf5; margin-bottom: 20px; }
-        .icon-placeholder { width: 60px; height: 60px; background: #eee; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 10px; font-size: 24px; border: 2px dashed #bbb; }
-        
-        footer { text-align: center; padding: 20px; background: #2d5a27; color: white; margin-top: 40px; }
+        .hero-gradient { background: linear-gradient(to bottom, #1b3d18, #2d5a27); }
+        .nav-link.active { background-color: #e67e22; color: white; }
+        #content-area { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
+<body class="bg-stone-50 text-gray-800 font-sans">
 
-<header>
-    <h1>KNOW AFRICA</h1>
-    <p>Discover the Wonders of the East African Community</p>
-</header>
+    <header class="hero-gradient text-white py-8 text-center shadow-lg">
+        <h1 class="text-5xl font-black tracking-tighter">KNOW AFRICA</h1>
+        <p class="text-sm uppercase tracking-[0.3em] mt-2 opacity-80">Explore East African Communities</p>
+    </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">EAC Overview</a>
-    <a href="#">Kenya</a>
-    <a href="#">Uganda</a>
-    <a href="#">Tanzania</a>
-    <a href="#">Rwanda</a>
-    <a href="#">Burundi</a>
-    <a href="#">South Sudan</a>
-    <a href="#">DRC</a>
-</nav>
-
-<div class="container">
-    <div class="hero"></div>
-
-    <div class="section">
-        <h2>Kenya: The Heart of the African Wilderness</h2>
-        <p>Kenya is widely regarded as the cradle of humanity and a global leader in wildlife conservation. From its snow-capped mountains to its sun-drenched beaches, it offers a diverse landscape unlike anywhere else on earth.</p>
-    </div>
-
-    <div class="main-container">
-    <h2 class="section-title">Top Tourist Attractions in Kenya</h2>
-
-    <div class="attraction-box">
-        <div class="attraction-image">
-            <img src="MASAAI.webp" alt="Maasai Mara">
+    <nav class="bg-[#1b3d18] sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center">
+            <button onclick="loadSection('home')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-home">Home</button>
+            <button onclick="loadSection('kenya')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-kenya">Kenya</button>
+            <button onclick="loadSection('tanzania')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-tanzania">Tanzania</button>
+            <button onclick="loadSection('uganda')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-uganda">Uganda</button>
+            <button onclick="loadSection('rwanda')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-rwanda">Rwanda</button>
+            <button onclick="loadSection('burundi')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-burundi">Burundi</button>
+            <button onclick="loadSection('southsudan')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-southsudan">South Sudan</button>
+            <button onclick="loadSection('drc')" class="nav-link px-6 py-4 font-bold text-white hover:bg-[#e67e22] transition uppercase text-xs" id="nav-drc">DR Congo</button>
         </div>
-        <div class="attraction-content">
-            <h3>Maasai Mara National Reserve</h3>
-            <p>Known for the legendary "Great Migration," this is the world's most dramatic wildlife viewing theater. Watch millions of wildebeest and zebras brave crocodile-infested rivers while lions and cheetahs prowl the vast savanna plains.</p>
-        </div>
-    </div>
+    </nav>
 
-    <div class="attraction-box">
-        <div class="attraction-image">
-            <img src="amboseli-national-park-1110x700.webp" alt="Amboseli">
-        </div>
-        <div class="attraction-content">
-            <h3>Amboseli National Park</h3>
-            <p>Situated at the foot of Mount Kilimanjaro, Amboseli is the premier destination to encounter massive herds of free-ranging elephants. It offers the best landscape photography opportunities in Africa with the snow-capped mountain as a backdrop.</p>
-        </div>
-    </div>
+    <main id="content-area" class="max-w-6xl mx-auto p-6 mt-6"></main>
 
-    <div class="attraction-box">
-        <div class="attraction-image">
-            <img src="Attractions-in-Lake-Nakuru-National-Parksss.webp" alt="Lake Nakuru">
-        </div>
-        <div class="attraction-content">
-            <h3>Lake Nakuru National Park</h3>
-            <p>A vibrant sanctuary famous for its massive flocks of flamingos that turn the shoreline pink. Beyond the birds, it is one of Kenya's most successful rhino sanctuaries, providing a safe home for both black and white rhinos.</p>
-        </div>
-    </div>
+    <script>
+        const contentArea = document.getElementById('content-area');
 
-    <div class="attraction-box">
-        <div class="attraction-image">
-            <img src="LAMU.webp" alt="Lamu Island">
-        </div>
-        <div class="attraction-content">
-            <h3>Lamu Island</h3>
-            <p>A UNESCO World Heritage site and a living monument to Swahili culture. This car-free island invites you to wander through narrow stone alleys, sail on ancient dhows, and experience a pace of life that hasn't changed in centuries.</p>
-        </div>
-    </div>
+        function loadSection(section) {
+            // Update Active Link UI
+            document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('nav-' + section);
+            if (activeBtn) activeBtn.classList.add('active');
 
-    <div class="attraction-box">
-        <div class="attraction-image">
-            <img src="MOUNT K.webp" alt="Mount Kenya">
+            if (section === 'home') {
+                contentArea.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-4xl font-bold text-[#2d5a27] mb-6">Welcome to the EAC</h2>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                The East African Community (EAC) is a regional powerhouse. 
+                                Explore the diverse landscapes, booming economies, and rich cultural tapestries of each member nation using the navigation above.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 bg-white border-l-4 border-[#e67e22] shadow-sm">
+                                    <h4 class="font-bold">8 Nations</h4>
+                                    <p class="text-xs text-gray-500">Integrating as one bloc.</p>
+                                </div>
+                                <div class="p-4 bg-white border-l-4 border-[#e67e22] shadow-sm">
+                                    <h4 class="font-bold">300M+ People</h4>
+                                    <p class="text-xs text-gray-500">A vibrant, growing market.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="https://via.placeholder.com/600x400?text=East+Africa+Community+Map" alt="EAC Map" class="w-full h-auto rounded-2xl shadow-xl">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="bg-white/90 px-6 py-3 rounded-full font-bold text-sm shadow-lg text-[#2d5a27]">Select a country above to begin</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (section === 'kenya') {
+                contentArea.innerHTML = `
+                <div class="animate-fadeIn pb-20">
+                    <div class="relative h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-8 md:p-16">
+                            <span class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-2">The Cradle of Humankind</span>
+                            <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">KENYA</h2>
+                            <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">A world within a single border, where ancient history meets the pulse of modern adventure.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                        <div class="lg:col-span-2 space-y-16">
+                            <section>
+                                <div class="flex items-center gap-4 mb-6">
+                                    <span class="bg-[#e67e22] text-white px-3 py-1 rounded text-xs font-bold uppercase">Landscapes</span>
+                                    <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                                </div>
+                                <h3 class="text-4xl font-black text-[#1b3d18] mb-6 tracking-tight">An Ecosystem of Wonders</h3>
+                                <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                                    Kenya is Africa’s original safari heartland, offering a spectrum of scenery that ranges from sun-drenched savannahs to alpine snow-caps. Whether it is the dense equatorial forests or the tropical coral reefs of the Indian Ocean, the diversity provides an unparalleled adventure for every traveler.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="rounded-2xl overflow-hidden h-64 shadow-lg">
+                                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="bg-stone-100 p-6 rounded-2xl border-l-4 border-[#2d5a27]">
+                                            <h4 class="font-bold text-[#1b3d18]">Aquatic Adventure</h4>
+                                            <p class="text-sm text-gray-500">World-class scuba diving, kite-surfing, and jet-skiing along the white sands of the coast.</p>
+                                        </div>
+                                        <div class="bg-stone-100 p-6 rounded-2xl border-l-4 border-[#e67e22]">
+                                            <h4 class="font-bold text-[#1b3d18]">High Altitude</h4>
+                                            <p class="text-sm text-gray-500">Trek the majestic Mt. Kenya or explore the volcanic terrain of Mt. Longonot.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="bg-[#1b3d18] text-white p-10 rounded-[2.5rem] shadow-xl">
+                                <h3 class="text-3xl font-bold mb-6">Ancient Heritage & Ruins</h3>
+                                <p class="opacity-80 leading-relaxed mb-8 text-lg">
+                                    Boasting one of the most complete records of human evolution, Kenya features prehistoric excavations at Lake Turkana and atmospheric 13th-century Swahili ruins like Gede.
+                                </p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                    <div class="p-4 bg-white/10 rounded-xl">
+                                        <span class="block text-2xl font-bold text-orange-400">42</span>
+                                        <span class="text-[10px] uppercase tracking-widest">Ethnic Tribes</span>
+                                    </div>
+                                    <div class="p-4 bg-white/10 rounded-xl">
+                                        <span class="block text-2xl font-bold text-orange-400">#2</span>
+                                        <span class="text-[10px] uppercase tracking-widest">Peak in Africa</span>
+                                    </div>
+                                    <div class="p-4 bg-white/10 rounded-xl">
+                                        <span class="block text-2xl font-bold text-orange-400">13C</span>
+                                        <span class="text-[10px] uppercase tracking-widest">Gede Ruins</span>
+                                    </div>
+                                    <div class="p-4 bg-white/10 rounded-xl">
+                                        <span class="block text-2xl font-bold text-orange-400">UNESCO</span>
+                                        <span class="text-[10px] uppercase tracking-widest">Lamu Heritage</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100">
+                                <h4 class="font-bold text-xl mb-6 text-[#2d5a27]">📍 Traveler's Intel</h4>
+                                <ul class="space-y-6">
+                                    <li>
+                                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Cultural Icons</p>
+                                        <p class="font-bold text-gray-700">Maasai Warriors & Rendille Nomads</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Excavations</p>
+                                        <p class="font-bold text-gray-700">Tugen Hills & Sibiloi Park</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Adrenaline</p>
+                                        <p class="font-bold text-gray-700">Tana River White Water Rafting</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-gradient-to-br from-[#e67e22] to-orange-600 p-8 rounded-[2rem] text-white shadow-xl">
+                                <h4 class="font-bold text-xl mb-2">Partner with Kenya</h4>
+                                <p class="text-sm opacity-90 mb-6">Invest in the regional hub for tech, athletics, and sustainable tourism.</p>
+                                <button class="w-full py-4 bg-white text-orange-600 rounded-2xl font-black text-xs uppercase tracking-widest">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            } 
+             else if (section === 'tanzania') {
+    contentArea.innerHTML = `
+        <div class="animate-fadeIn pb-20">
+            <div class="relative h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-16">
+                    <span class="text-blue-400 font-bold tracking-widest uppercase text-sm mb-2">The Roof of Africa</span>
+                    <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">TANZANIA</h2>
+                    <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">From the endless plains of the Serengeti to the spice-scented streets of Zanzibar.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-16">
+                    
+                    <section>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="bg-[#e67e22] text-white px-3 py-1 rounded text-xs font-bold uppercase">Wildlife</span>
+                            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                        </div>
+                        <h3 class="text-4xl font-black text-[#1b3d18] mb-6 tracking-tight">The Greatest Show on Earth</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            Witness the <strong>Great Migration</strong>, a thunderous movement of millions of wildebeest and zebras across the Serengeti. Unlike standard tours, our focus is on exclusivity—using seasonally adjusted routes that put you in the heart of the action, away from the crowds, in luxury mobile camps that follow the rhythm of the wild.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-2xl border-b-4 border-blue-200">
+                                <h4 class="font-bold text-blue-900 mb-2">Indian Ocean Cruises</h4>
+                                <p class="text-sm text-blue-800/70">Expedition cruises from Kenya to Cape Town, stopping at paradise islands and hidden coastal gems.</p>
+                            </div>
+                            <div class="bg-green-50 p-6 rounded-2xl border-b-4 border-green-200">
+                                <h4 class="font-bold text-green-900 mb-2">Off the Beaten Path</h4>
+                                <p class="text-sm text-green-800/70">Southern Tanzania offers a raw, untouched safari experience for the true explorer.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-stone-900 text-white p-10 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-3xl font-bold mb-6">Conquering the Summit</h3>
+                            <p class="opacity-80 leading-relaxed mb-8">
+                                Mount Kilimanjaro stands as a sentinel over the continent. Whether taking the scenic <strong>Northern Circuit</strong> or a private guided journey, reaching the peak is a transformative "Level 6" challenge that remains the ultimate African bucket-list achievement.
+                            </p>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="text-center">
+                                    <span class="block text-xl font-bold text-blue-400">5,895m</span>
+                                    <span class="text-[9px] uppercase opacity-50">Altitude</span>
+                                </div>
+                                <div class="text-center border-x border-white/10">
+                                    <span class="block text-xl font-bold text-blue-400">11-13</span>
+                                    <span class="text-[9px] uppercase opacity-50">Day Treks</span>
+                                </div>
+                                <div class="text-center">
+                                    <span class="block text-xl font-bold text-blue-400">Level 6+</span>
+                                    <span class="text-[9px] uppercase opacity-50">Intensity</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 right-0 opacity-10 pointer-events-none">
+                            <svg width="200" height="200" viewBox="0 0 200 200"><path d="M100 0 L200 200 L0 200 Z" fill="white"/></svg>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-3xl font-black text-[#1b3d18] mb-8">Beyond the Jeep</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="p-4 bg-stone-100 rounded-xl">
+                                <h5 class="font-bold text-sm">Olduvai Gorge</h5>
+                                <p class="text-[10px] text-gray-500">Visit the "Cradle of Mankind" with expert naturalists.</p>
+                            </div>
+                            <div class="p-4 bg-stone-100 rounded-xl">
+                                <h5 class="font-bold text-sm">Maasai Culture</h5>
+                                <p class="text-[10px] text-gray-500">Authentic, respectful cultural immersion.</p>
+                            </div>
+                            <div class="p-4 bg-stone-100 rounded-xl">
+                                <h5 class="font-bold text-sm">Aerial Safaris</h5>
+                                <p class="text-[10px] text-gray-500">Private charter flights over the migration plains.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-xl mb-6 text-[#2d5a27]">🌍 Signature Trips</h4>
+                        <div class="space-y-6">
+                            <div class="group cursor-pointer">
+                                <span class="text-[10px] bg-orange-100 text-orange-600 px-2 py-0.5 rounded font-bold">TOP RATED</span>
+                                <p class="font-bold text-gray-800 mt-1">Great Migration Safari</p>
+                                <p class="text-xs text-gray-500">13 Days • From $12,195</p>
+                            </div>
+                            <div class="group cursor-pointer border-t pt-4">
+                                <span class="text-[10px] bg-blue-100 text-blue-600 px-2 py-0.5 rounded font-bold">ADVENTURE</span>
+                                <p class="font-bold text-gray-800 mt-1">Northern Circuit Climb</p>
+                                <p class="text-xs text-gray-500">11 Days • From $8,395</p>
+                            </div>
+                            <div class="group cursor-pointer border-t pt-4">
+                                <span class="text-[10px] bg-purple-100 text-purple-600 px-2 py-0.5 rounded font-bold">FAMILY</span>
+                                <p class="font-bold text-gray-800 mt-1">Tanzania Family Safari</p>
+                                <p class="text-xs text-gray-500">8 Days • From $8,395</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1b3d18] p-8 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
+                        <h4 class="font-bold text-xl mb-2">Expert-Led Journeys</h4>
+                        <p class="text-sm opacity-80 mb-6">Our guides stay with you from touchdown to takeoff. No hand-offs, just pure expertise.</p>
+                        <button class="w-full py-4 bg-[#e67e22] text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition">View All Tanzania Trips</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="attraction-content">
-            <h3>Mount Kenya</h3>
-            <p>The second-highest peak in Africa offers a diverse range of ecosystems, from thick bamboo forests to glacial moorlands. While the summit is a technical climb, the lower peaks are accessible to any fit trekker looking for stunning views.</p>
+    `;}
+            
+          else if (section === 'uganda') {
+    contentArea.innerHTML = `
+        <div class="animate-fadeIn pb-20">
+            <div class="relative h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#1b3d18] via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+                    <span class="text-green-400 font-bold tracking-widest uppercase text-sm mb-2">The Pearl of Africa</span>
+                    <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">UGANDA</h2>
+                    <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">A sanctuary where the deep jungle meets the sprawling savannah.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-16">
+                    
+                    <section>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="bg-[#2d5a27] text-white px-3 py-1 rounded text-xs font-bold uppercase">Emerald Wilds</span>
+                            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                        </div>
+                        <h3 class="text-4xl font-black text-[#1b3d18] mb-6 tracking-tight">The Primate Kingdom</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            Uganda offers a safari experience that is raw and intimate. Beyond the traditional game drive, this is the land of the <strong>Endangered Mountain Gorilla</strong>. Imagine trekking through the ancient, misty Bwindi Impenetrable Forest to stand face-to-face with a silverback—a moment that defines a lifetime.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div class="rounded-3xl overflow-hidden shadow-xl rotate-1 group">
+                                <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex gap-4">
+                                    <div class="h-10 w-10 shrink-0 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">🐒</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Chimpanzee Tracking</h5>
+                                        <p class="text-sm text-gray-500">Watch our closest relatives leap through tropical forest canopies.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="h-10 w-10 shrink-0 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-700 font-bold">🦁</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Tree-Climbing Lions</h5>
+                                        <p class="text-sm text-gray-500">Marvel at the unique prides of Queen Elizabeth National Park.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-gradient-to-br from-[#2d5a27] to-[#1b3d18] text-white p-10 rounded-[2.5rem] shadow-xl">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="flex-1">
+                                <h3 class="text-3xl font-bold mb-4">Untamed Biodiversity</h3>
+                                <p class="opacity-80 leading-relaxed">
+                                    From the source of the Nile to the snow-capped Rwenzori Mountains, Uganda’s geography is a lush tapestry. We’ve designed expeditions that take you deep into tropical heartlands where the biodiversity is the highest on the continent.
+                                </p>
+                            </div>
+                            <div class="w-full md:w-1/3 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+                                <p class="text-[10px] uppercase tracking-widest mb-4 opacity-60">Adventure Levels</p>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs"><span>Bwindi Trek</span><span class="font-bold text-green-400">Level 3+</span></div>
+                                    <div class="w-full bg-white/20 h-1 rounded-full"><div class="bg-green-400 h-1 rounded-full w-[75%]"></div></div>
+                                    <div class="flex justify-between text-xs mt-2"><span>Nile Rafting</span><span class="font-bold text-green-400">Level 4</span></div>
+                                    <div class="w-full bg-white/20 h-1 rounded-full"><div class="bg-green-400 h-1 rounded-full w-[85%]"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 relative overflow-hidden">
+                        <h4 class="font-bold text-xl mb-6 text-[#2d5a27]">🦍 Primate Expeditions</h4>
+                        <div class="space-y-6">
+                            <div class="p-4 rounded-2xl hover:bg-stone-50 border border-transparent hover:border-stone-100 transition cursor-pointer">
+                                <p class="text-[10px] text-green-600 font-bold">10 DAYS</p>
+                                <h5 class="font-black text-gray-800">Mountain Gorilla Safari</h5>
+                                <p class="text-xs text-gray-500 mt-1">From $9,395 • Group Trip</p>
+                            </div>
+                            <div class="p-4 rounded-2xl hover:bg-stone-50 border border-transparent hover:border-stone-100 transition cursor-pointer">
+                                <p class="text-[10px] text-green-600 font-bold">12 DAYS</p>
+                                <h5 class="font-black text-gray-800">The Ultimate Uganda</h5>
+                                <p class="text-xs text-gray-500 mt-1">From $10,195 • Comprehensive</p>
+                            </div>
+                            <div class="p-4 rounded-2xl hover:bg-stone-50 border border-transparent hover:border-stone-100 transition cursor-pointer">
+                                <p class="text-[10px] text-green-600 font-bold">8 DAYS</p>
+                                <h5 class="font-black text-gray-800">Uganda Private Safari</h5>
+                                <p class="text-xs text-gray-500 mt-1">From $6,995 • Tailor Made</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-8 rounded-[2rem] border border-yellow-100 shadow-sm">
+                        <h4 class="font-bold text-yellow-800 mb-2 italic">Naturalist Tip:</h4>
+                        <p class="text-sm text-yellow-700 leading-relaxed">
+                            Don't miss the Kazinga Channel boat cruise; it offers the world's highest concentration of hippos and incredible bird-watching.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    `;}  
+            
+        else if (section === 'rwanda') {
+    contentArea.innerHTML = `
+        <div class="animate-fadeIn pb-20">
+            <div class="relative h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0d2a31] via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+                    <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2">The Land of a Thousand Hills</span>
+                    <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">RWANDA</h2>
+                    <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">A model for the future: where pristine conservation meets silicon-valley innovation.</p>
+                </div>
+            </div>
 
-</div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-16">
+                    
+                    <section>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="bg-teal-600 text-white px-3 py-1 rounded text-xs font-bold uppercase">Sustainable Luxury</span>
+                            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                        </div>
+                        <h3 class="text-4xl font-black text-[#0d2a31] mb-6 tracking-tight">Pioneering Responsible Tourism</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            Rwanda isn't just a destination; it’s a global leader in <strong>Green Growth</strong>. Since banning plastic bags in 2008, it has become one of the cleanest nations on earth. Here, tourism directly fuels community development, with 10% of park revenue reinvested into local schools and health clinics.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-stone-100 p-6 rounded-3xl group hover:bg-teal-600 transition duration-300">
+                                <h4 class="font-bold group-hover:text-white transition">The Albertine Rift</h4>
+                                <p class="text-xs text-gray-500 group-hover:text-teal-100 mt-2">Home to endemic chimpanzees, golden monkeys, and the famous Canopy Walkway.</p>
+                            </div>
+                            <div class="bg-stone-100 p-6 rounded-3xl group hover:bg-teal-600 transition duration-300">
+                                <h4 class="font-bold group-hover:text-white transition">Ancient Kingship</h4>
+                                <p class="text-xs text-gray-500 group-hover:text-teal-100 mt-2">Explore the King's Palace at Nyanza, a window into Rwanda's rich, dignified heritage.</p>
+                            </div>
+                        </div>
+                    </section>
 
-<footer>
-    <p>&copy; 2025 Know Africa Website Project. All Rights Reserved.</p>
-</footer>
+                    <section class="bg-teal-900 text-white p-10 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-3xl font-bold mb-6">Africa's Tech Incubator</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-4">
+                                        <div class="p-2 bg-white/10 rounded-lg text-teal-300">🚁</div>
+                                        <div>
+                                            <h5 class="font-bold">Zipline Drones</h5>
+                                            <p class="text-sm opacity-70">Pioneering drone-delivery systems for critical medical supplies across mountainous terrain.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <div class="p-2 bg-white/10 rounded-lg text-teal-300">🚗</div>
+                                        <div>
+                                            <h5 class="font-bold">Volkswagen Assembly</h5>
+                                            <p class="text-sm opacity-70">A hub for smart mobility, car sharing, and smartphone ride-hailing.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                                    <h5 class="text-teal-400 font-bold mb-2">Kigali Innovation City</h5>
+                                    <p class="text-xs opacity-80 leading-relaxed">A world-class ecosystem linking high-tech industry with top-tier universities and capital investment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
 
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-xl mb-4 text-teal-800">💼 Ease of Business</h4>
+                        <p class="text-xs text-gray-400 mb-6 uppercase tracking-widest font-bold">World Bank Ranking: #2 in Africa</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                                <span class="h-1.5 w-1.5 bg-teal-500 rounded-full"></span> Special Economic Zones
+                            </li>
+                            <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                                <span class="h-1.5 w-1.5 bg-teal-500 rounded-full"></span> One-Stop Investment Center
+                            </li>
+                            <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                                <span class="h-1.5 w-1.5 bg-teal-500 rounded-full"></span> Zero-Tolerance for Corruption
+                            </li>
+                        </ul>
+                        <button class="w-full mt-8 py-3 bg-teal-800 text-white rounded-xl font-bold text-xs uppercase tracking-wider">Invest in Rwanda</button>
+                    </div>
+
+                    <div class="bg-stone-900 p-8 rounded-[2rem] text-white">
+                        <h4 class="font-bold text-xl mb-4 text-teal-400">Meet in Kigali</h4>
+                        <p class="text-xs opacity-70 mb-4">Host to the Kigali Convention Centre, the region's premium hub for exhibitions and festivals.</p>
+                        <div class="h-32 rounded-xl bg-teal-800/50 flex items-center justify-center border border-teal-700/50">
+                             <span class="text-xs font-bold opacity-50 uppercase">Airport-Adjacent Hub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;     
+          } else if (section === 'burundi') {
+    contentArea.innerHTML = `
+        <div class="animate-fadeIn pb-20">
+            <div class="relative h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#3d1b18] via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+                    <span class="text-orange-300 font-bold tracking-widest uppercase text-sm mb-2">The Heart of Africa</span>
+                    <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">BURUNDI</h2>
+                    <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">A hidden gem of rhythm, tea-covered hills, and the world's longest freshwater lake.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-16">
+                    
+                    <section>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="bg-[#e67e22] text-white px-3 py-1 rounded text-xs font-bold uppercase">Heritage</span>
+                            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                        </div>
+                        <h3 class="text-4xl font-black text-[#3d1b18] mb-6 tracking-tight">The Lord of the Drums</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            Experience the <strong>Royal Drummers of Burundi</strong>, one of the world's most powerful percussion ensembles. Using drums carved from local "speaking" trees and covered in traditional cowhide, these performers channel the spirit of an entire nation. It’s an ancestral dance passed from father to son for centuries—a rhythmic heartbeat you can feel in your soul.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-amber-50 p-6 rounded-[2rem] border-dashed border-2 border-amber-200">
+                                <h4 class="font-bold text-amber-900">Karera Waterfalls</h4>
+                                <p class="text-xs text-amber-800/70 mt-2">Five hidden cascades tucked inside the lush forests of Rutana. A serene pitstop for the adventurous soul.</p>
+                            </div>
+                            <div class="bg-stone-100 p-6 rounded-[2rem]">
+                                <h4 class="font-bold text-gray-800">The Source of the Nile</h4>
+                                <p class="text-xs text-gray-500 mt-2">Stand at the southernmost point of the mighty Nile, identified by explorers in 1937.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-[#3d1b18] text-white p-10 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-3xl font-bold mb-4">Misty Lake Tanganyika</h3>
+                            <p class="opacity-80 leading-relaxed mb-6">
+                                If it weren’t for Lake Baikal, this would be the deepest and oldest freshwater lake on Earth. It is the beating heart of Burundi—a place where you can watch local fishermen at dawn and spot hippos or crocodiles along the shore.
+                            </p>
+                            <div class="flex gap-4">
+                                <span class="px-4 py-2 bg-white/10 rounded-full text-xs border border-white/20">Deepest in Africa</span>
+                                <span class="px-4 py-2 bg-white/10 rounded-full text-xs border border-white/20">Ancient Legends</span>
+                                <span class="px-4 py-2 bg-white/10 rounded-full text-xs border border-white/20">Freshwater Wildlife</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-3xl font-black text-[#3d1b18] mb-8">Green Hills & Valleys</h3>
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="flex-1 space-y-4">
+                                <p class="text-gray-600">The mountains of <strong>Teza</strong> are famous for Africa’s most flavorful tea. Imagine rolling hills covered in a carpet of green, where the cool air carries the scent of fresh leaves and the thermal springs flow through the valleys.</p>
+                                <p class="text-sm font-bold text-[#e67e22]">“Muzumbu!” — The friendly cry of local children welcoming travelers to their scenic hills.</p>
+                            </div>
+                            <div class="w-full md:w-48 h-48 bg-stone-200 rounded-full flex-shrink-0 overflow-hidden shadow-inner border-8 border-white">
+                                <img src="https://images.unsplash.com/photo-1597484211616-39196ef63c5d?auto=format&fit=crop&w=400" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 rotate-1">
+                        <h4 class="font-bold text-xl mb-6 text-[#3d1b18]">📝 Solo Travel Intel</h4>
+                        <ul class="space-y-4">
+                            <li class="border-b pb-2">
+                                <p class="text-[10px] text-orange-600 font-bold uppercase">Language</p>
+                                <p class="text-sm text-gray-700 font-medium">French-speaking (English in cities)</p>
+                            </li>
+                            <li class="border-b pb-2">
+                                <p class="text-[10px] text-orange-600 font-bold uppercase">Visa</p>
+                                <p class="text-sm text-gray-700 font-medium">$90 on Arrival (2 blank pages)</p>
+                            </li>
+                            <li class="border-b pb-2">
+                                <p class="text-[10px] text-orange-600 font-bold uppercase">Best Stay</p>
+                                <p class="text-sm text-gray-700 font-medium">Hotel Club Du Lac Tanganyika</p>
+                            </li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-orange-50 rounded-xl text-xs text-orange-800">
+                            <strong>Note:</strong> Roads can be rough. Hiring a local guide is highly recommended for safety and ease.
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-900 p-8 rounded-[2rem] text-white shadow-xl">
+                        <h4 class="font-bold text-xl mb-2">Unmapped Stories</h4>
+                        <p class="text-xs opacity-70 mb-6">Burundi isn't for everyone—it's for the traveler who wants the world to themselves.</p>
+                        <div class="grid grid-cols-2 gap-2 text-center">
+                            <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+                                <span class="block font-bold">5 Days</span>
+                                <span class="text-[10px] opacity-50 uppercase">Trip Length</span>
+                            </div>
+                            <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+                                <span class="block font-bold">$700</span>
+                                <span class="text-[10px] opacity-50 uppercase">Est. Budget</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;  
+        } else if (section === 'southsudan') {
+    contentArea.innerHTML = `
+        <div class="animate-fadeIn pb-20">
+            <div class="relative h-[450px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1489493173507-6feea31f12ff?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#432818] via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+                    <span class="text-orange-400 font-bold tracking-widest uppercase text-sm mb-2">The World's Youngest Nation</span>
+                    <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">SOUTH SUDAN</h2>
+                    <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">An untouched frontier of ancient traditions, thundering rapids, and unmatched cultural pride.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-16">
+                    
+                    <section>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="bg-[#99582a] text-white px-3 py-1 rounded text-xs font-bold uppercase">Living History</span>
+                            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                        </div>
+                        <h3 class="text-4xl font-black text-[#432818] mb-6 tracking-tight">Authenticity Undisturbed</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            South Sudan is a destination for the intrepid traveler. Here, the <strong>Mundari and Dinka</strong> tribes maintain a lifestyle that has remained intact for millennia. From intricate facial scarification to the towering stature of the pastoralists, the cultural diversity here is a living record of human heritage, flourishing far away from the reach of modern civilization.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-8 bg-[#fdf0d5] rounded-[2.5rem] border-l-8 border-[#99582a]">
+                                <h4 class="font-black text-[#432818] uppercase text-xl mb-2">Ancient Wrestling</h4>
+                                <p class="text-sm text-[#6f4e37] leading-relaxed">Watch bare-chested youths compete for glory and cattle at Bor's Freedom Square—a traditional sport that remains the pride of the nation.</p>
+                            </div>
+                            <div class="p-8 bg-stone-100 rounded-[2.5rem]">
+                                <h4 class="font-black text-gray-800 uppercase text-xl mb-2">The White Nile</h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Experience the river's power at <strong>Fola Falls</strong>, where the Nile thunders over gigantic rocks in a spectacular display of desert hydraulics.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-[#432818] text-white p-10 rounded-[2.5rem] shadow-xl">
+                        <h3 class="text-3xl font-bold mb-6">Nimule: The Smallest Gem</h3>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="flex-1">
+                                <p class="opacity-80 leading-relaxed mb-4">
+                                    Nimule National Park may be the country's smallest, but it offers the most enchanting views. Located on the border with the 'Pearl of Africa', it is a lush habitat for hippos, giraffes, and the rare African wild dog.
+                                </p>
+                                <ul class="grid grid-cols-2 gap-2 text-xs font-bold text-orange-300">
+                                    <li>✓ Savannah Woodlands</li>
+                                    <li>✓ Bahr al Jabal Rapids</li>
+                                    <li>✓ Migratory Gazelles</li>
+                                    <li>✓ Elephant Sanctuaries</li>
+                                </ul>
+                            </div>
+                            <div class="w-full md:w-1/3 aspect-square bg-white/10 rounded-3xl flex items-center justify-center border border-white/20">
+                                <div class="text-center">
+                                    <span class="block text-4xl mb-2">🦁</span>
+                                    <span class="text-[10px] tracking-[0.2em] uppercase">Unexplored Wilds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-xl mb-4 text-[#432818]">🏪 Local Pulse</h4>
+                        <div class="space-y-4">
+                            <div class="group">
+                                <h5 class="text-sm font-black group-hover:text-orange-600 transition">Konyo Konyo Market</h5>
+                                <p class="text-xs text-gray-500">The heart of Juba. A congested, vibrant maze that feeds the entire country.</p>
+                            </div>
+                            <div class="group border-t pt-4">
+                                <h5 class="text-sm font-black group-hover:text-orange-600 transition">Jebel Market</h5>
+                                <p class="text-xs text-gray-500">The primary hub for indigenous necessities and traditional crafts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-[#99582a] to-[#432818] p-8 rounded-[2rem] text-white shadow-xl">
+                        <h4 class="font-bold text-xl mb-2 text-orange-300">The Nile Frontier</h4>
+                        <p class="text-sm opacity-90 mb-6">From white water rafting to world-class sport fishing, the Nile is South Sudan's ultimate playground.</p>
+                        <button class="w-full py-4 bg-white text-[#432818] rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-orange-50 transition">Explore Tours</button>
+                    </div>
+
+                    <div class="p-6 bg-stone-50 border border-stone-200 rounded-2xl">
+                        <h5 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Spirit of the Land</h5>
+                        <p class="text-xs text-gray-600 italic">"Explore the Saint Theresa Cathedral or the Juba Market Mosque to witness the architecture of a God-fearing nation."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;    
+
+
+} else if (section === 'drc') {
+    contentArea.innerHTML = `
+        <div class="animate-fadeIn pb-20">
+            <div class="relative h-[500px] rounded-[2rem] overflow-hidden mb-12 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=1200" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a1a0f] via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
+                    <span class="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-2">The Last Undiscovered Frontier</span>
+                    <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">CONGO (DRC)</h2>
+                    <p class="text-white/70 text-lg md:text-2xl mt-4 font-light max-w-2xl">A mythical land of active volcanoes, deep-forest kingdoms, and the world's most vibrant urban cultures.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-16">
+                    
+                    <section>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="bg-yellow-600 text-white px-3 py-1 rounded text-xs font-bold uppercase">Biodiversity Hub</span>
+                            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+                        </div>
+                        <h3 class="text-4xl font-black text-[#0a1a0f] mb-6 tracking-tight">Realities of the Continent</h3>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            DRC covers more than half of Africa’s rainforest. It is a land of overwhelming contradictions—immensely rich in resources yet challenging to navigate. From the <strong>Wagenia fisheries</strong> on the Congo River to the world’s largest lava lake atop <strong>Mount Nyiragongo</strong>, a journey here is an immersion into the raw, unstructured heart of Africa.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-emerald-900 text-white p-8 rounded-3xl">
+                                <h4 class="font-bold text-yellow-500 mb-2">Virunga & Garamba</h4>
+                                <p class="text-sm opacity-80">Africa's oldest national parks, home to mountain gorillas and the last Kordofan giraffes.</p>
+                            </div>
+                            <div class="bg-stone-100 p-8 rounded-3xl">
+                                <h4 class="font-bold text-gray-800 mb-2">The Bonobo Quest</h4>
+                                <p class="text-sm text-gray-500">Track our closest living relatives in the remote Salonga and Lomako reserves—the only place on earth they exist.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-stone-50 p-10 rounded-[2.5rem] border border-stone-200">
+                        <h3 class="text-3xl font-black text-[#0a1a0f] mb-6">The Kingdom of Kuba</h3>
+                        <p class="text-gray-600 mb-8">
+                            Hidden within the savannah and forest lies an ancient kingdom known for its complex organization and world-renowned raffia textiles. These geometric embroideries can take months to complete, serving as a symbolic record of a proud Bantu heritage.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="p-4 bg-white rounded-xl shadow-sm">
+                                <span class="block font-bold text-yellow-600">Raffia</span>
+                                <span class="text-[10px] uppercase text-gray-400">Master Weaving</span>
+                            </div>
+                            <div class="p-4 bg-white rounded-xl shadow-sm">
+                                <span class="block font-bold text-yellow-600">Mukanda</span>
+                                <span class="text-[10px] uppercase text-gray-400">Initiation Rites</span>
+                            </div>
+                            <div class="p-4 bg-white rounded-xl shadow-sm">
+                                <span class="block font-bold text-yellow-600">Lokele</span>
+                                <span class="text-[10px] uppercase text-gray-400">Talking Drums</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-3xl font-black text-[#0a1a0f] mb-8">Kinshasa: The Vibrant Megacity</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="p-6 bg-pink-50 rounded-2xl border-l-4 border-pink-500">
+                                    <h5 class="font-bold text-pink-900">The Sapeurs</h5>
+                                    <p class="text-sm text-pink-800/70">The 'Société des Ambianceurs et des Personnes Élégantes'—an urban movement of high fashion, luxury, and dandyism that defies the city's chaos.</p>
+                                </div>
+                                <div class="p-6 bg-blue-50 rounded-2xl border-l-4 border-blue-500">
+                                    <h5 class="font-bold text-blue-900">KinAct Festival</h5>
+                                    <p class="text-sm text-blue-800/70">An itinerant urban festival bringing street performance, sculpture, and social criticism to the neighborhoods of Kinshasa.</p>
+                                </div>
+                            </div>
+                            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1523805081446-ebefad99c281?auto=format&fit=crop&w=600" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                                    <span class="bg-white text-black px-4 py-2 rounded-full font-bold text-xs">Explore Kinshasa Art</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-[#0a1a0f] p-8 rounded-[2rem] text-white">
+                        <h4 class="font-bold text-xl mb-6 text-yellow-500">🌋 Expedition Stats</h4>
+                        <ul class="space-y-6 text-sm">
+                            <li class="flex justify-between border-b border-white/10 pb-2">
+                                <span class="opacity-60">Endemic Species</span>
+                                <span class="font-bold text-yellow-500">3,200+</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-2">
+                                <span class="opacity-60">National Reserves</span>
+                                <span class="font-bold text-yellow-500">13% of Land</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-2">
+                                <span class="opacity-60">Genetic Share (Bonobos)</span>
+                                <span class="font-bold text-yellow-500">98.7%</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+                            <p class="text-[10px] uppercase text-yellow-500 font-black mb-2 tracking-widest">Warning</p>
+                            <p class="text-[11px] leading-relaxed opacity-70 italic">"Congo is for the traveller in search of authenticity. It is expensive, unstructured, and hard to navigate without expert partners."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-100 p-8 rounded-[2rem] border border-stone-200">
+                        <h4 class="font-bold text-lg mb-4 text-gray-800">Forgotten Heritage</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                            From the neo-gothic <strong>Hotel Metropole</strong> to the scientific laboratories of <strong>Yangambi</strong>, DRC is a paradise for lovers of colonial architecture and abandoned history.
+                        </p>
+                        <img src="https://via.placeholder.com/300x200?text=Abandoned+Architecture" class="rounded-xl grayscale opacity-50 mb-4">
+                        <button class="w-full py-3 border-2 border-[#0a1a0f] text-[#0a1a0f] rounded-xl font-bold text-xs uppercase hover:bg-[#0a1a0f] hover:text-white transition">View All Congo Routes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+            }       else {
+                contentArea.innerHTML = `
+                    <div class="h-64 flex flex-col items-center justify-center text-gray-400 border-2 border-dashed border-gray-200 rounded-3xl">
+                        <h2 class="text-2xl font-bold mb-2 uppercase">${section} Module</h2>
+                        <p>Latest data for this region is currently being updated.</p>
+                    </div>
+                `;
+            }
+        }
+
+        window.onload = () => loadSection('home');
+    </script>
 </body>
 </html>
