@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  .intersolar-container {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    background-color: #ffffff;
+  }
+
+  .event-header {
+    background: linear-gradient(135deg, #1a5f7a 0%, #2ecc71 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .event-header h1 { margin: 0 0 10px 0; font-size: 1.8rem; }
+  .event-meta { font-weight: bold; font-size: 1.1rem; opacity: 0.9; }
+
+  h2 { border-bottom: 2px solid #2ecc71; padding-bottom: 8px; color: #1a5f7a; margin-top: 40px; }
+
+  /* Video Styles */
+  .video-placeholder {
+    background: #e9ecef;
+    border: 2px dashed #adb5bd;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Portrait specific ratio (9:16) */
+  .portrait-video {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .trend-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .trend-card {
+    flex: 1 1 300px;
+    background: #f9fbf9;
+    padding: 20px;
+    border-left: 4px solid #2ecc71;
+    border-radius: 4px;
+  }
+
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .company-card {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+  }
+
+  .company-name {
+    display: block;
+    color: #2ecc71;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .footer-summary {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f4f7f6;
+    border-radius: 8px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .video-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="intersolar-container">
+  <header class="event-header">
+    <h1>Intersolar Africa 2026: Powering the Future of Clean Energy</h1>
+    <div class="event-meta">📍 Sarit Expo Centre, Nairobi | 📅 3rd–4th February 2026</div>
+  </header>
+
+  <p>Intersolar Africa 2026 once again proved why it is one of the most influential renewable energy exhibitions in the region. Highlights from the floor included cutting-edge solar power and energy storage solutions.</p>
+
+<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 900px; margin: auto; color: #333;">
+  
+  <h2 style="color: #1a5f7a; border-left: 5px solid #2ecc71; padding-left: 15px; margin-bottom: 20px;">🎥 Expo Highlights</h2>
+
+  <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding-bottom: 30px;">
+    
+    <div style="flex: 1; min-width: 280px; max-width: 320px; background: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; border: 4px solid #f0f0f0;">
+      <div style="position: absolute; top: 15px; left: 15px; background: rgba(46, 204, 113, 0.9); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; z-index: 10; text-transform: uppercase;">Live Floor</div>
+      <video controls autoplay muted loop playsinline style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block;">
+        <source src="vid 2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div style="flex: 1; min-width: 280px; max-width: 320px; background: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; border: 4px solid #f0f0f0;">
+      <div style="position: absolute; top: 15px; left: 15px; background: rgba(52, 152, 219, 0.9); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; z-index: 10; text-transform: uppercase;">Tech Demo</div>
+      <video controls autoplay muted loop playsinline style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block;">
+        <source src="IMG_2960.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+  <p style="text-align: center; color: #666; font-style: italic;">Experience the energy of Intersolar Africa 2026</p>
+</div>
+
+
+  
+</div>
+
+
+
+
+
+  <h2>Key Industry Trends</h2>
+  <div class="trend-section">
+    <div class="trend-card">
+      <strong>⚡ Solar + Storage</strong>
+      <p>Integrated solar and battery solutions are now the standard for improving energy reliability.</p>
+    </div>
+    <div class="trend-card">
+      <strong>🔌 Smart Energy & EV</strong>
+      <p>Electric mobility is gaining massive traction as the continent shifts toward cleaner transport.</p>
+    </div>
+  </div>
+
+  <h2>Event Highlights (Photos)</h2>
+
+<div class="photo-grid" style="display: flex; gap: 16px; flex-wrap: wrap;">
+  <div class="photo-item portrait-photo" style="width: 344px; height: 249px; overflow: hidden; border-radius: 8px; background: #f4f4f4; flex-shrink: 0;">
+    <img src="picture2.jpg" alt="Intersolar Africa 2026 expo floor" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease;">
+  </div>
+
+  <div class="photo-item portrait-photo" style="width: 344px; height: 249px; overflow: hidden; border-radius: 8px; background: #f4f4f4; flex-shrink: 0;">
+    <img src="picture 3.jpg" alt="Solar product demonstrations at Intersolar Africa 2026" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease;">
+  </div>
+
+  <div class="photo-item portrait-photo" style="width: 344px; height: 249px; overflow: hidden; border-radius: 8px; background: #f4f4f4; flex-shrink: 0;">
+    <img src="picture 2.jpg" alt="Industry interview at Intersolar Africa 2026" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease;">
+  </div>
+  <div class="photo-item portrait-photo" style="width: 344px; height: 249px; overflow: hidden; border-radius: 8px; background: #f4f4f4; flex-shrink: 0;">
+    <img src="IMG_2953.jpeg" alt="Industry interview at Intersolar Africa 2026" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease;">
+  </div>
+  <div class="photo-item portrait-photo" style="width: 344px; height: 249px; overflow: hidden; border-radius: 8px; background: #f4f4f4; flex-shrink: 0;">
+    <img src="IMG_2967.jpeg" alt="Industry interview at Intersolar Africa 2026" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease;">
+  </div>
+
+</div>
+
+  <h2>Featured Companies</h2>
+  <div class="company-grid">
+    <div class="company-card"><span class="company-name">Starcharge</span> Advanced EV charging and energy storage.</div>
+    <div class="company-card"><span class="company-name">VG Solar</span> High-quality solar for residential and industrial use.</div>
+    <div class="company-card"><span class="company-name">TWS</span> Leaders in sustainable power management.</div>
+    <div class="company-card"><span class="company-name">Sunways</span> High-efficiency intelligent solar inverters.</div>
+    <div class="company-card"><span class="company-name">GLGW</span> Focused on enhancing solar system reliability.</div>
+    <div class="company-card"><span class="company-name">Swatten</span> Experts in power conversion and battery storage.</div>
+  </div>
+
+  <div class="footer-summary">
+   Visit our youtube channel for more updates at inisght industries Africa.
+  </div>
+</div>
+
+</body>
+</html>
