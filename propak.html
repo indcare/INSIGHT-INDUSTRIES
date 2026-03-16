@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Propak Expo | My Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #1a1a1a;
+            --accent-blue: #3498db;
+            --text-main: #333;
+            --text-light: #666;
+            --bg-soft: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        header {
+            position: relative;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+        }
+
+        /* YouTube Call to Action */
+        .youtube-banner {
+            background: #c4302b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .youtube-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            color: var(--primary-dark);
+            margin: 0 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-blue); }
+
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 20px;
+        }
+
+        .day-intro {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Company Cards */
+        .company-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .company-card h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e1f0fa;
+            color: var(--accent-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        img, video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .caption {
+            font-style: italic;
+            color: var(--text-light);
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: -10px;
+            display: block;
+        }
+
+        .observation-box {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #f1c40f;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: var(--primary-dark);
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            nav a { margin: 0 10px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="home.jpeg" alt="Propak Entrance" class="hero-img">
+    <h1>Exploring Propak Expo</h1>
+    <p>A Three-Day Journey Through the Pulse of Packaging & Processing</p>
+</header>
+
+<div class="youtube-banner">
+    📢 Exclusive Interviews:  
+    <a href="https://www.youtube.com/@INSIGHTINDUSTRIESAFRICA">Watch the full interviews on YouTube</a>
+</div>
+
+<nav>
+    <a href="#day1">Day 1: Materials</a>
+    <a href="#day2">Day 2: Strategy</a>
+    <a href="#day3">Day 3: Tech Spotlight</a>
+</nav>
+
+<div class="container">
+
+    <section id="day1">
+        <h2 class="section-title">Day 01: The Future of Plastics</h2>
+        <p class="day-intro">Day one was an immersion into the core of the industry: packaging systems and material science. I focused on the companies redefining how we cut, fill, and preserve products.</p>
+        
+        <img src="exhibition hall.jpeg" alt="Exhibition Hall">
+        <span class="caption">The buzzing atmosphere of the Propak main hall.</span>
+
+        <div class="company-card">
+            <span class="tag">Manufacturing • UK</span>
+            <h3>Durham-Duplex</h3>
+            <p>From Sheffield, UK, these specialists showcase a century of precision. Their industrial knives are the silent engines of processing lines worldwide.</p>
+            <img src="dunker.jpeg" alt="Durham-Duplex">
+            <div class="observation-box">
+                <strong>💡 Note:</strong> Their tray and zig-zag knives are incredibly high-spec, essential for clean packaging finishes.
+            </div>
+        </div>
+
+        <div class="company-card">
+            <span class="tag">Cooling • Thailand</span>
+            <h3>Palm Boxes</h3>
+            <p>Innovative food-grade polyethylene ice boxes. Using polyurethane foam injection, these units offer world-class thermal retention.</p>
+            <video controls poster="video-placeholder.jpg">
+                <source src="palm.mp4" type="video/mp4">
+            </video>
+            <span class="caption">Watch the Palm Box insulation demo</span>
+        </div>
+
+        <div class="company-card">
+            <span class="tag">Sustainability</span>
+            <h3>Pro Packaging Limited</h3>
+            <p>Leading the green charge with <strong>bagasse-based</strong> containers. Utilizing sugarcane waste to replace plastic is a game-changer for eco-friendly logistics.</p>
+            <img src="pro packaging.jpeg" alt="Pro Packaging">
+        </div>
+    </section>
+
+    <section id="day2">
+        <h2 class="section-title">Day 02: Office & Strategy</h2>
+        <div class="observation-box" style="border-left-color: #3498db; background: #eef7fd;">
+            <p>Day 2 was a pivot. We spent the day at the <strong>regional office</strong> to analyze the data gathered on Day 1. This allowed us to strategize our approach for the final day, ensuring we targeted the most impactful international interviews for Day 3.</p>
+        </div>
+       
+        <span class="caption">Refining our focus for the international tech showcase.</span>
+    </section>
+
+    <section id="day3">
+        <h2 class="section-title">Day 03: Global Innovations</h2>
+        <p class="day-intro">Our strategy paid off. Day 3 was a deep dive into high-tech machinery and raw material engineering from Italy, India, and Vietnam.</p>
+
+        <div class="company-card">
+            <span class="tag">Blow Moulding • USA</span>
+            <h3>Uniloy</h3>
+            <p>A global leader offering four distinct blow moulding technologies. Their booth was a masterclass in specialized industrial container production.</p>
+           
+        </div>
+
+        <div class="company-card">
+            <span class="tag">Raw Materials • Vietnam</span>
+            <h3>GCC Plastics</h3>
+            <p>Specializing in <strong>Calcium Carbonate (CaCO₃)</strong> and filler masterbatches. Their materials are fundamental for PVC manufacturing and electric cabling.</p>
+        </div>
+
+        <div class="company-card">
+            <span class="tag">Energy • India</span>
+            <h3>Thermax</h3>
+            <p>Engineering for a cleaner world. From industrial boilers to water treatment, Thermax focuses on helping factories optimize energy efficiency.</p>
+        </div>
+
+        <div class="company-card">
+            <span class="tag">Automation • Italy</span>
+            <h3>CMI Industries</h3>
+            <p>High-technology packaging lines for pharma and cosmetics. Beautifully engineered Italian machinery for filling, capping, and labeling.</p>
+        </div>
+
+        <div class="company-card">
+            <span class="tag">Extrusion • India</span>
+            <h3>Maruti Plastotech</h3>
+            <p>Specialists in rope-making technology. Their PLC-controlled systems are designed for high performance with minimal energy waste.</p>
+        </div>
+    </section>
+
+    <div class="observation-box" style="text-align: center;">
+        <h3>Final Reflections</h3>
+        <p>Three days at Propak Expo highlighted one truth: the packaging industry is no longer just about "boxes"—it's about sustainability, AI-driven precision, and global collaboration.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Propak Expo Experience | Built for the Industry</p>
+</footer>
+
+</body>
+</html>
